@@ -1,9 +1,0 @@
-name: dropsonde_test 
-channels:
-  - conda-forge
-dependencies:
-  - python==3.12
-  - halodrops
-  - pip
-  - pip:
-    - orcestra>=0.0.12
