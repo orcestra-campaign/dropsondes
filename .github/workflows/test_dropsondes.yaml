@@ -22,6 +22,8 @@ jobs:
         use-mamba: true
         miniforge-variant: Mambaforge
         miniforge-version: latest
+    - name: install pip
+      run: conda install pip
     - name: install halodrops 
       run: python3 -m pip install halodrops
 
