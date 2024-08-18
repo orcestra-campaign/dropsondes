@@ -1,0 +1,46 @@
+name: test
+
+on: [push, pull_request]
+
+env:
+  CONDA_CACHE_NUMBER: 0
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash -l {0}
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: initialize conda
+      uses: conda-incubator/setup-miniconda@v3
+      with:
+        activate-environment: dropsonde_test
+        auto-activate-base: false
+        use-mamba: true
+        miniforge-variant: Mambaforge
+        miniforge-version: latest
+    - name: restore conda environment from cache
+      uses: actions/cache/restore@v4
+      with:
+        path: ${{ env.CONDA }}/envs
+        key:
+          conda-${{ runner.os }}--${{ runner.arch }}--${{ hashFiles('environment.yml') }}-${{ env.CONDA_CACHE_NUMBER }}
+      id: conda_cache
+    - name: install conda environment
+      run:
+        mamba env update -n dropsonde_test -f environment.yml
+      if: steps.conda_cache.outputs.cache-hit != 'true'
+      id: install_conda_env
+    - name: upload conda environment to cache
+      uses: actions/cache/save@v4
+      if: steps.install_conda_env.outcome == 'success'
+      with:
+        path: ${{ env.CONDA }}/envs
+        key:
+          conda-${{ runner.os }}--${{ runner.arch }}--${{ hashFiles('environment.yml') }}-${{ env.CONDA_CACHE_NUMBER }}
+    - name: run tests
+      run: conda info 
+        
