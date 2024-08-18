@@ -1,0 +1,944 @@
+AVAPS-LOG,UTC Date & Time,Session Time,Channel,Event or Error Message,Calling Context
+AVAPS-LOG,2024-08-11 13:15:55.350Z,0.000,,*** AVAPS II SYSTEM LOG FILE ***
+AVAPS-LOG,2024-08-11 13:16:00.420Z,5.070,,Serial port initialization complete: no errors.
+AVAPS-LOG,2024-08-11 13:16:04.664Z,9.314,,GPS Reference Receiver UART 1 configuration commands sent
+AVAPS-LOG,2024-08-11 13:16:09.074Z,13.724,,GPS Reference Receiver UART 2 configuration commands sent
+AVAPS-LOG,2024-08-11 13:16:14.762Z,19.411,,Serial port initialization complete: no errors.
+AVAPS-LOG,2024-08-11 13:16:13.158Z,17.808,,PC Clock set to: 2024-08-11 13:16:13.159 using GPS Reference Receiver data - PC Clock error was: 3.871 sec
+AVAPS-LOG,2024-08-11 13:16:53.218Z,57.868,,Automated System Tests:  No Errors Detected...
+AVAPS-LOG,2024-08-11 13:16:53.226Z,57.876,,Spectrum Analyzer program started
+AVAPS-LOG,2024-08-11 13:16:53.226Z,57.876,,Aircraft Data Acq program started
+AVAPS-LOG,2024-08-11 13:16:53.227Z,57.877,,Spectrum Analyzer Data Acq data log file created
+AVAPS-LOG,2024-08-11 13:16:53.284Z,57.934,,Sounding Supervisor program started
+AVAPS-LOG,2024-08-11 13:16:53.709Z,58.359,,GPS Reference Receiver (NMEA) data log file created
+AVAPS-LOG,2024-08-11 13:16:53.709Z,58.359,,GPS Reference Data Acq (NMEA) program started
+AVAPS-LOG,2024-08-11 13:16:53.709Z,58.359,,Aircraft Data Acq data log file created
+AVAPS-LOG,2024-08-11 13:16:54.159Z,58.809,,PC Clock set to: 2024-08-11 13:16:54.160 using GPS Reference Receiver data - PC Clock error was: 0.019 sec
+AVAPS-LOG,2024-08-11 13:17:10.576Z,75.226,1,Sounding START request
+AVAPS-LOG,2024-08-11 13:17:10.903Z,75.552,1,Sounding files created
+AVAPS-LOG,2024-08-11 13:17:11.149Z,75.798,,PC Clock set to: 2024-08-11 13:17:11.149 using GPS Reference Receiver data - PC Clock error was: -0.030 sec
+AVAPS-LOG,2024-08-11 13:17:23.028Z,87.678,1,Sounding frequency 403.00 selected by operator
+AVAPS-LOG,2024-08-11 13:17:36.315Z,100.965,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 13:17:36.789Z,101.438,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 13:17:37.268Z,101.918,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 13:17:37.268Z,101.918,,Sonde 234150033 GPS Aiding FAILED on message 1 of 1 after 3 attempts.
+AVAPS-LOG,2024-08-11 13:18:10.987Z,135.637,1,Sonde 234150033 factory pressure error value is 0.000 mb
+AVAPS-LOG,2024-08-11 13:18:13.100Z,137.749,1,Sonde 234150033 Preview OK by operator
+AVAPS-LOG,2024-08-11 13:18:16.528Z,141.178,1,Sounding data collection started by operator
+AVAPS-LOG,2024-08-11 13:18:26.027Z,150.677,1,CHANNEL 1 READY for launch
+AVAPS-LOG,2024-08-11 13:20:04.782Z,249.432,1,Sonde 234150033 Launch Detect; Launch Time 2024-08-11 13:20:00.728; Dfile Name D20240811_132001.1
+AVAPS-LOG,2024-08-11 13:20:04.783Z,249.433,1,Sounding Launch Obs identified OK; LLA source is Aircraft Data System
+AVAPS-LOG,2024-08-11 13:36:43.438Z,1248.087,1,Sounding STOP request
+AVAPS-LOG,2024-08-11 13:37:15.830Z,1280.480,1,Sounding files closed
+AVAPS-LOG,2024-08-11 13:37:15.841Z,1280.490,1,Sounding files renamed
+AVAPS-LOG,2024-08-11 13:37:16.641Z,1281.290,1,Sounding ENDED
+AVAPS-LOG,2024-08-11 13:56:36.766Z,2441.415,1,Sounding START request
+AVAPS-LOG,2024-08-11 13:56:37.132Z,2441.781,1,Sounding files created
+AVAPS-LOG,2024-08-11 13:56:38.158Z,2442.808,,PC Clock set to: 2024-08-11 13:56:38.159 using GPS Reference Receiver data - PC Clock error was: -0.041 sec
+AVAPS-LOG,2024-08-11 13:56:45.468Z,2450.118,1,Sounding frequency 403.00 selected by operator
+AVAPS-LOG,2024-08-11 13:56:58.856Z,2463.506,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 13:56:59.329Z,2463.979,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 13:56:59.809Z,2464.459,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 13:56:59.809Z,2464.459,,Sonde 233530236 GPS Aiding FAILED on message 1 of 1 after 3 attempts.
+AVAPS-LOG,2024-08-11 13:57:32.527Z,2497.177,1,Sonde 233530236 factory pressure error value is 0.000 mb
+AVAPS-LOG,2024-08-11 13:57:34.340Z,2498.990,1,Sonde 233530236 Preview OK by operator
+AVAPS-LOG,2024-08-11 13:57:36.568Z,2501.217,1,Sounding data collection started by operator
+AVAPS-LOG,2024-08-11 13:57:46.017Z,2510.667,1,CHANNEL 1 READY for launch
+AVAPS-LOG,2024-08-11 14:02:21.518Z,2786.168,1,Sonde 233530236 Launch Detect; Launch Time 2024-08-11 14:02:17.569; Dfile Name D20240811_140218.1
+AVAPS-LOG,2024-08-11 14:02:21.519Z,2786.169,1,Sounding Launch Obs identified OK; LLA source is Aircraft Data System
+AVAPS-LOG,2024-08-11 14:12:12.679Z,3377.328,2,Sounding START request
+AVAPS-LOG,2024-08-11 14:12:12.973Z,3377.623,2,Sounding files created
+AVAPS-LOG,2024-08-11 14:12:38.267Z,3402.917,2,Sounding frequency 405.60 selected by operator
+AVAPS-LOG,2024-08-11 14:12:54.356Z,3419.006,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 14:12:54.873Z,3419.523,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 14:12:55.340Z,3419.990,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 14:12:55.340Z,3419.990,,Sonde 233530219 GPS Aiding FAILED on message 1 of 1 after 3 attempts.
+AVAPS-LOG,2024-08-11 14:13:34.278Z,3458.927,2,Sonde 233530219 factory pressure error value is 0.000 mb
+AVAPS-LOG,2024-08-11 14:13:36.093Z,3460.743,2,Sonde 233530219 Preview OK by operator
+AVAPS-LOG,2024-08-11 14:13:38.968Z,3463.618,2,Sounding data collection started by operator
+AVAPS-LOG,2024-08-11 14:13:48.019Z,3472.668,2,CHANNEL 2 READY for launch
+AVAPS-LOG,2024-08-11 14:14:38.815Z,3523.465,3,Sounding START request
+AVAPS-LOG,2024-08-11 14:14:39.173Z,3523.822,3,Sounding files created
+AVAPS-LOG,2024-08-11 14:15:03.268Z,3547.918,3,Sounding frequency 404.74 selected by operator
+AVAPS-LOG,2024-08-11 14:15:12.747Z,3557.397,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 14:15:13.230Z,3557.879,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 14:15:13.699Z,3558.348,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 14:15:13.699Z,3558.348,,Sonde 234150010 GPS Aiding FAILED on message 1 of 1 after 3 attempts.
+AVAPS-LOG,2024-08-11 14:15:41.780Z,3586.429,3,Sonde 234150010 factory pressure error value is 0.000 mb
+AVAPS-LOG,2024-08-11 14:15:43.900Z,3588.549,3,Sonde 234150010 Preview OK by operator
+AVAPS-LOG,2024-08-11 14:15:47.567Z,3592.217,3,Sounding data collection started by operator
+AVAPS-LOG,2024-08-11 14:15:57.018Z,3601.668,3,CHANNEL 3 READY for launch
+AVAPS-LOG,2024-08-11 14:17:05.519Z,3670.169,2,Sonde 233530219 Launch Detect; Launch Time 2024-08-11 14:17:01.468; Dfile Name D20240811_141701.2
+AVAPS-LOG,2024-08-11 14:17:05.519Z,3670.169,2,Sounding Launch Obs identified OK; LLA source is Aircraft Data System
+AVAPS-LOG,2024-08-11 14:18:08.969Z,3733.619,4,Sounding START request
+AVAPS-LOG,2024-08-11 14:18:09.373Z,3734.023,4,Sounding files created
+AVAPS-LOG,2024-08-11 14:18:29.068Z,3753.718,4,Sounding frequency 403.98 selected by operator
+AVAPS-LOG,2024-08-11 14:18:38.757Z,3763.407,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 14:18:39.238Z,3763.887,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 14:18:39.719Z,3764.369,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 14:18:39.719Z,3764.369,,Sonde 233521168 GPS Aiding FAILED on message 1 of 1 after 3 attempts.
+AVAPS-LOG,2024-08-11 14:19:37.280Z,3821.930,4,Sonde 233521168 factory pressure error value is 0.000 mb
+AVAPS-LOG,2024-08-11 14:19:39.101Z,3823.751,4,Sonde 233521168 Preview OK by operator
+AVAPS-LOG,2024-08-11 14:19:52.769Z,3837.418,4,Sounding data collection started by operator
+AVAPS-LOG,2024-08-11 14:20:02.017Z,3846.667,4,CHANNEL 4 READY for launch
+AVAPS-LOG,2024-08-11 14:20:28.855Z,3873.505,1,Sounding STOP request
+AVAPS-LOG,2024-08-11 14:20:44.923Z,3889.573,1,Sounding files closed
+AVAPS-LOG,2024-08-11 14:20:44.929Z,3889.579,1,Sounding files renamed
+AVAPS-LOG,2024-08-11 14:20:45.754Z,3890.404,1,Sounding ENDED
+AVAPS-LOG,2024-08-11 14:23:15.771Z,4040.420,3,Sonde 234150010 Launch Detect; Launch Time 2024-08-11 14:23:11.750; Dfile Name D20240811_142312.3
+AVAPS-LOG,2024-08-11 14:23:15.771Z,4040.420,3,Sounding Launch Obs identified OK; LLA source is Aircraft Data System
+AVAPS-LOG,2024-08-11 14:24:22.743Z,4107.392,1,Sounding START request
+AVAPS-LOG,2024-08-11 14:24:22.974Z,4107.623,1,Sounding files created
+AVAPS-LOG,2024-08-11 14:24:42.468Z,4127.117,1,Sounding frequency 403.18 selected by operator
+AVAPS-LOG,2024-08-11 14:24:52.146Z,4136.795,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 14:24:52.628Z,4137.278,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 14:24:53.108Z,4137.758,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 14:24:53.108Z,4137.758,,Sonde 231330736 GPS Aiding FAILED on message 1 of 1 after 3 attempts.
+AVAPS-LOG,2024-08-11 14:25:18.278Z,4162.928,1,Sonde 231330736 factory pressure error value is 0.000 mb
+AVAPS-LOG,2024-08-11 14:25:20.092Z,4164.741,1,Sonde 231330736 Preview OK by operator
+AVAPS-LOG,2024-08-11 14:25:22.068Z,4166.718,1,Sounding data collection started by operator
+AVAPS-LOG,2024-08-11 14:25:32.018Z,4176.668,1,CHANNEL 1 READY for launch
+AVAPS-LOG,2024-08-11 14:26:19.569Z,4224.219,5,Sounding START request
+AVAPS-LOG,2024-08-11 14:26:19.974Z,4224.624,5,Sounding files created
+AVAPS-LOG,2024-08-11 14:26:30.368Z,4235.018,5,Sounding frequency 402.20 selected by operator
+AVAPS-LOG,2024-08-11 14:26:43.546Z,4248.196,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 14:26:44.029Z,4248.678,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 14:26:44.509Z,4249.159,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 14:26:44.509Z,4249.159,,Sonde 231221034 GPS Aiding FAILED on message 1 of 1 after 3 attempts.
+AVAPS-LOG,2024-08-11 14:27:30.781Z,4295.430,5,Sonde 231221034 factory pressure error value is 0.000 mb
+AVAPS-LOG,2024-08-11 14:27:32.658Z,4297.308,5,Sonde 231221034 Preview OK by operator
+AVAPS-LOG,2024-08-11 14:27:37.469Z,4302.119,5,Sounding data collection started by operator
+AVAPS-LOG,2024-08-11 14:27:47.018Z,4311.668,5,CHANNEL 5 READY for launch
+AVAPS-LOG,2024-08-11 14:29:01.520Z,4386.170,4,Sonde 233521168 Launch Detect; Launch Time 2024-08-11 14:28:57.468; Dfile Name D20240811_142857.4
+AVAPS-LOG,2024-08-11 14:29:01.520Z,4386.170,4,Sounding Launch Obs identified OK; LLA source is Aircraft Data System
+AVAPS-LOG,2024-08-11 14:30:27.769Z,4472.419,6,Sounding START request
+AVAPS-LOG,2024-08-11 14:30:28.175Z,4472.824,6,Sounding files created
+AVAPS-LOG,2024-08-11 14:30:47.668Z,4492.318,6,Sounding frequency 401.40 selected by operator
+AVAPS-LOG,2024-08-11 14:30:57.766Z,4502.416,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 14:30:58.249Z,4502.898,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 14:30:58.719Z,4503.369,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 14:30:58.720Z,4503.370,,Sonde 231430763 GPS Aiding FAILED on message 1 of 1 after 3 attempts.
+AVAPS-LOG,2024-08-11 14:31:29.282Z,4533.931,6,Sonde 231430763 factory pressure error value is 0.000 mb
+AVAPS-LOG,2024-08-11 14:31:31.101Z,4535.750,6,Sonde 231430763 Preview OK by operator
+AVAPS-LOG,2024-08-11 14:31:36.469Z,4541.119,6,Sounding data collection started by operator
+AVAPS-LOG,2024-08-11 14:31:46.019Z,4550.669,6,CHANNEL 6 READY for launch
+AVAPS-LOG,2024-08-11 14:34:13.019Z,4697.669,1,Sonde 231330736 Launch Detect; Launch Time 2024-08-11 14:34:08.969; Dfile Name D20240811_143409.1
+AVAPS-LOG,2024-08-11 14:34:13.020Z,4697.670,1,Sounding Launch Obs identified OK; LLA source is Aircraft Data System
+AVAPS-LOG,2024-08-11 14:36:15.591Z,4820.241,7,Sounding START request
+AVAPS-LOG,2024-08-11 14:36:15.973Z,4820.622,7,Sounding files created
+AVAPS-LOG,2024-08-11 14:36:34.767Z,4839.417,7,Sounding frequency 400.64 selected by operator
+AVAPS-LOG,2024-08-11 14:36:44.347Z,4848.997,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 14:36:44.839Z,4849.488,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 14:36:45.310Z,4849.960,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 14:36:45.310Z,4849.960,,Sonde 231430766 GPS Aiding FAILED on message 1 of 1 after 3 attempts.
+AVAPS-LOG,2024-08-11 14:37:04.528Z,4869.178,7,Sonde 231430766 factory pressure error value is 0.000 mb
+AVAPS-LOG,2024-08-11 14:37:06.338Z,4870.987,7,Sonde 231430766 Preview OK by operator
+AVAPS-LOG,2024-08-11 14:37:08.668Z,4873.318,7,Sounding data collection started by operator
+AVAPS-LOG,2024-08-11 14:37:18.024Z,4882.674,7,CHANNEL 7 READY for launch
+AVAPS-LOG,2024-08-11 14:38:29.519Z,4954.169,6,Sonde 231430763 Launch Detect; Launch Time 2024-08-11 14:38:25.500; Dfile Name D20240811_143826.6
+AVAPS-LOG,2024-08-11 14:38:29.519Z,4954.169,6,Sounding Launch Obs identified OK; LLA source is Aircraft Data System
+AVAPS-LOG,2024-08-11 14:38:56.641Z,4981.290,2,Sounding STOP request
+AVAPS-LOG,2024-08-11 14:39:08.911Z,4993.561,2,Sounding files closed
+AVAPS-LOG,2024-08-11 14:39:08.915Z,4993.565,2,Sounding files renamed
+AVAPS-LOG,2024-08-11 14:39:09.868Z,4994.518,2,Sounding ENDED
+AVAPS-LOG,2024-08-11 14:39:17.968Z,5002.618,8,Sounding START request
+AVAPS-LOG,2024-08-11 14:39:18.375Z,5003.025,8,Sounding files created
+AVAPS-LOG,2024-08-11 14:39:31.068Z,5015.718,8,Sounding frequency 405.44 selected by operator
+AVAPS-LOG,2024-08-11 14:39:48.066Z,5032.716,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 14:39:48.539Z,5033.189,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 14:39:49.020Z,5033.670,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 14:39:49.021Z,5033.671,,Sonde 231221035 GPS Aiding FAILED on message 1 of 1 after 3 attempts.
+AVAPS-LOG,2024-08-11 14:40:36.841Z,5081.490,8,Sonde 231221035 factory pressure error value is 0.000 mb
+AVAPS-LOG,2024-08-11 14:40:38.650Z,5083.299,8,Sonde 231221035 Preview OK by operator
+AVAPS-LOG,2024-08-11 14:40:41.068Z,5085.718,8,Sounding data collection started by operator
+AVAPS-LOG,2024-08-11 14:40:51.019Z,5095.668,8,CHANNEL 8 READY for launch
+AVAPS-LOG,2024-08-11 14:41:02.569Z,5107.219,3,Sounding STOP request
+AVAPS-LOG,2024-08-11 14:41:19.633Z,5124.283,3,Sounding files closed
+AVAPS-LOG,2024-08-11 14:41:19.638Z,5124.288,3,Sounding files renamed
+AVAPS-LOG,2024-08-11 14:41:20.581Z,5125.231,3,Sounding ENDED
+AVAPS-LOG,2024-08-11 14:43:08.519Z,5233.169,5,Sonde 231221034 Launch Detect; Launch Time 2024-08-11 14:43:04.500; Dfile Name D20240811_144304.5
+AVAPS-LOG,2024-08-11 14:43:08.519Z,5233.169,5,Sounding Launch Obs identified OK; LLA source is Aircraft Data System
+AVAPS-LOG,2024-08-11 14:44:00.471Z,5285.121,2,Sounding START request
+AVAPS-LOG,2024-08-11 14:44:00.775Z,5285.424,2,Sounding files created
+AVAPS-LOG,2024-08-11 14:44:14.168Z,5298.818,2,Sounding frequency 404.64 selected by operator
+AVAPS-LOG,2024-08-11 14:44:32.147Z,5316.797,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 14:44:32.629Z,5317.278,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 14:44:33.109Z,5317.759,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 14:44:33.110Z,5317.760,,Sonde 231221056 GPS Aiding FAILED on message 1 of 1 after 3 attempts.
+AVAPS-LOG,2024-08-11 14:45:12.839Z,5357.488,2,Sonde 231221056 factory pressure error value is 0.000 mb
+AVAPS-LOG,2024-08-11 14:45:14.650Z,5359.300,2,Sonde 231221056 Preview OK by operator
+AVAPS-LOG,2024-08-11 14:45:16.167Z,5360.817,2,Sounding data collection started by operator
+AVAPS-LOG,2024-08-11 14:45:26.018Z,5370.668,2,CHANNEL 2 READY for launch
+AVAPS-LOG,2024-08-11 14:45:50.675Z,5395.325,4,Sounding STOP request
+AVAPS-LOG,2024-08-11 14:46:01.639Z,5406.289,4,Sounding files closed
+AVAPS-LOG,2024-08-11 14:46:01.652Z,5406.301,4,Sounding files renamed
+AVAPS-LOG,2024-08-11 14:46:02.558Z,5407.208,4,Sounding ENDED
+AVAPS-LOG,2024-08-11 14:47:39.269Z,5503.919,7,Sonde 231430766 Launch Detect; Launch Time 2024-08-11 14:47:35.168; Dfile Name D20240811_144735.7
+AVAPS-LOG,2024-08-11 14:47:39.270Z,5503.920,7,Sounding Launch Obs identified OK; LLA source is Aircraft Data System
+AVAPS-LOG,2024-08-11 14:48:32.816Z,5557.466,3,Sounding START request
+AVAPS-LOG,2024-08-11 14:48:33.175Z,5557.824,3,Sounding files created
+AVAPS-LOG,2024-08-11 14:48:43.467Z,5568.117,3,Sounding frequency 403.96 selected by operator
+AVAPS-LOG,2024-08-11 14:48:52.956Z,5577.605,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 14:48:53.439Z,5578.088,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 14:48:53.909Z,5578.559,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 14:48:53.909Z,5578.559,,Sonde 231221055 GPS Aiding FAILED on message 1 of 1 after 3 attempts.
+AVAPS-LOG,2024-08-11 14:49:34.529Z,5619.179,3,Sonde 231221055 factory pressure error value is 0.000 mb
+AVAPS-LOG,2024-08-11 14:49:36.348Z,5620.997,3,Sonde 231221055 Preview OK by operator
+AVAPS-LOG,2024-08-11 14:49:42.568Z,5627.218,3,Sounding data collection started by operator
+AVAPS-LOG,2024-08-11 14:49:52.018Z,5636.667,3,CHANNEL 3 READY for launch
+AVAPS-LOG,2024-08-11 14:51:44.192Z,5748.841,1,Sounding STOP request
+AVAPS-LOG,2024-08-11 14:51:55.642Z,5760.292,1,Sounding files closed
+AVAPS-LOG,2024-08-11 14:51:55.648Z,5760.298,1,Sounding files renamed
+AVAPS-LOG,2024-08-11 14:51:56.599Z,5761.249,1,Sounding ENDED
+AVAPS-LOG,2024-08-11 14:52:22.518Z,5787.168,8,Sonde 231221035 Launch Detect; Launch Time 2024-08-11 14:52:18.500; Dfile Name D20240811_145218.8
+AVAPS-LOG,2024-08-11 14:52:22.518Z,5787.168,8,Sounding Launch Obs identified OK; LLA source is Aircraft Data System
+AVAPS-LOG,2024-08-11 14:53:10.464Z,5835.114,4,Sounding START request
+AVAPS-LOG,2024-08-11 14:53:10.776Z,5835.426,4,Sounding files created
+AVAPS-LOG,2024-08-11 14:53:20.468Z,5845.117,4,Sounding frequency 403.16 selected by operator
+AVAPS-LOG,2024-08-11 14:53:30.057Z,5854.707,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 14:53:30.529Z,5855.178,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 14:53:30.999Z,5855.649,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 14:53:30.999Z,5855.649,,Sonde 230431066 GPS Aiding FAILED on message 1 of 1 after 3 attempts.
+AVAPS-LOG,2024-08-11 14:53:42.529Z,5867.178,4,Sonde 230431066 factory pressure error value is 0.000 mb
+AVAPS-LOG,2024-08-11 14:53:44.348Z,5868.998,4,Sonde 230431066 Preview OK by operator
+AVAPS-LOG,2024-08-11 14:53:47.768Z,5872.417,4,Sounding data collection started by operator
+AVAPS-LOG,2024-08-11 14:53:57.018Z,5881.668,4,CHANNEL 4 READY for launch
+AVAPS-LOG,2024-08-11 14:55:16.728Z,5961.378,6,Sounding STOP request
+AVAPS-LOG,2024-08-11 14:55:26.639Z,5971.288,6,Sounding files closed
+AVAPS-LOG,2024-08-11 14:55:26.644Z,5971.293,6,Sounding files renamed
+AVAPS-LOG,2024-08-11 14:55:27.553Z,5972.202,6,Sounding ENDED
+AVAPS-LOG,2024-08-11 14:57:12.019Z,6076.669,2,Sonde 231221056 Launch Detect; Launch Time 2024-08-11 14:57:07.969; Dfile Name D20240811_145708.2
+AVAPS-LOG,2024-08-11 14:57:12.019Z,6076.669,2,Sounding Launch Obs identified OK; LLA source is Aircraft Data System
+AVAPS-LOG,2024-08-11 14:59:22.199Z,6206.849,5,Sounding STOP request
+AVAPS-LOG,2024-08-11 14:59:29.039Z,6213.688,5,Sounding files closed
+AVAPS-LOG,2024-08-11 14:59:29.053Z,6213.703,5,Sounding files renamed
+AVAPS-LOG,2024-08-11 14:59:30.008Z,6214.658,5,Sounding ENDED
+AVAPS-LOG,2024-08-11 14:59:34.103Z,6218.753,5,Sounding START request
+AVAPS-LOG,2024-08-11 14:59:34.374Z,6219.024,5,Sounding files created
+AVAPS-LOG,2024-08-11 14:59:46.668Z,6231.317,5,Sounding frequency 402.16 selected by operator
+AVAPS-LOG,2024-08-11 14:59:59.747Z,6244.397,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 15:00:00.230Z,6244.879,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 15:00:00.710Z,6245.360,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 15:00:00.710Z,6245.360,,Sonde 231221038 GPS Aiding FAILED on message 1 of 1 after 3 attempts.
+AVAPS-LOG,2024-08-11 15:00:37.782Z,6282.432,5,Sonde 231221038 factory pressure error value is 0.000 mb
+AVAPS-LOG,2024-08-11 15:00:39.601Z,6284.251,5,Sonde 231221038 Preview OK by operator
+AVAPS-LOG,2024-08-11 15:00:42.468Z,6287.117,5,Sounding data collection started by operator
+AVAPS-LOG,2024-08-11 15:00:52.018Z,6296.668,5,CHANNEL 5 READY for launch
+AVAPS-LOG,2024-08-11 15:01:55.269Z,6359.918,3,Sonde 231221055 Launch Detect; Launch Time 2024-08-11 15:01:51.250; Dfile Name D20240811_150151.3
+AVAPS-LOG,2024-08-11 15:01:55.270Z,6359.919,3,Sounding Launch Obs identified OK; LLA source is Aircraft Data System
+AVAPS-LOG,2024-08-11 15:04:35.370Z,6520.019,7,Sounding STOP request
+AVAPS-LOG,2024-08-11 15:04:43.039Z,6527.689,7,Sounding files closed
+AVAPS-LOG,2024-08-11 15:04:43.043Z,6527.693,7,Sounding files renamed
+AVAPS-LOG,2024-08-11 15:04:43.987Z,6528.637,7,Sounding ENDED
+AVAPS-LOG,2024-08-11 15:07:00.769Z,6665.419,4,Sonde 230431066 Launch Detect; Launch Time 2024-08-11 15:06:56.750; Dfile Name D20240811_150657.4
+AVAPS-LOG,2024-08-11 15:07:00.770Z,6665.420,4,Sounding Launch Obs identified OK; LLA source is Aircraft Data System
+AVAPS-LOG,2024-08-11 15:09:00.838Z,6785.488,8,Sounding STOP request
+AVAPS-LOG,2024-08-11 15:09:07.943Z,6792.592,8,Sounding files closed
+AVAPS-LOG,2024-08-11 15:09:07.957Z,6792.606,8,Sounding files renamed
+AVAPS-LOG,2024-08-11 15:09:08.847Z,6793.496,8,Sounding ENDED
+AVAPS-LOG,2024-08-11 15:13:29.928Z,7054.578,6,Sounding START request
+AVAPS-LOG,2024-08-11 15:13:30.174Z,7054.824,6,Sounding files created
+AVAPS-LOG,2024-08-11 15:13:40.768Z,7065.418,6,Sounding frequency 405.56 selected by operator
+AVAPS-LOG,2024-08-11 15:13:50.846Z,7075.496,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 15:13:51.329Z,7075.979,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 15:13:51.809Z,7076.458,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 15:13:51.809Z,7076.458,,Sonde 231331380 GPS Aiding FAILED on message 1 of 1 after 3 attempts.
+AVAPS-LOG,2024-08-11 15:13:57.781Z,7082.430,6,Sonde 231331380 factory pressure error value is 0.000 mb
+AVAPS-LOG,2024-08-11 15:13:59.633Z,7084.282,6,Sonde 231331380 Preview OK by operator
+AVAPS-LOG,2024-08-11 15:14:02.768Z,7087.418,6,Sounding data collection started by operator
+AVAPS-LOG,2024-08-11 15:14:12.019Z,7096.669,6,CHANNEL 6 READY for launch
+AVAPS-LOG,2024-08-11 15:14:28.520Z,7113.169,6,Sonde 231331380 Launch Detect; Launch Time 2024-08-11 15:14:24.469; Dfile Name D20240811_151424.6
+AVAPS-LOG,2024-08-11 15:14:28.520Z,7113.169,6,Sounding Launch Obs identified OK; LLA source is Aircraft Data System
+AVAPS-LOG,2024-08-11 15:14:50.968Z,7135.618,2,Sounding STOP request
+AVAPS-LOG,2024-08-11 15:15:00.440Z,7145.089,2,Sounding files closed
+AVAPS-LOG,2024-08-11 15:15:00.452Z,7145.101,2,Sounding files renamed
+AVAPS-LOG,2024-08-11 15:15:01.532Z,7146.181,2,Sounding ENDED
+AVAPS-LOG,2024-08-11 15:23:41.016Z,7665.665,3,Sounding STOP request
+AVAPS-LOG,2024-08-11 15:23:50.058Z,7674.708,3,Sounding files closed
+AVAPS-LOG,2024-08-11 15:23:50.066Z,7674.716,3,Sounding files renamed
+AVAPS-LOG,2024-08-11 15:23:50.945Z,7675.595,3,Sounding ENDED
+AVAPS-LOG,2024-08-11 15:24:02.604Z,7687.253,4,Sounding STOP request
+AVAPS-LOG,2024-08-11 15:24:25.041Z,7709.690,4,Sounding files closed
+AVAPS-LOG,2024-08-11 15:24:25.045Z,7709.694,4,Sounding files renamed
+AVAPS-LOG,2024-08-11 15:24:25.938Z,7710.587,4,Sounding ENDED
+AVAPS-LOG,2024-08-11 15:24:55.974Z,7740.624,5,Sounding STOP request
+AVAPS-LOG,2024-08-11 15:25:14.633Z,7759.282,5,Sounding files closed
+AVAPS-LOG,2024-08-11 15:25:14.655Z,7759.304,5,Sounding files renamed
+AVAPS-LOG,2024-08-11 15:25:15.411Z,7760.060,5,Sounding ENDED
+AVAPS-LOG,2024-08-11 16:05:33.896Z,10178.545,6,Sounding STOP request
+AVAPS-LOG,2024-08-11 16:05:45.923Z,10190.573,6,Sounding files closed
+AVAPS-LOG,2024-08-11 16:05:45.928Z,10190.578,6,Sounding files renamed
+AVAPS-LOG,2024-08-11 16:05:46.858Z,10191.508,6,Sounding ENDED
+AVAPS-LOG,2024-08-11 16:06:21.568Z,10226.218,1,Sounding START request
+AVAPS-LOG,2024-08-11 16:06:21.973Z,10226.623,1,Sounding files created
+AVAPS-LOG,2024-08-11 16:06:22.147Z,10226.797,,PC Clock set to: 2024-08-11 16:06:22.148 using GPS Reference Receiver data - PC Clock error was: -0.098 sec
+AVAPS-LOG,2024-08-11 16:06:30.465Z,10235.115,1,Sounding frequency 404.76 selected by operator
+AVAPS-LOG,2024-08-11 16:06:40.354Z,10245.004,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 16:06:40.826Z,10245.476,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 16:06:41.297Z,10245.946,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 16:06:41.297Z,10245.946,,Sonde 234030101 GPS Aiding FAILED on message 1 of 1 after 3 attempts.
+AVAPS-LOG,2024-08-11 16:07:02.626Z,10267.275,1,Sonde 234030101 factory pressure error value is 0.000 mb
+AVAPS-LOG,2024-08-11 16:07:04.448Z,10269.098,1,Sonde 234030101 Preview OK by operator
+AVAPS-LOG,2024-08-11 16:07:08.265Z,10272.915,1,Sounding data collection started by operator
+AVAPS-LOG,2024-08-11 16:07:18.015Z,10282.665,1,CHANNEL 1 READY for launch
+AVAPS-LOG,2024-08-11 16:08:13.163Z,10337.812,2,Sounding START request
+AVAPS-LOG,2024-08-11 16:08:13.470Z,10338.120,2,Sounding files created
+AVAPS-LOG,2024-08-11 16:08:23.767Z,10348.416,2,Sounding frequency 404.04 selected by operator
+AVAPS-LOG,2024-08-11 16:08:33.754Z,10358.403,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 16:08:34.227Z,10358.876,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 16:08:34.697Z,10359.346,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 16:08:34.697Z,10359.346,,Sonde 234141202 GPS Aiding FAILED on message 1 of 1 after 3 attempts.
+AVAPS-LOG,2024-08-11 16:09:13.376Z,10398.025,2,Sonde 234141202 factory pressure error value is 0.000 mb
+AVAPS-LOG,2024-08-11 16:09:15.197Z,10399.846,2,Sonde 234141202 Preview OK by operator
+AVAPS-LOG,2024-08-11 16:09:20.766Z,10405.416,2,Sounding data collection started by operator
+AVAPS-LOG,2024-08-11 16:09:30.016Z,10414.666,2,CHANNEL 2 READY for launch
+AVAPS-LOG,2024-08-11 16:15:07.266Z,10751.916,1,Sonde 234030101 Launch Detect; Launch Time 2024-08-11 16:15:03.265; Dfile Name D20240811_161503.1
+AVAPS-LOG,2024-08-11 16:15:07.266Z,10751.916,1,Sounding Launch Obs identified OK; LLA source is Aircraft Data System
+AVAPS-LOG,2024-08-11 16:15:50.298Z,10794.947,3,Sounding START request
+AVAPS-LOG,2024-08-11 16:15:50.672Z,10795.321,3,Sounding files created
+AVAPS-LOG,2024-08-11 16:16:00.466Z,10805.115,3,Sounding frequency 403.40 selected by operator
+AVAPS-LOG,2024-08-11 16:16:09.974Z,10814.623,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 16:16:10.447Z,10815.096,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 16:16:10.917Z,10815.566,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 16:16:10.917Z,10815.566,,Sonde 233521167 GPS Aiding FAILED on message 1 of 1 after 3 attempts.
+AVAPS-LOG,2024-08-11 16:16:32.126Z,10836.775,3,Sonde 233521167 factory pressure error value is 0.000 mb
+AVAPS-LOG,2024-08-11 16:16:33.945Z,10838.595,3,Sonde 233521167 Preview OK by operator
+AVAPS-LOG,2024-08-11 16:16:35.867Z,10840.517,3,Sounding data collection started by operator
+AVAPS-LOG,2024-08-11 16:16:45.016Z,10849.666,3,CHANNEL 3 READY for launch
+AVAPS-LOG,2024-08-11 16:17:05.267Z,10869.916,4,Sounding START request
+AVAPS-LOG,2024-08-11 16:17:05.672Z,10870.321,4,Sounding files created
+AVAPS-LOG,2024-08-11 16:17:17.066Z,10881.715,4,Sounding frequency 402.74 selected by operator
+AVAPS-LOG,2024-08-11 16:17:26.654Z,10891.304,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 16:17:27.137Z,10891.787,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 16:17:27.607Z,10892.256,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 16:17:27.607Z,10892.256,,Sonde 234140293 GPS Aiding FAILED on message 1 of 1 after 3 attempts.
+AVAPS-LOG,2024-08-11 16:17:36.127Z,10900.777,4,Sonde 234140293 factory pressure error value is 0.000 mb
+AVAPS-LOG,2024-08-11 16:17:37.946Z,10902.596,4,Sonde 234140293 Preview OK by operator
+AVAPS-LOG,2024-08-11 16:17:39.767Z,10904.416,4,Sounding data collection started by operator
+AVAPS-LOG,2024-08-11 16:17:49.015Z,10913.665,4,CHANNEL 4 READY for launch
+AVAPS-LOG,2024-08-11 16:20:10.516Z,11055.166,2,Sonde 234141202 Launch Detect; Launch Time 2024-08-11 16:20:06.500; Dfile Name D20240811_162006.2
+AVAPS-LOG,2024-08-11 16:20:10.516Z,11055.166,2,Sounding Launch Obs identified OK; LLA source is Aircraft Data System
+AVAPS-LOG,2024-08-11 16:21:13.880Z,11118.530,5,Sounding START request
+AVAPS-LOG,2024-08-11 16:21:14.272Z,11118.921,5,Sounding files created
+AVAPS-LOG,2024-08-11 16:21:25.866Z,11130.515,5,Sounding frequency 402.04 selected by operator
+AVAPS-LOG,2024-08-11 16:21:35.444Z,11140.093,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 16:21:35.926Z,11140.576,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 16:21:36.398Z,11141.047,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 16:21:36.398Z,11141.047,,Sonde 234141200 GPS Aiding FAILED on message 1 of 1 after 3 attempts.
+AVAPS-LOG,2024-08-11 16:21:44.887Z,11149.537,5,Sonde 234141200 factory pressure error value is 0.000 mb
+AVAPS-LOG,2024-08-11 16:21:46.709Z,11151.359,5,Sonde 234141200 Preview OK by operator
+AVAPS-LOG,2024-08-11 16:21:48.966Z,11153.616,5,Sounding data collection started by operator
+AVAPS-LOG,2024-08-11 16:21:58.015Z,11162.665,5,CHANNEL 5 READY for launch
+AVAPS-LOG,2024-08-11 16:26:01.767Z,11406.416,3,Sonde 233521167 Launch Detect; Launch Time 2024-08-11 16:25:57.765; Dfile Name D20240811_162558.3
+AVAPS-LOG,2024-08-11 16:26:01.768Z,11406.417,3,Sounding Launch Obs identified OK; LLA source is Aircraft Data System
+AVAPS-LOG,2024-08-11 16:27:10.951Z,11475.601,6,Sounding START request
+AVAPS-LOG,2024-08-11 16:27:11.272Z,11475.922,6,Sounding files created
+AVAPS-LOG,2024-08-11 16:27:21.365Z,11486.015,6,Sounding frequency 405.40 selected by operator
+AVAPS-LOG,2024-08-11 16:27:30.844Z,11495.494,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 16:27:31.326Z,11495.976,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 16:27:31.798Z,11496.447,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 16:27:31.798Z,11496.447,,Sonde 234150014 GPS Aiding FAILED on message 1 of 1 after 3 attempts.
+AVAPS-LOG,2024-08-11 16:27:41.625Z,11506.275,6,Sonde 234150014 factory pressure error value is 0.000 mb
+AVAPS-LOG,2024-08-11 16:27:43.437Z,11508.087,6,Sonde 234150014 Preview OK by operator
+AVAPS-LOG,2024-08-11 16:27:44.997Z,11509.646,6,Sounding data collection started by operator
+AVAPS-LOG,2024-08-11 16:27:55.016Z,11519.666,6,CHANNEL 6 READY for launch
+AVAPS-LOG,2024-08-11 16:30:43.767Z,11688.416,4,Sonde 234140293 Launch Detect; Launch Time 2024-08-11 16:30:39.750; Dfile Name D20240811_163040.4
+AVAPS-LOG,2024-08-11 16:30:43.768Z,11688.417,4,Sounding Launch Obs identified OK; LLA source is Aircraft Data System
+AVAPS-LOG,2024-08-11 16:31:19.538Z,11724.188,7,Sounding START request
+AVAPS-LOG,2024-08-11 16:31:19.874Z,11724.524,7,Sounding files created
+AVAPS-LOG,2024-08-11 16:31:41.465Z,11746.115,7,Sounding frequency 401.36 selected by operator
+AVAPS-LOG,2024-08-11 16:31:51.644Z,11756.294,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 16:31:52.117Z,11756.767,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 16:31:52.587Z,11757.237,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 16:31:52.587Z,11757.237,,Sonde 233744243 GPS Aiding FAILED on message 1 of 1 after 3 attempts.
+AVAPS-LOG,2024-08-11 16:32:35.627Z,11800.277,7,Sonde 233744243 factory pressure error value is 0.000 mb
+AVAPS-LOG,2024-08-11 16:32:37.446Z,11802.095,7,Sonde 233744243 Preview OK by operator
+AVAPS-LOG,2024-08-11 16:32:39.166Z,11803.816,7,Sounding data collection started by operator
+AVAPS-LOG,2024-08-11 16:32:49.016Z,11813.666,7,CHANNEL 7 READY for launch
+AVAPS-LOG,2024-08-11 16:33:04.169Z,11828.819,1,Sounding STOP request
+AVAPS-LOG,2024-08-11 16:33:20.733Z,11845.383,1,Sounding files closed
+AVAPS-LOG,2024-08-11 16:33:20.738Z,11845.388,1,Sounding files renamed
+AVAPS-LOG,2024-08-11 16:33:21.697Z,11846.347,1,Sounding ENDED
+AVAPS-LOG,2024-08-11 16:35:06.016Z,11950.666,5,Sonde 234141200 Launch Detect; Launch Time 2024-08-11 16:35:02.000; Dfile Name D20240811_163502.5
+AVAPS-LOG,2024-08-11 16:35:06.016Z,11950.666,5,Sounding Launch Obs identified OK; LLA source is Aircraft Data System
+AVAPS-LOG,2024-08-11 16:35:56.106Z,12000.755,8,Sounding START request
+AVAPS-LOG,2024-08-11 16:35:56.473Z,12001.123,8,Sounding files created
+AVAPS-LOG,2024-08-11 16:36:05.165Z,12009.815,8,Sounding frequency 404.76 selected by operator
+AVAPS-LOG,2024-08-11 16:36:14.755Z,12019.405,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 16:36:15.226Z,12019.876,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 16:36:15.697Z,12020.346,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 16:36:15.697Z,12020.346,,Sonde 234150019 GPS Aiding FAILED on message 1 of 1 after 3 attempts.
+AVAPS-LOG,2024-08-11 16:36:29.626Z,12034.276,8,Sonde 234150019 factory pressure error value is 0.000 mb
+AVAPS-LOG,2024-08-11 16:36:31.445Z,12036.095,8,Sonde 234150019 Preview OK by operator
+AVAPS-LOG,2024-08-11 16:36:35.766Z,12040.416,8,Sounding data collection started by operator
+AVAPS-LOG,2024-08-11 16:36:45.015Z,12049.665,8,CHANNEL 8 READY for launch
+AVAPS-LOG,2024-08-11 16:36:53.962Z,12058.611,2,Sounding STOP request
+AVAPS-LOG,2024-08-11 16:37:01.760Z,12066.410,2,Sounding files closed
+AVAPS-LOG,2024-08-11 16:37:01.768Z,12066.418,2,Sounding files renamed
+AVAPS-LOG,2024-08-11 16:37:02.656Z,12067.306,2,Sounding ENDED
+AVAPS-LOG,2024-08-11 16:40:02.766Z,12247.416,7,Sonde 233744243 Launch Detect; Launch Time 2024-08-11 16:39:58.750; Dfile Name D20240811_163959.7
+AVAPS-LOG,2024-08-11 16:40:02.767Z,12247.417,7,Sounding Launch Obs identified OK; LLA source is Aircraft Data System
+AVAPS-LOG,2024-08-11 16:40:31.777Z,12276.427,1,Sounding START request
+AVAPS-LOG,2024-08-11 16:40:32.072Z,12276.722,1,Sounding files created
+AVAPS-LOG,2024-08-11 16:40:37.966Z,12282.615,1,Sounding frequency 404.16 selected by operator
+AVAPS-LOG,2024-08-11 16:40:47.553Z,12292.203,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 16:40:48.026Z,12292.676,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 16:40:48.507Z,12293.156,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 16:40:48.507Z,12293.156,,Sonde 233530243 GPS Aiding FAILED on message 1 of 1 after 3 attempts.
+AVAPS-LOG,2024-08-11 16:41:21.377Z,12326.026,1,Sonde 233530243 factory pressure error value is 0.000 mb
+AVAPS-LOG,2024-08-11 16:41:23.191Z,12327.840,1,Sonde 233530243 Preview OK by operator
+AVAPS-LOG,2024-08-11 16:41:24.966Z,12329.615,1,Sounding data collection started by operator
+AVAPS-LOG,2024-08-11 16:41:34.016Z,12338.665,1,CHANNEL 1 READY for launch
+AVAPS-LOG,2024-08-11 16:41:49.219Z,12353.868,3,Sounding STOP request
+AVAPS-LOG,2024-08-11 16:41:58.533Z,12363.182,3,Sounding files closed
+AVAPS-LOG,2024-08-11 16:41:58.539Z,12363.188,3,Sounding files renamed
+AVAPS-LOG,2024-08-11 16:41:59.464Z,12364.113,3,Sounding ENDED
+AVAPS-LOG,2024-08-11 16:43:45.268Z,12469.917,8,Sonde 234150019 Launch Detect; Launch Time 2024-08-11 16:43:41.166; Dfile Name D20240811_164341.8
+AVAPS-LOG,2024-08-11 16:43:45.269Z,12469.918,8,Sounding Launch Obs identified OK; LLA source is Aircraft Data System
+AVAPS-LOG,2024-08-11 16:44:26.202Z,12510.852,2,Sounding START request
+AVAPS-LOG,2024-08-11 16:44:26.472Z,12511.122,2,Sounding files created
+AVAPS-LOG,2024-08-11 16:44:35.566Z,12520.215,2,Sounding frequency 403.36 selected by operator
+AVAPS-LOG,2024-08-11 16:44:45.853Z,12530.503,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 16:44:46.327Z,12530.976,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 16:44:46.806Z,12531.456,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 16:44:46.806Z,12531.456,,Sonde 234140290 GPS Aiding FAILED on message 1 of 1 after 3 attempts.
+AVAPS-LOG,2024-08-11 16:45:05.625Z,12550.274,2,Sonde 234140290 factory pressure error value is 0.000 mb
+AVAPS-LOG,2024-08-11 16:45:07.441Z,12552.090,2,Sonde 234140290 Preview OK by operator
+AVAPS-LOG,2024-08-11 16:45:10.766Z,12555.416,2,Sounding data collection started by operator
+AVAPS-LOG,2024-08-11 16:45:20.017Z,12564.666,2,CHANNEL 2 READY for launch
+AVAPS-LOG,2024-08-11 16:46:06.269Z,12610.918,3,Sounding START request
+AVAPS-LOG,2024-08-11 16:46:06.673Z,12611.323,3,Sounding files created
+AVAPS-LOG,2024-08-11 16:46:21.965Z,12626.615,3,Sounding frequency 405.76 selected by operator
+AVAPS-LOG,2024-08-11 16:46:31.655Z,12636.305,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 16:46:32.126Z,12636.776,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 16:46:32.606Z,12637.255,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 16:46:32.607Z,12637.256,,Sonde 234140291 GPS Aiding FAILED on message 1 of 1 after 3 attempts.
+AVAPS-LOG,2024-08-11 16:46:41.879Z,12646.529,3,Sonde 234140291 factory pressure error value is 0.000 mb
+AVAPS-LOG,2024-08-11 16:46:43.708Z,12648.357,3,Sonde 234140291 Preview OK by operator
+AVAPS-LOG,2024-08-11 16:46:46.167Z,12650.816,3,Sounding data collection started by operator
+AVAPS-LOG,2024-08-11 16:46:56.016Z,12660.666,3,CHANNEL 3 READY for launch
+AVAPS-LOG,2024-08-11 16:47:07.884Z,12672.534,6,Sounding STOP request
+AVAPS-LOG,2024-08-11 16:47:20.553Z,12685.203,6,Sounding files closed
+AVAPS-LOG,2024-08-11 16:47:20.558Z,12685.208,6,Sounding files renamed
+AVAPS-LOG,2024-08-11 16:47:21.318Z,12685.968,6,Sounding ENDED
+AVAPS-LOG,2024-08-11 16:47:46.516Z,12711.166,1,Sonde 233530243 Launch Detect; Launch Time 2024-08-11 16:47:42.466; Dfile Name D20240811_164742.1
+AVAPS-LOG,2024-08-11 16:47:46.516Z,12711.166,1,Sounding Launch Obs identified OK; LLA source is Aircraft Data System
+AVAPS-LOG,2024-08-11 16:48:27.666Z,12752.315,4,Sounding STOP request
+AVAPS-LOG,2024-08-11 16:48:39.340Z,12763.990,4,Sounding files closed
+AVAPS-LOG,2024-08-11 16:48:39.352Z,12764.002,4,Sounding files renamed
+AVAPS-LOG,2024-08-11 16:48:40.326Z,12764.976,4,Sounding ENDED
+AVAPS-LOG,2024-08-11 16:48:49.074Z,12773.724,4,Sounding START request
+AVAPS-LOG,2024-08-11 16:48:49.474Z,12774.123,4,Sounding files created
+AVAPS-LOG,2024-08-11 16:49:00.466Z,12785.115,4,Sounding frequency 402.64 selected by operator
+AVAPS-LOG,2024-08-11 16:49:10.044Z,12794.694,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 16:49:10.527Z,12795.176,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 16:49:11.006Z,12795.656,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 16:49:11.006Z,12795.656,,Sonde 231221575 GPS Aiding FAILED on message 1 of 1 after 3 attempts.
+AVAPS-LOG,2024-08-11 16:49:26.376Z,12811.025,4,Sonde 231221575 factory pressure error value is 0.000 mb
+AVAPS-LOG,2024-08-11 16:49:28.187Z,12812.837,4,Sonde 231221575 Preview OK by operator
+AVAPS-LOG,2024-08-11 16:49:30.766Z,12815.415,4,Sounding data collection started by operator
+AVAPS-LOG,2024-08-11 16:49:40.016Z,12824.665,4,CHANNEL 4 READY for launch
+AVAPS-LOG,2024-08-11 16:52:14.767Z,12979.417,2,Sonde 234140290 Launch Detect; Launch Time 2024-08-11 16:52:10.668; Dfile Name D20240811_165211.2
+AVAPS-LOG,2024-08-11 16:52:14.768Z,12979.418,2,Sounding Launch Obs identified OK; LLA source is Aircraft Data System
+AVAPS-LOG,2024-08-11 16:52:50.996Z,13015.646,5,Sounding STOP request
+AVAPS-LOG,2024-08-11 16:52:59.072Z,13023.722,5,Sounding files closed
+AVAPS-LOG,2024-08-11 16:52:59.085Z,13023.735,5,Sounding files renamed
+AVAPS-LOG,2024-08-11 16:52:59.992Z,13024.642,5,Sounding ENDED
+AVAPS-LOG,2024-08-11 16:53:21.866Z,13046.516,5,Sounding START request
+AVAPS-LOG,2024-08-11 16:53:22.275Z,13046.925,5,Sounding files created
+AVAPS-LOG,2024-08-11 16:53:39.065Z,13063.715,5,Sounding frequency 402.04 selected by operator
+AVAPS-LOG,2024-08-11 16:53:48.643Z,13073.293,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 16:53:49.118Z,13073.768,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 16:53:49.586Z,13074.236,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 16:53:49.587Z,13074.237,,Sonde 234150026 GPS Aiding FAILED on message 1 of 1 after 3 attempts.
+AVAPS-LOG,2024-08-11 16:53:54.625Z,13079.274,5,Sonde 234150026 factory pressure error value is 0.000 mb
+AVAPS-LOG,2024-08-11 16:53:56.447Z,13081.097,5,Sonde 234150026 Preview OK by operator
+AVAPS-LOG,2024-08-11 16:53:58.166Z,13082.815,5,Sounding data collection started by operator
+AVAPS-LOG,2024-08-11 16:54:08.015Z,13092.665,5,CHANNEL 5 READY for launch
+AVAPS-LOG,2024-08-11 16:57:47.517Z,13312.167,3,Sonde 234140291 Launch Detect; Launch Time 2024-08-11 16:57:43.500; Dfile Name D20240811_165744.3
+AVAPS-LOG,2024-08-11 16:57:47.518Z,13312.168,3,Sounding Launch Obs identified OK; LLA source is Aircraft Data System
+AVAPS-LOG,2024-08-11 16:58:30.871Z,13355.521,7,Sounding STOP request
+AVAPS-LOG,2024-08-11 16:58:37.145Z,13361.795,7,Sounding files closed
+AVAPS-LOG,2024-08-11 16:58:37.149Z,13361.799,7,Sounding files renamed
+AVAPS-LOG,2024-08-11 16:58:38.086Z,13362.736,7,Sounding ENDED
+AVAPS-LOG,2024-08-11 16:59:42.518Z,13427.167,4,Sonde 231221575 Launch Detect; Launch Time 2024-08-11 16:59:38.467; Dfile Name D20240811_165938.4
+AVAPS-LOG,2024-08-11 16:59:42.519Z,13427.168,4,Sounding Launch Obs identified OK; LLA source is Aircraft Data System
+AVAPS-LOG,2024-08-11 17:00:58.099Z,13502.749,8,Sounding STOP request
+AVAPS-LOG,2024-08-11 17:01:05.043Z,13509.693,8,Sounding files closed
+AVAPS-LOG,2024-08-11 17:01:05.057Z,13509.707,8,Sounding files renamed
+AVAPS-LOG,2024-08-11 17:01:05.942Z,13510.592,8,Sounding ENDED
+AVAPS-LOG,2024-08-11 17:06:02.268Z,13806.918,1,Sounding STOP request
+AVAPS-LOG,2024-08-11 17:06:11.534Z,13816.183,1,Sounding files closed
+AVAPS-LOG,2024-08-11 17:06:11.538Z,13816.187,1,Sounding files renamed
+AVAPS-LOG,2024-08-11 17:06:12.447Z,13817.096,1,Sounding ENDED
+AVAPS-LOG,2024-08-11 17:09:55.018Z,14039.668,2,Sounding STOP request
+AVAPS-LOG,2024-08-11 17:10:01.341Z,14045.991,2,Sounding files closed
+AVAPS-LOG,2024-08-11 17:10:01.346Z,14045.996,2,Sounding files renamed
+AVAPS-LOG,2024-08-11 17:10:02.237Z,14046.887,2,Sounding ENDED
+AVAPS-LOG,2024-08-11 17:12:44.766Z,14209.416,5,Sonde 234150026 Launch Detect; Launch Time 2024-08-11 17:12:40.750; Dfile Name D20240811_171241.5
+AVAPS-LOG,2024-08-11 17:12:44.766Z,14209.416,5,Sounding Launch Obs identified OK; LLA source is Aircraft Data System
+AVAPS-LOG,2024-08-11 17:15:27.268Z,14371.917,3,Sounding STOP request
+AVAPS-LOG,2024-08-11 17:16:22.538Z,14427.188,3,Sounding files closed
+AVAPS-LOG,2024-08-11 17:16:22.543Z,14427.193,3,Sounding files renamed
+AVAPS-LOG,2024-08-11 17:16:23.442Z,14428.092,3,Sounding ENDED
+AVAPS-LOG,2024-08-11 17:16:27.067Z,14431.716,4,Sounding STOP request
+AVAPS-LOG,2024-08-11 17:16:52.039Z,14456.689,4,Sounding files closed
+AVAPS-LOG,2024-08-11 17:16:52.051Z,14456.701,4,Sounding files renamed
+AVAPS-LOG,2024-08-11 17:16:52.883Z,14457.533,4,Sounding ENDED
+AVAPS-LOG,2024-08-11 17:17:24.153Z,14488.803,1,Sounding START request
+AVAPS-LOG,2024-08-11 17:17:24.472Z,14489.122,1,Sounding files created
+AVAPS-LOG,2024-08-11 17:17:38.966Z,14503.615,1,Sounding frequency 403.04 selected by operator
+AVAPS-LOG,2024-08-11 17:17:48.554Z,14513.204,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 17:17:49.027Z,14513.676,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 17:17:49.497Z,14514.146,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 17:17:49.497Z,14514.146,,Sonde 233530237 GPS Aiding FAILED on message 1 of 1 after 3 attempts.
+AVAPS-LOG,2024-08-11 17:18:21.375Z,14546.025,1,Sonde 233530237 factory pressure error value is 0.000 mb
+AVAPS-LOG,2024-08-11 17:18:23.198Z,14547.848,1,Sonde 233530237 Preview OK by operator
+AVAPS-LOG,2024-08-11 17:18:25.365Z,14550.015,1,Sounding data collection started by operator
+AVAPS-LOG,2024-08-11 17:18:35.016Z,14559.665,1,CHANNEL 1 READY for launch
+AVAPS-LOG,2024-08-11 17:19:18.665Z,14603.315,2,Sounding START request
+AVAPS-LOG,2024-08-11 17:19:19.073Z,14603.723,2,Sounding files created
+AVAPS-LOG,2024-08-11 17:19:28.466Z,14613.115,2,Sounding frequency 403.84 selected by operator
+AVAPS-LOG,2024-08-11 17:19:38.053Z,14622.703,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 17:19:38.527Z,14623.177,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 17:19:39.001Z,14623.650,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 17:19:39.001Z,14623.650,,Sonde 233530245 GPS Aiding FAILED on message 1 of 1 after 3 attempts.
+AVAPS-LOG,2024-08-11 17:20:06.375Z,14651.025,2,Sonde 233530245 factory pressure error value is 0.000 mb
+AVAPS-LOG,2024-08-11 17:20:08.197Z,14652.847,2,Sonde 233530245 Preview OK by operator
+AVAPS-LOG,2024-08-11 17:20:09.866Z,14654.516,2,Sounding data collection started by operator
+AVAPS-LOG,2024-08-11 17:20:19.016Z,14663.665,2,CHANNEL 2 READY for launch
+AVAPS-LOG,2024-08-11 17:23:02.518Z,14827.167,2,Sonde 233530245 Launch Detect; Launch Time 2024-08-11 17:22:58.466; Dfile Name D20240811_172258.2
+AVAPS-LOG,2024-08-11 17:23:02.518Z,14827.167,2,Sounding Launch Obs identified OK; LLA source is Aircraft Data System
+AVAPS-LOG,2024-08-11 17:23:23.076Z,14847.725,3,Sounding START request
+AVAPS-LOG,2024-08-11 17:23:23.473Z,14848.123,3,Sounding files created
+AVAPS-LOG,2024-08-11 17:23:33.965Z,14858.615,3,Sounding frequency 404.64 selected by operator
+AVAPS-LOG,2024-08-11 17:23:43.555Z,14868.204,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 17:23:44.027Z,14868.676,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 17:23:44.497Z,14869.146,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 17:23:44.497Z,14869.146,,Sonde 233250950 GPS Aiding FAILED on message 1 of 1 after 3 attempts.
+AVAPS-LOG,2024-08-11 17:24:05.376Z,14890.026,3,Sonde 233250950 factory pressure error value is 0.000 mb
+AVAPS-LOG,2024-08-11 17:24:07.196Z,14891.846,3,Sonde 233250950 Preview OK by operator
+AVAPS-LOG,2024-08-11 17:24:08.765Z,14893.415,3,Sounding data collection started by operator
+AVAPS-LOG,2024-08-11 17:24:18.017Z,14902.667,3,CHANNEL 3 READY for launch
+AVAPS-LOG,2024-08-11 17:24:41.667Z,14926.316,4,Sounding START request
+AVAPS-LOG,2024-08-11 17:24:42.071Z,14926.721,4,Sounding files created
+AVAPS-LOG,2024-08-11 17:24:51.766Z,14936.416,4,Sounding frequency 405.28 selected by operator
+AVAPS-LOG,2024-08-11 17:25:01.345Z,14945.995,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 17:25:01.819Z,14946.468,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 17:25:02.287Z,14946.937,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 17:25:02.287Z,14946.937,,Sonde 234150007 GPS Aiding FAILED on message 1 of 1 after 3 attempts.
+AVAPS-LOG,2024-08-11 17:25:42.377Z,14987.027,4,Sonde 234150007 factory pressure error value is 0.000 mb
+AVAPS-LOG,2024-08-11 17:25:44.197Z,14988.847,4,Sonde 234150007 Preview OK by operator
+AVAPS-LOG,2024-08-11 17:25:47.865Z,14992.515,4,Sounding data collection started by operator
+AVAPS-LOG,2024-08-11 17:25:57.017Z,15001.667,4,CHANNEL 4 READY for launch
+AVAPS-LOG,2024-08-11 17:26:38.827Z,15043.476,6,Sounding START request
+AVAPS-LOG,2024-08-11 17:26:39.072Z,15043.722,6,Sounding files created
+AVAPS-LOG,2024-08-11 17:26:54.165Z,15058.815,6,Sounding frequency 402.68 selected by operator
+AVAPS-LOG,2024-08-11 17:27:03.843Z,15068.493,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 17:27:04.326Z,15068.976,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 17:27:04.797Z,15069.446,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 17:27:04.797Z,15069.446,,Sonde 234140488 GPS Aiding FAILED on message 1 of 1 after 3 attempts.
+AVAPS-LOG,2024-08-11 17:28:27.517Z,15152.166,3,Sonde 233250950 Launch Detect; Launch Time 2024-08-11 17:28:23.465; Dfile Name D20240811_172823.3
+AVAPS-LOG,2024-08-11 17:28:27.517Z,15152.166,3,Sounding Launch Obs identified OK; LLA source is Aircraft Data System
+AVAPS-LOG,2024-08-11 17:28:31.886Z,15156.535,6,Sonde 234140488 factory pressure error value is 0.000 mb
+AVAPS-LOG,2024-08-11 17:28:34.405Z,15159.055,6,Sonde 234140488 Preview aborted because of umbilical I/O error
+AVAPS-LOG,2024-08-11 17:29:16.366Z,15201.016,6,Sonde 234140488 factory pressure error value is 0.000 mb
+AVAPS-LOG,2024-08-11 17:29:16.367Z,15201.017,6,Sonde 234140488 Preview aborted by operator
+AVAPS-LOG,2024-08-11 17:29:29.666Z,15214.316,6,Sounding frequency 402.68 selected by operator
+AVAPS-LOG,2024-08-11 17:29:39.753Z,15224.403,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 17:29:40.227Z,15224.877,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 17:29:40.707Z,15225.356,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 17:29:40.707Z,15225.356,,Sonde 234140294 GPS Aiding FAILED on message 1 of 1 after 3 attempts.
+AVAPS-LOG,2024-08-11 17:29:48.127Z,15232.777,6,Sonde 234140294 factory pressure error value is 0.000 mb
+AVAPS-LOG,2024-08-11 17:29:49.948Z,15234.597,6,Sonde 234140294 Preview OK by operator
+AVAPS-LOG,2024-08-11 17:29:54.267Z,15238.917,6,Sounding data collection started by operator
+AVAPS-LOG,2024-08-11 17:30:04.015Z,15248.665,6,CHANNEL 6 READY for launch
+AVAPS-LOG,2024-08-11 17:30:25.683Z,15270.332,7,Sounding START request
+AVAPS-LOG,2024-08-11 17:30:26.074Z,15270.724,7,Sounding files created
+AVAPS-LOG,2024-08-11 17:30:40.565Z,15285.215,7,Sounding frequency 401.32 selected by operator
+AVAPS-LOG,2024-08-11 17:30:50.443Z,15295.093,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 17:30:50.927Z,15295.577,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 17:30:51.398Z,15296.047,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 17:30:51.398Z,15296.047,,Sonde 233530220 GPS Aiding FAILED on message 1 of 1 after 3 attempts.
+AVAPS-LOG,2024-08-11 17:31:29.876Z,15334.526,7,Sonde 233530220 factory pressure error value is 0.000 mb
+AVAPS-LOG,2024-08-11 17:31:31.726Z,15336.375,7,Sonde 233530220 Preview OK by operator
+AVAPS-LOG,2024-08-11 17:31:33.866Z,15338.516,7,Sounding data collection started by operator
+AVAPS-LOG,2024-08-11 17:31:43.015Z,15347.665,7,CHANNEL 7 READY for launch
+AVAPS-LOG,2024-08-11 17:31:47.867Z,15352.517,5,Sounding STOP request
+AVAPS-LOG,2024-08-11 17:32:02.537Z,15367.186,5,Sounding files closed
+AVAPS-LOG,2024-08-11 17:32:02.551Z,15367.200,5,Sounding files renamed
+AVAPS-LOG,2024-08-11 17:32:03.487Z,15368.136,5,Sounding ENDED
+AVAPS-LOG,2024-08-11 17:32:11.972Z,15376.622,1,Sounding STOP request
+AVAPS-LOG,2024-08-11 17:32:25.947Z,15390.597,1,Sounding files closed
+AVAPS-LOG,2024-08-11 17:32:25.952Z,15390.602,1,Sounding files renamed
+AVAPS-LOG,2024-08-11 17:32:26.157Z,15390.807,1,Sounding ENDED
+AVAPS-LOG,2024-08-11 17:33:38.515Z,15463.165,4,Sonde 234150007 Launch Detect; Launch Time 2024-08-11 17:33:34.500; Dfile Name D20240811_173334.4
+AVAPS-LOG,2024-08-11 17:33:38.516Z,15463.166,4,Sounding Launch Obs identified OK; LLA source is Aircraft Data System
+AVAPS-LOG,2024-08-11 17:34:21.267Z,15505.917,8,Sounding START request
+AVAPS-LOG,2024-08-11 17:34:21.673Z,15506.323,8,Sounding files created
+AVAPS-LOG,2024-08-11 17:34:31.165Z,15515.815,8,Sounding frequency 402.08 selected by operator
+AVAPS-LOG,2024-08-11 17:34:40.745Z,15525.395,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 17:34:41.227Z,15525.877,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 17:34:41.697Z,15526.347,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 17:34:41.697Z,15526.347,,Sonde 234150020 GPS Aiding FAILED on message 1 of 1 after 3 attempts.
+AVAPS-LOG,2024-08-11 17:34:56.627Z,15541.276,8,Sonde 234150020 factory pressure error value is 0.000 mb
+AVAPS-LOG,2024-08-11 17:34:58.459Z,15543.109,8,Sonde 234150020 Preview OK by operator
+AVAPS-LOG,2024-08-11 17:35:00.166Z,15544.816,8,Sounding data collection started by operator
+AVAPS-LOG,2024-08-11 17:35:10.016Z,15554.666,8,CHANNEL 8 READY for launch
+AVAPS-LOG,2024-08-11 17:38:41.767Z,15766.417,6,Sonde 234140294 Launch Detect; Launch Time 2024-08-11 17:38:37.766; Dfile Name D20240811_173838.6
+AVAPS-LOG,2024-08-11 17:38:41.768Z,15766.418,6,Sounding Launch Obs identified OK; LLA source is Aircraft Data System
+AVAPS-LOG,2024-08-11 17:39:28.402Z,15813.051,1,Sounding START request
+AVAPS-LOG,2024-08-11 17:39:28.675Z,15813.325,1,Sounding files created
+AVAPS-LOG,2024-08-11 17:40:05.566Z,15850.215,1,Sounding frequency 403.30 selected by operator
+AVAPS-LOG,2024-08-11 17:40:15.955Z,15860.605,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 17:40:16.436Z,15861.086,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 17:40:16.917Z,15861.567,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 17:40:16.917Z,15861.567,,Sonde 233530225 GPS Aiding FAILED on message 1 of 1 after 3 attempts.
+AVAPS-LOG,2024-08-11 17:40:25.126Z,15869.775,1,Sonde 233530225 factory pressure error value is 0.000 mb
+AVAPS-LOG,2024-08-11 17:40:26.939Z,15871.588,1,Sonde 233530225 Preview OK by operator
+AVAPS-LOG,2024-08-11 17:40:29.167Z,15873.817,1,Sounding data collection started by operator
+AVAPS-LOG,2024-08-11 17:40:39.016Z,15883.666,1,CHANNEL 1 READY for launch
+AVAPS-LOG,2024-08-11 17:41:50.467Z,15955.117,2,Sounding STOP request
+AVAPS-LOG,2024-08-11 17:41:55.561Z,15960.210,2,Sounding files closed
+AVAPS-LOG,2024-08-11 17:41:55.575Z,15960.224,2,Sounding files renamed
+AVAPS-LOG,2024-08-11 17:41:56.521Z,15961.170,2,Sounding ENDED
+AVAPS-LOG,2024-08-11 17:43:36.017Z,16060.666,7,Sonde 233530220 Launch Detect; Launch Time 2024-08-11 17:43:32.000; Dfile Name D20240811_174332.7
+AVAPS-LOG,2024-08-11 17:43:36.017Z,16060.666,7,Sounding Launch Obs identified OK; LLA source is Aircraft Data System
+AVAPS-LOG,2024-08-11 17:44:43.867Z,16128.516,2,Sounding START request
+AVAPS-LOG,2024-08-11 17:44:44.274Z,16128.924,2,Sounding files created
+AVAPS-LOG,2024-08-11 17:44:50.065Z,16134.715,2,Sounding frequency 404.10 selected by operator
+AVAPS-LOG,2024-08-11 17:44:59.655Z,16144.304,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 17:45:00.126Z,16144.776,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 17:45:00.597Z,16145.246,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 17:45:00.597Z,16145.246,,Sonde 234140490 GPS Aiding FAILED on message 1 of 1 after 3 attempts.
+AVAPS-LOG,2024-08-11 17:45:20.376Z,16165.025,2,Sonde 234140490 factory pressure error value is 0.000 mb
+AVAPS-LOG,2024-08-11 17:45:22.196Z,16166.846,2,Sonde 234140490 Preview OK by operator
+AVAPS-LOG,2024-08-11 17:45:23.966Z,16168.615,2,Sounding data collection started by operator
+AVAPS-LOG,2024-08-11 17:45:33.016Z,16177.666,2,CHANNEL 2 READY for launch
+AVAPS-LOG,2024-08-11 17:48:11.767Z,16336.417,8,Sonde 234150020 Launch Detect; Launch Time 2024-08-11 17:48:07.750; Dfile Name D20240811_174808.8
+AVAPS-LOG,2024-08-11 17:48:11.767Z,16336.417,8,Sounding Launch Obs identified OK; LLA source is Aircraft Data System
+AVAPS-LOG,2024-08-11 17:49:03.666Z,16388.316,3,Sounding STOP request
+AVAPS-LOG,2024-08-11 17:49:14.537Z,16399.187,3,Sounding files closed
+AVAPS-LOG,2024-08-11 17:49:14.541Z,16399.191,3,Sounding files renamed
+AVAPS-LOG,2024-08-11 17:49:15.469Z,16400.119,3,Sounding ENDED
+AVAPS-LOG,2024-08-11 17:49:45.068Z,16429.718,3,Sounding START request
+AVAPS-LOG,2024-08-11 17:49:45.473Z,16430.123,3,Sounding files created
+AVAPS-LOG,2024-08-11 17:50:02.266Z,16446.915,3,Sounding frequency 404.72 selected by operator
+AVAPS-LOG,2024-08-11 17:50:11.844Z,16456.493,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 17:50:12.328Z,16456.977,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 17:50:12.806Z,16457.456,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 17:50:12.806Z,16457.456,,Sonde 233250805 GPS Aiding FAILED on message 1 of 1 after 3 attempts.
+AVAPS-LOG,2024-08-11 17:50:26.126Z,16470.776,3,Sonde 233250805 factory pressure error value is 0.000 mb
+AVAPS-LOG,2024-08-11 17:50:27.938Z,16472.588,3,Sonde 233250805 Preview OK by operator
+AVAPS-LOG,2024-08-11 17:50:29.865Z,16474.515,3,Sounding data collection started by operator
+AVAPS-LOG,2024-08-11 17:50:39.015Z,16483.665,3,CHANNEL 3 READY for launch
+AVAPS-LOG,2024-08-11 17:51:01.740Z,16506.389,4,Sounding STOP request
+AVAPS-LOG,2024-08-11 17:51:10.731Z,16515.380,4,Sounding files closed
+AVAPS-LOG,2024-08-11 17:51:10.736Z,16515.385,4,Sounding files renamed
+AVAPS-LOG,2024-08-11 17:51:11.682Z,16516.331,4,Sounding ENDED
+AVAPS-LOG,2024-08-11 17:52:54.017Z,16618.667,2,Sonde 234140490 Launch Detect; Launch Time 2024-08-11 17:52:50.000; Dfile Name D20240811_175250.2
+AVAPS-LOG,2024-08-11 17:52:54.018Z,16618.668,2,Sounding Launch Obs identified OK; LLA source is Aircraft Data System
+AVAPS-LOG,2024-08-11 17:53:42.268Z,16666.918,4,Sounding START request
+AVAPS-LOG,2024-08-11 17:53:42.673Z,16667.322,4,Sounding files created
+AVAPS-LOG,2024-08-11 17:53:49.666Z,16674.316,4,Sounding frequency 405.30 selected by operator
+AVAPS-LOG,2024-08-11 17:53:59.454Z,16684.104,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 17:53:59.937Z,16684.586,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 17:54:00.417Z,16685.067,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 17:54:00.417Z,16685.067,,Sonde 233521187 GPS Aiding FAILED on message 1 of 1 after 3 attempts.
+AVAPS-LOG,2024-08-11 17:54:28.376Z,16713.026,4,Sonde 233521187 factory pressure error value is 0.000 mb
+AVAPS-LOG,2024-08-11 17:54:30.188Z,16714.837,4,Sonde 233521187 Preview OK by operator
+AVAPS-LOG,2024-08-11 17:54:32.066Z,16716.716,4,Sounding data collection started by operator
+AVAPS-LOG,2024-08-11 17:54:42.016Z,16726.666,4,CHANNEL 4 READY for launch
+AVAPS-LOG,2024-08-11 17:54:53.772Z,16738.422,5,Sounding START request
+AVAPS-LOG,2024-08-11 17:54:54.073Z,16738.723,5,Sounding files created
+AVAPS-LOG,2024-08-11 17:55:04.865Z,16749.515,5,Sounding frequency 405.72 selected by operator
+AVAPS-LOG,2024-08-11 17:55:14.454Z,16759.104,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 17:55:14.926Z,16759.576,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 17:55:15.397Z,16760.046,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 17:55:15.397Z,16760.046,,Sonde 233530212 GPS Aiding FAILED on message 1 of 1 after 3 attempts.
+AVAPS-LOG,2024-08-11 17:55:29.125Z,16773.774,5,Sonde 233530212 factory pressure error value is 0.000 mb
+AVAPS-LOG,2024-08-11 17:55:30.946Z,16775.596,5,Sonde 233530212 Preview OK by operator
+AVAPS-LOG,2024-08-11 17:55:33.066Z,16777.716,5,Sounding data collection started by operator
+AVAPS-LOG,2024-08-11 17:55:43.016Z,16787.666,5,CHANNEL 5 READY for launch
+AVAPS-LOG,2024-08-11 17:56:42.767Z,16847.417,3,Sonde 233250805 Launch Detect; Launch Time 2024-08-11 17:56:38.750; Dfile Name D20240811_175639.3
+AVAPS-LOG,2024-08-11 17:56:42.768Z,16847.418,3,Sounding Launch Obs identified OK; LLA source is Aircraft Data System
+AVAPS-LOG,2024-08-11 18:00:11.466Z,17056.116,7,Sounding STOP request
+AVAPS-LOG,2024-08-11 18:00:30.349Z,17074.999,7,Sounding files closed
+AVAPS-LOG,2024-08-11 18:00:30.364Z,17075.014,7,Sounding files renamed
+AVAPS-LOG,2024-08-11 18:00:31.342Z,17075.992,7,Sounding ENDED
+AVAPS-LOG,2024-08-11 18:01:17.016Z,17121.666,4,Sonde 233521187 Launch Detect; Launch Time 2024-08-11 18:01:12.967; Dfile Name D20240811_180113.4
+AVAPS-LOG,2024-08-11 18:01:17.031Z,17121.681,4,Sounding Launch Obs identified OK; LLA source is Aircraft Data System
+AVAPS-LOG,2024-08-11 18:01:53.716Z,17158.366,7,Sounding START request
+AVAPS-LOG,2024-08-11 18:01:54.073Z,17158.723,7,Sounding files created
+AVAPS-LOG,2024-08-11 18:02:07.665Z,17172.315,7,Sounding frequency 401.50 selected by operator
+AVAPS-LOG,2024-08-11 18:02:17.264Z,17181.914,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 18:02:17.747Z,17182.397,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 18:02:18.216Z,17182.866,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 18:02:18.217Z,17182.867,,Sonde 233521051 GPS Aiding FAILED on message 1 of 1 after 3 attempts.
+AVAPS-LOG,2024-08-11 18:02:59.376Z,17224.026,7,Sonde 233521051 factory pressure error value is 0.000 mb
+AVAPS-LOG,2024-08-11 18:03:01.195Z,17225.845,7,Sonde 233521051 Preview OK by operator
+AVAPS-LOG,2024-08-11 18:03:02.766Z,17227.415,7,Sounding data collection started by operator
+AVAPS-LOG,2024-08-11 18:03:12.016Z,17236.666,7,CHANNEL 7 READY for launch
+AVAPS-LOG,2024-08-11 18:06:39.466Z,17444.116,8,Sounding STOP request
+AVAPS-LOG,2024-08-11 18:06:46.073Z,17450.723,8,Sounding files closed
+AVAPS-LOG,2024-08-11 18:06:46.088Z,17450.738,8,Sounding files renamed
+AVAPS-LOG,2024-08-11 18:06:47.050Z,17451.700,8,Sounding ENDED
+AVAPS-LOG,2024-08-11 18:07:12.067Z,17476.717,8,Sounding START request
+AVAPS-LOG,2024-08-11 18:07:12.474Z,17477.124,8,Sounding files created
+AVAPS-LOG,2024-08-11 18:07:23.165Z,17487.815,8,Sounding frequency 402.10 selected by operator
+AVAPS-LOG,2024-08-11 18:07:32.763Z,17497.413,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 18:07:33.236Z,17497.886,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 18:07:33.716Z,17498.366,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 18:07:33.716Z,17498.366,,Sonde 234150008 GPS Aiding FAILED on message 1 of 1 after 3 attempts.
+AVAPS-LOG,2024-08-11 18:07:44.377Z,17509.027,8,Sonde 234150008 factory pressure error value is 0.000 mb
+AVAPS-LOG,2024-08-11 18:07:46.197Z,17510.847,8,Sonde 234150008 Preview OK by operator
+AVAPS-LOG,2024-08-11 18:07:58.067Z,17522.717,8,Sounding data collection started by operator
+AVAPS-LOG,2024-08-11 18:08:08.017Z,17532.667,8,CHANNEL 8 READY for launch
+AVAPS-LOG,2024-08-11 18:09:27.867Z,17612.517,2,Sounding STOP request
+AVAPS-LOG,2024-08-11 18:09:49.062Z,17633.712,2,Sounding files closed
+AVAPS-LOG,2024-08-11 18:09:49.075Z,17633.725,2,Sounding files renamed
+AVAPS-LOG,2024-08-11 18:09:49.965Z,17634.615,2,Sounding ENDED
+AVAPS-LOG,2024-08-11 18:11:37.016Z,17741.666,7,Sonde 233521051 Launch Detect; Launch Time 2024-08-11 18:11:33.000; Dfile Name D20240811_181133.7
+AVAPS-LOG,2024-08-11 18:11:37.016Z,17741.666,7,Sounding Launch Obs identified OK; LLA source is Aircraft Data System
+AVAPS-LOG,2024-08-11 18:17:00.015Z,18064.665,8,Sonde 234150008 Launch Detect; Launch Time 2024-08-11 18:16:55.966; Dfile Name D20240811_181656.8
+AVAPS-LOG,2024-08-11 18:17:00.016Z,18064.666,8,Sounding Launch Obs identified OK; LLA source is Aircraft Data System
+AVAPS-LOG,2024-08-11 18:17:58.971Z,18123.621,6,Sounding STOP request
+AVAPS-LOG,2024-08-11 18:18:43.368Z,18168.018,6,Sounding files closed
+AVAPS-LOG,2024-08-11 18:18:43.376Z,18168.026,6,Sounding files renamed
+AVAPS-LOG,2024-08-11 18:18:45.330Z,18169.980,6,Sounding ENDED
+AVAPS-LOG,2024-08-11 18:18:50.371Z,18175.020,5,Sounding STOP request
+AVAPS-LOG,2024-08-11 18:19:10.144Z,18194.794,5,Sounding files closed
+AVAPS-LOG,2024-08-11 18:19:10.158Z,18194.808,5,Sounding files renamed
+AVAPS-LOG,2024-08-11 18:19:10.646Z,18195.296,5,Sounding ENDED
+AVAPS-LOG,2024-08-11 18:19:25.370Z,18210.020,1,Sounding STOP request
+AVAPS-LOG,2024-08-11 18:19:38.977Z,18223.627,1,Sounding files closed
+AVAPS-LOG,2024-08-11 18:19:38.983Z,18223.633,1,Sounding files renamed
+AVAPS-LOG,2024-08-11 18:19:39.801Z,18224.451,1,Sounding ENDED
+AVAPS-LOG,2024-08-11 18:20:36.084Z,18280.734,4,Sounding STOP request
+AVAPS-LOG,2024-08-11 18:20:42.541Z,18287.191,4,Sounding files closed
+AVAPS-LOG,2024-08-11 18:20:42.547Z,18287.197,4,Sounding files renamed
+AVAPS-LOG,2024-08-11 18:20:43.453Z,18288.103,4,Sounding ENDED
+AVAPS-LOG,2024-08-11 18:20:48.267Z,18292.916,3,Sounding STOP request
+AVAPS-LOG,2024-08-11 18:20:56.056Z,18300.705,3,Sounding files closed
+AVAPS-LOG,2024-08-11 18:20:56.063Z,18300.712,3,Sounding files renamed
+AVAPS-LOG,2024-08-11 18:20:57.037Z,18301.686,3,Sounding ENDED
+AVAPS-LOG,2024-08-11 19:05:38.281Z,20982.930,7,Sounding STOP request
+AVAPS-LOG,2024-08-11 19:05:50.519Z,20995.168,7,Sounding files closed
+AVAPS-LOG,2024-08-11 19:05:50.523Z,20995.172,7,Sounding files renamed
+AVAPS-LOG,2024-08-11 19:05:51.513Z,20996.162,7,Sounding ENDED
+AVAPS-LOG,2024-08-11 19:05:54.224Z,20998.873,8,Sounding STOP request
+AVAPS-LOG,2024-08-11 19:05:58.510Z,21003.159,8,Sounding files closed
+AVAPS-LOG,2024-08-11 19:05:58.516Z,21003.165,8,Sounding files renamed
+AVAPS-LOG,2024-08-11 19:05:59.522Z,21004.171,8,Sounding ENDED
+AVAPS-LOG,2024-08-11 19:13:03.036Z,21427.685,1,Sounding START request
+AVAPS-LOG,2024-08-11 19:13:03.271Z,21427.921,1,Sounding files created
+AVAPS-LOG,2024-08-11 19:13:04.157Z,21428.807,,PC Clock set to: 2024-08-11 19:13:04.158 using GPS Reference Receiver data - PC Clock error was: -0.152 sec
+AVAPS-LOG,2024-08-11 19:13:25.717Z,21450.366,1,Sounding frequency 402.10 selected by operator
+AVAPS-LOG,2024-08-11 19:13:35.595Z,21460.244,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 19:13:36.084Z,21460.733,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 19:13:36.567Z,21461.216,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 19:13:36.568Z,21461.217,,Sonde 234141206 GPS Aiding FAILED on message 1 of 1 after 3 attempts.
+AVAPS-LOG,2024-08-11 19:14:00.267Z,21484.916,1,Sonde 234141206 factory pressure error value is 0.000 mb
+AVAPS-LOG,2024-08-11 19:14:00.268Z,21484.917,1,Sonde 234141206 Preview aborted by operator
+AVAPS-LOG,2024-08-11 19:14:11.917Z,21496.566,1,Sounding frequency 403.50 selected by operator
+AVAPS-LOG,2024-08-11 19:14:30.406Z,21515.056,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 19:14:30.878Z,21515.527,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 19:14:31.348Z,21515.998,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 19:14:31.348Z,21515.998,,Sonde 233530222 GPS Aiding FAILED on message 1 of 1 after 3 attempts.
+AVAPS-LOG,2024-08-11 19:14:59.778Z,21544.428,1,Sonde 233530222 factory pressure error value is 0.000 mb
+AVAPS-LOG,2024-08-11 19:15:01.596Z,21546.246,1,Sonde 233530222 Preview OK by operator
+AVAPS-LOG,2024-08-11 19:15:03.317Z,21547.967,1,Sounding data collection started by operator
+AVAPS-LOG,2024-08-11 19:15:13.016Z,21557.666,1,CHANNEL 1 READY for launch
+AVAPS-LOG,2024-08-11 19:15:46.817Z,21591.466,2,Sounding START request
+AVAPS-LOG,2024-08-11 19:15:47.222Z,21591.872,2,Sounding files created
+AVAPS-LOG,2024-08-11 19:15:52.718Z,21597.367,2,Sounding frequency 404.30 selected by operator
+AVAPS-LOG,2024-08-11 19:16:02.295Z,21606.945,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 19:16:02.769Z,21607.419,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 19:16:03.238Z,21607.887,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 19:16:03.238Z,21607.887,,Sonde 233530214 GPS Aiding FAILED on message 1 of 1 after 3 attempts.
+AVAPS-LOG,2024-08-11 19:16:41.778Z,21646.427,2,Sonde 233530214 factory pressure error value is 0.000 mb
+AVAPS-LOG,2024-08-11 19:16:43.266Z,21647.916,1,Sonde 233530222 Launch Detect; Launch Time 2024-08-11 19:16:39.316; Dfile Name D20240811_191639.1
+AVAPS-LOG,2024-08-11 19:16:43.267Z,21647.917,1,Sounding Launch Obs identified OK; LLA source is Aircraft Data System
+AVAPS-LOG,2024-08-11 19:16:43.600Z,21648.250,2,Sonde 233530214 Preview OK by operator
+AVAPS-LOG,2024-08-11 19:16:45.017Z,21649.666,2,Sounding data collection started by operator
+AVAPS-LOG,2024-08-11 19:16:55.016Z,21659.666,2,CHANNEL 2 READY for launch
+AVAPS-LOG,2024-08-11 19:17:28.618Z,21693.268,3,Sounding START request
+AVAPS-LOG,2024-08-11 19:17:29.027Z,21693.676,3,Sounding files created
+AVAPS-LOG,2024-08-11 19:17:33.416Z,21698.066,3,Sounding frequency 404.90 selected by operator
+AVAPS-LOG,2024-08-11 19:17:42.894Z,21707.544,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 19:17:43.378Z,21708.028,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 19:17:43.849Z,21708.498,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 19:17:43.849Z,21708.498,,Sonde 233530230 GPS Aiding FAILED on message 1 of 1 after 3 attempts.
+AVAPS-LOG,2024-08-11 19:18:04.527Z,21729.177,3,Sonde 233530230 factory pressure error value is 0.000 mb
+AVAPS-LOG,2024-08-11 19:18:06.349Z,21730.998,3,Sonde 233530230 Preview OK by operator
+AVAPS-LOG,2024-08-11 19:18:08.617Z,21733.266,3,Sounding data collection started by operator
+AVAPS-LOG,2024-08-11 19:18:18.018Z,21742.667,3,CHANNEL 3 READY for launch
+AVAPS-LOG,2024-08-11 19:18:30.652Z,21755.302,4,Sounding START request
+AVAPS-LOG,2024-08-11 19:18:31.027Z,21755.677,4,Sounding files created
+AVAPS-LOG,2024-08-11 19:18:38.017Z,21762.667,4,Sounding frequency 405.50 selected by operator
+AVAPS-LOG,2024-08-11 19:18:47.905Z,21772.555,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 19:18:48.379Z,21773.028,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 19:18:48.857Z,21773.507,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 19:18:48.857Z,21773.507,,Sonde 231221588 GPS Aiding FAILED on message 1 of 1 after 3 attempts.
+AVAPS-LOG,2024-08-11 19:19:06.528Z,21791.178,4,Sonde 231221588 factory pressure error value is 0.000 mb
+AVAPS-LOG,2024-08-11 19:19:08.347Z,21792.996,4,Sonde 231221588 Preview OK by operator
+AVAPS-LOG,2024-08-11 19:19:12.416Z,21797.066,4,Sounding data collection started by operator
+AVAPS-LOG,2024-08-11 19:19:22.017Z,21806.667,4,CHANNEL 4 READY for launch
+AVAPS-LOG,2024-08-11 19:19:42.818Z,21827.468,5,Sounding START request
+AVAPS-LOG,2024-08-11 19:19:43.224Z,21827.874,5,Sounding files created
+AVAPS-LOG,2024-08-11 19:19:52.717Z,21837.366,5,Sounding frequency 403.92 selected by operator
+AVAPS-LOG,2024-08-11 19:20:19.768Z,21864.418,2,Sonde 233530214 Launch Detect; Launch Time 2024-08-11 19:20:15.818; Dfile Name D20240811_192016.2
+AVAPS-LOG,2024-08-11 19:20:19.768Z,21864.418,2,Sounding Launch Obs identified OK; LLA source is Aircraft Data System
+AVAPS-LOG,2024-08-11 19:20:59.806Z,21904.456,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 19:21:00.279Z,21904.929,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 19:21:00.758Z,21905.407,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 19:21:00.758Z,21905.407,,Sonde 233530254 GPS Aiding FAILED on message 1 of 1 after 3 attempts.
+AVAPS-LOG,2024-08-11 19:21:58.527Z,21963.177,5,Sonde 233530254 factory pressure error value is 0.000 mb
+AVAPS-LOG,2024-08-11 19:22:00.607Z,21965.257,5,Sonde 233530254 Preview OK by operator
+AVAPS-LOG,2024-08-11 19:22:02.817Z,21967.467,5,Sounding data collection started by operator
+AVAPS-LOG,2024-08-11 19:22:12.019Z,21976.669,5,CHANNEL 5 READY for launch
+AVAPS-LOG,2024-08-11 19:23:32.517Z,22057.167,3,Sonde 233530230 Launch Detect; Launch Time 2024-08-11 19:23:28.500; Dfile Name D20240811_192328.3
+AVAPS-LOG,2024-08-11 19:23:32.518Z,22057.168,3,Sounding Launch Obs identified OK; LLA source is Aircraft Data System
+AVAPS-LOG,2024-08-11 19:24:02.516Z,22087.165,6,Sounding START request
+AVAPS-LOG,2024-08-11 19:24:02.824Z,22087.474,6,Sounding files created
+AVAPS-LOG,2024-08-11 19:24:11.216Z,22095.866,6,Sounding frequency 403.06 selected by operator
+AVAPS-LOG,2024-08-11 19:24:20.814Z,22105.464,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 19:24:21.288Z,22105.938,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 19:24:21.758Z,22106.408,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 19:24:21.758Z,22106.408,,Sonde 233530218 GPS Aiding FAILED on message 1 of 1 after 3 attempts.
+AVAPS-LOG,2024-08-11 19:24:35.528Z,22120.178,6,Sonde 233530218 factory pressure error value is 0.000 mb
+AVAPS-LOG,2024-08-11 19:24:37.347Z,22121.996,6,Sonde 233530218 Preview OK by operator
+AVAPS-LOG,2024-08-11 19:24:39.616Z,22124.266,6,Sounding data collection started by operator
+AVAPS-LOG,2024-08-11 19:24:49.019Z,22133.669,6,CHANNEL 6 READY for launch
+AVAPS-LOG,2024-08-11 19:27:00.519Z,22265.169,4,Sonde 231221588 Launch Detect; Launch Time 2024-08-11 19:26:56.618; Dfile Name D20240811_192657.4
+AVAPS-LOG,2024-08-11 19:27:00.520Z,22265.170,4,Sounding Launch Obs identified OK; LLA source is Aircraft Data System
+AVAPS-LOG,2024-08-11 19:27:41.102Z,22305.752,7,Sounding START request
+AVAPS-LOG,2024-08-11 19:27:41.424Z,22306.074,7,Sounding files created
+AVAPS-LOG,2024-08-11 19:27:52.617Z,22317.266,7,Sounding frequency 402.58 selected by operator
+AVAPS-LOG,2024-08-11 19:28:02.194Z,22326.844,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 19:28:02.678Z,22327.327,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 19:28:03.148Z,22327.798,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 19:28:03.151Z,22327.801,,Sonde 234140404 GPS Aiding FAILED on message 1 of 1 after 3 attempts.
+AVAPS-LOG,2024-08-11 19:28:09.279Z,22333.929,7,Sonde 234140404 factory pressure error value is 0.000 mb
+AVAPS-LOG,2024-08-11 19:28:11.096Z,22335.746,7,Sonde 234140404 Preview OK by operator
+AVAPS-LOG,2024-08-11 19:28:14.018Z,22338.667,7,Sounding data collection started by operator
+AVAPS-LOG,2024-08-11 19:28:24.019Z,22348.669,7,CHANNEL 7 READY for launch
+AVAPS-LOG,2024-08-11 19:30:37.518Z,22482.168,5,Sonde 233530254 Launch Detect; Launch Time 2024-08-11 19:30:33.517; Dfile Name D20240811_193034.5
+AVAPS-LOG,2024-08-11 19:30:37.519Z,22482.169,5,Sounding Launch Obs identified OK; LLA source is Aircraft Data System
+AVAPS-LOG,2024-08-11 19:31:16.435Z,22521.085,8,Sounding START request
+AVAPS-LOG,2024-08-11 19:31:16.826Z,22521.475,8,Sounding files created
+AVAPS-LOG,2024-08-11 19:31:31.516Z,22536.166,8,Sounding frequency 402.14 selected by operator
+AVAPS-LOG,2024-08-11 19:31:41.005Z,22545.655,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 19:31:41.488Z,22546.138,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 19:31:41.959Z,22546.608,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 19:31:41.959Z,22546.608,,Sonde 234140405 GPS Aiding FAILED on message 1 of 1 after 3 attempts.
+AVAPS-LOG,2024-08-11 19:31:53.279Z,22557.929,8,Sonde 234140405 factory pressure error value is 0.000 mb
+AVAPS-LOG,2024-08-11 19:31:55.097Z,22559.747,8,Sonde 234140405 Preview OK by operator
+AVAPS-LOG,2024-08-11 19:32:00.216Z,22564.866,8,Sounding data collection started by operator
+AVAPS-LOG,2024-08-11 19:32:10.018Z,22574.668,8,CHANNEL 8 READY for launch
+AVAPS-LOG,2024-08-11 19:32:31.604Z,22596.254,1,Sounding STOP request
+AVAPS-LOG,2024-08-11 19:32:43.688Z,22608.338,1,Sounding files closed
+AVAPS-LOG,2024-08-11 19:32:43.694Z,22608.344,1,Sounding files renamed
+AVAPS-LOG,2024-08-11 19:32:44.515Z,22609.165,1,Sounding ENDED
+AVAPS-LOG,2024-08-11 19:34:21.020Z,22705.669,6,Sonde 233530218 Launch Detect; Launch Time 2024-08-11 19:34:17.118; Dfile Name D20240811_193417.6
+AVAPS-LOG,2024-08-11 19:34:21.022Z,22705.671,6,Sounding Launch Obs identified OK; LLA source is Aircraft Data System
+AVAPS-LOG,2024-08-11 19:34:33.371Z,22718.020,1,Sounding START request
+AVAPS-LOG,2024-08-11 19:34:33.626Z,22718.276,1,Sounding files created
+AVAPS-LOG,2024-08-11 19:34:42.516Z,22727.166,1,Sounding frequency 403.54 selected by operator
+AVAPS-LOG,2024-08-11 19:34:52.105Z,22736.755,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 19:34:52.577Z,22737.227,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 19:34:53.059Z,22737.708,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 19:34:53.060Z,22737.709,,Sonde 233530232 GPS Aiding FAILED on message 1 of 1 after 3 attempts.
+AVAPS-LOG,2024-08-11 19:35:23.778Z,22768.428,1,Sonde 233530232 factory pressure error value is 0.000 mb
+AVAPS-LOG,2024-08-11 19:35:25.588Z,22770.238,1,Sonde 233530232 Preview OK by operator
+AVAPS-LOG,2024-08-11 19:35:27.218Z,22771.868,1,Sounding data collection started by operator
+AVAPS-LOG,2024-08-11 19:35:37.017Z,22781.667,1,CHANNEL 1 READY for launch
+AVAPS-LOG,2024-08-11 19:35:54.217Z,22798.867,2,Sounding STOP request
+AVAPS-LOG,2024-08-11 19:36:03.137Z,22807.787,2,Sounding files closed
+AVAPS-LOG,2024-08-11 19:36:03.143Z,22807.793,2,Sounding files renamed
+AVAPS-LOG,2024-08-11 19:36:03.902Z,22808.552,2,Sounding ENDED
+AVAPS-LOG,2024-08-11 19:38:02.269Z,22926.918,7,Sonde 234140404 Launch Detect; Launch Time 2024-08-11 19:37:58.250; Dfile Name D20240811_193758.7
+AVAPS-LOG,2024-08-11 19:38:02.269Z,22926.918,7,Sounding Launch Obs identified OK; LLA source is Aircraft Data System
+AVAPS-LOG,2024-08-11 19:38:46.220Z,22970.869,2,Sounding START request
+AVAPS-LOG,2024-08-11 19:38:46.626Z,22971.276,2,Sounding files created
+AVAPS-LOG,2024-08-11 19:38:55.216Z,22979.866,2,Sounding frequency 404.46 selected by operator
+AVAPS-LOG,2024-08-11 19:39:04.896Z,22989.546,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 19:39:05.376Z,22990.026,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 19:39:05.858Z,22990.508,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 19:39:05.858Z,22990.508,,Sonde 234140443 GPS Aiding FAILED on message 1 of 1 after 3 attempts.
+AVAPS-LOG,2024-08-11 19:39:31.280Z,23015.930,2,Sonde 234140443 factory pressure error value is 0.000 mb
+AVAPS-LOG,2024-08-11 19:39:33.098Z,23017.748,2,Sonde 234140443 Preview OK by operator
+AVAPS-LOG,2024-08-11 19:39:36.216Z,23020.866,2,Sounding data collection started by operator
+AVAPS-LOG,2024-08-11 19:39:46.017Z,23030.667,2,CHANNEL 2 READY for launch
+AVAPS-LOG,2024-08-11 19:41:35.020Z,23139.669,8,Sonde 234140405 Launch Detect; Launch Time 2024-08-11 19:41:31.019; Dfile Name D20240811_194131.8
+AVAPS-LOG,2024-08-11 19:41:35.021Z,23139.670,8,Sounding Launch Obs identified OK; LLA source is Aircraft Data System
+AVAPS-LOG,2024-08-11 19:41:41.618Z,23146.267,3,Sounding STOP request
+AVAPS-LOG,2024-08-11 19:41:50.698Z,23155.347,3,Sounding files closed
+AVAPS-LOG,2024-08-11 19:41:50.711Z,23155.360,3,Sounding files renamed
+AVAPS-LOG,2024-08-11 19:41:51.556Z,23156.205,3,Sounding ENDED
+AVAPS-LOG,2024-08-11 19:41:59.819Z,23164.468,3,Sounding START request
+AVAPS-LOG,2024-08-11 19:42:00.225Z,23164.875,3,Sounding files created
+AVAPS-LOG,2024-08-11 19:42:14.317Z,23178.966,3,Sounding frequency 404.96 selected by operator
+AVAPS-LOG,2024-08-11 19:42:23.905Z,23188.555,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 19:42:24.378Z,23189.027,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 19:42:24.847Z,23189.497,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 19:42:24.847Z,23189.497,,Sonde 234030805 GPS Aiding FAILED on message 1 of 1 after 3 attempts.
+AVAPS-LOG,2024-08-11 19:42:37.277Z,23201.927,3,Sonde 234030805 factory pressure error value is 0.000 mb
+AVAPS-LOG,2024-08-11 19:42:39.100Z,23203.749,3,Sonde 234030805 Preview OK by operator
+AVAPS-LOG,2024-08-11 19:43:06.216Z,23230.866,3,Sounding data collection started by operator
+AVAPS-LOG,2024-08-11 19:43:16.017Z,23240.667,3,CHANNEL 3 READY for launch
+AVAPS-LOG,2024-08-11 19:43:35.860Z,23260.509,4,Sounding STOP request
+AVAPS-LOG,2024-08-11 19:43:44.178Z,23268.827,4,Sounding files closed
+AVAPS-LOG,2024-08-11 19:43:44.192Z,23268.841,4,Sounding files renamed
+AVAPS-LOG,2024-08-11 19:43:44.994Z,23269.643,4,Sounding ENDED
+AVAPS-LOG,2024-08-11 19:44:16.021Z,23300.670,4,Sounding START request
+AVAPS-LOG,2024-08-11 19:44:16.424Z,23301.073,4,Sounding files created
+AVAPS-LOG,2024-08-11 19:44:53.767Z,23338.417,1,Sonde 233530232 Launch Detect; Launch Time 2024-08-11 19:44:49.750; Dfile Name D20240811_194450.1
+AVAPS-LOG,2024-08-11 19:44:53.767Z,23338.417,1,Sounding Launch Obs identified OK; LLA source is Aircraft Data System
+AVAPS-LOG,2024-08-11 19:44:55.916Z,23340.566,4,Sounding frequency 405.40 selected by operator
+AVAPS-LOG,2024-08-11 19:45:05.606Z,23350.255,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 19:45:06.087Z,23350.736,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 19:45:06.568Z,23351.218,,BYTE COUNT MISMATCH from AVAPS II DROPSONDE card after command  on COM 27 -- Expected Length: 3 Actual Length: 25 Received String: GPS ublox message error[crlf]
+AVAPS-LOG,2024-08-11 19:45:06.568Z,23351.218,,Sonde 234140400 GPS Aiding FAILED on message 1 of 1 after 3 attempts.
+AVAPS-LOG,2024-08-11 19:45:13.279Z,23357.928,4,Sonde 234140400 factory pressure error value is 0.000 mb
+AVAPS-LOG,2024-08-11 19:45:15.088Z,23359.738,4,Sonde 234140400 Preview OK by operator
+AVAPS-LOG,2024-08-11 19:45:22.618Z,23367.268,4,Sounding data collection started by operator
+AVAPS-LOG,2024-08-11 19:45:32.018Z,23376.667,4,CHANNEL 4 READY for launch
+AVAPS-LOG,2024-08-11 19:46:09.417Z,23414.067,5,Sounding STOP request
+AVAPS-LOG,2024-08-11 19:46:15.888Z,23420.538,5,Sounding files closed
+AVAPS-LOG,2024-08-11 19:46:15.895Z,23420.545,5,Sounding files renamed
+AVAPS-LOG,2024-08-11 19:46:16.756Z,23421.406,5,Sounding ENDED
+AVAPS-LOG,2024-08-11 19:48:08.517Z,23533.167,2,Sonde 234140443 Launch Detect; Launch Time 2024-08-11 19:48:04.500; Dfile Name D20240811_194804.2
+AVAPS-LOG,2024-08-11 19:48:08.518Z,23533.168,2,Sounding Launch Obs identified OK; LLA source is Aircraft Data System
+AVAPS-LOG,2024-08-11 19:51:17.768Z,23722.418,3,Sonde 234030805 Launch Detect; Launch Time 2024-08-11 19:51:13.750; Dfile Name D20240811_195114.3
+AVAPS-LOG,2024-08-11 19:51:17.769Z,23722.419,3,Sounding Launch Obs identified OK; LLA source is Aircraft Data System
+AVAPS-LOG,2024-08-11 19:52:59.617Z,23824.267,6,Sounding STOP request
+AVAPS-LOG,2024-08-11 19:53:05.291Z,23829.941,6,Sounding files closed
+AVAPS-LOG,2024-08-11 19:53:05.296Z,23829.946,6,Sounding files renamed
+AVAPS-LOG,2024-08-11 19:53:06.189Z,23830.839,6,Sounding ENDED
+AVAPS-LOG,2024-08-11 19:53:11.844Z,23836.493,7,Sounding STOP request
+AVAPS-LOG,2024-08-11 19:53:17.332Z,23841.982,7,Sounding files closed
+AVAPS-LOG,2024-08-11 19:53:17.345Z,23841.995,7,Sounding files renamed
+AVAPS-LOG,2024-08-11 19:53:18.177Z,23842.827,7,Sounding ENDED
+AVAPS-LOG,2024-08-11 19:54:29.018Z,23913.668,4,Sonde 234140400 Launch Detect; Launch Time 2024-08-11 19:54:25.019; Dfile Name D20240811_195425.4
+AVAPS-LOG,2024-08-11 19:54:29.019Z,23913.669,4,Sounding Launch Obs identified OK; LLA source is Aircraft Data System
+AVAPS-LOG,2024-08-11 19:55:36.531Z,23981.180,8,Sounding STOP request
+AVAPS-LOG,2024-08-11 19:55:42.487Z,23987.137,8,Sounding files closed
+AVAPS-LOG,2024-08-11 19:55:42.508Z,23987.158,8,Sounding files renamed
+AVAPS-LOG,2024-08-11 19:55:43.333Z,23987.983,8,Sounding ENDED
+AVAPS-LOG,2024-08-11 20:43:43.468Z,26868.117,1,Sounding STOP request
+AVAPS-LOG,2024-08-11 20:43:50.194Z,26874.843,1,Sounding files closed
+AVAPS-LOG,2024-08-11 20:43:50.207Z,26874.856,1,Sounding files renamed
+AVAPS-LOG,2024-08-11 20:43:51.180Z,26875.829,1,Sounding ENDED
+AVAPS-LOG,2024-08-11 20:43:52.436Z,26877.085,2,Sounding STOP request
+AVAPS-LOG,2024-08-11 20:43:57.880Z,26882.529,2,Sounding files closed
+AVAPS-LOG,2024-08-11 20:43:57.887Z,26882.536,2,Sounding files renamed
+AVAPS-LOG,2024-08-11 20:43:58.862Z,26883.511,2,Sounding ENDED
+AVAPS-LOG,2024-08-11 20:44:00.617Z,26885.266,3,Sounding STOP request
+AVAPS-LOG,2024-08-11 20:44:08.290Z,26892.939,3,Sounding files closed
+AVAPS-LOG,2024-08-11 20:44:08.294Z,26892.943,3,Sounding files renamed
+AVAPS-LOG,2024-08-11 20:44:09.260Z,26893.909,3,Sounding ENDED
+AVAPS-LOG,2024-08-11 20:44:10.416Z,26895.066,4,Sounding STOP request
+AVAPS-LOG,2024-08-11 20:44:16.690Z,26901.339,4,Sounding files closed
+AVAPS-LOG,2024-08-11 20:44:16.695Z,26901.344,4,Sounding files renamed
+AVAPS-LOG,2024-08-11 20:44:17.617Z,26902.266,4,Sounding ENDED

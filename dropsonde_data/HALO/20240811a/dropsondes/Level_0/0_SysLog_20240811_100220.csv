@@ -1,0 +1,21 @@
+AVAPS-LOG,UTC Date & Time,Session Time,Channel,Event or Error Message,Calling Context
+AVAPS-LOG,2024-08-11 10:02:20.554Z,0.000,,*** AVAPS II SYSTEM LOG FILE ***
+AVAPS-LOG,2024-08-11 10:02:41.395Z,20.841,,Serial port initialization complete: no errors.
+AVAPS-LOG,2024-08-11 10:02:45.638Z,25.083,,GPS Reference Receiver UART 1 configuration commands sent
+AVAPS-LOG,2024-08-11 10:02:50.048Z,29.494,,GPS Reference Receiver UART 2 configuration commands sent
+AVAPS-LOG,2024-08-11 10:02:55.785Z,35.230,,Serial port initialization complete: no errors.
+AVAPS-LOG,2024-08-11 10:03:01.171Z,40.616,,PC Clock set to: 2024-08-11 10:03:01.170 using GPS Reference Receiver data - PC Clock error was: -3.273 sec
+AVAPS-LOG,2024-08-11 10:03:48.167Z,87.613,,Automated System Tests:  No Errors Detected...
+AVAPS-LOG,2024-08-11 10:03:48.175Z,87.621,,Spectrum Analyzer program started
+AVAPS-LOG,2024-08-11 10:03:48.175Z,87.621,,Aircraft Data Acq program started
+AVAPS-LOG,2024-08-11 10:03:48.176Z,87.622,,Spectrum Analyzer Data Acq data log file created
+AVAPS-LOG,2024-08-11 10:03:48.255Z,87.701,,Sounding Supervisor program started
+AVAPS-LOG,2024-08-11 10:03:48.797Z,88.243,,GPS Reference Receiver (NMEA) data log file created
+AVAPS-LOG,2024-08-11 10:03:48.798Z,88.244,,GPS Reference Data Acq (NMEA) program started
+AVAPS-LOG,2024-08-11 10:03:48.798Z,88.244,,Aircraft Data Acq data log file created
+AVAPS-LOG,2024-08-11 10:03:49.151Z,88.597,,PC Clock set to: 2024-08-11 10:03:49.150 using GPS Reference Receiver data - PC Clock error was: -0.023 sec
+AVAPS-LOG,2024-08-11 10:03:53.161Z,92.606,,Sounding Supervisor program ended by operator
+AVAPS-LOG,2024-08-11 10:03:53.191Z,92.636,,GPS Reference Data Acq (NMEA) program ended
+AVAPS-LOG,2024-08-11 10:03:53.651Z,93.097,,Spectrum Analyzer program ended
+AVAPS-LOG,2024-08-11 10:03:54.950Z,94.396,,Aircraft Data Acq program ended
+AVAPS-LOG,2024-08-11 10:03:55.053Z,94.498,,Soundings Loader program ended
