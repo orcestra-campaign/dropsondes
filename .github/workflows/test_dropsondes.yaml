@@ -22,8 +22,6 @@ jobs:
         use-mamba: true
         miniforge-variant: Mambaforge
         miniforge-version: latest
-    - name: install pip
-      run: mamba install pip
     - name: install halodrops 
       run: python3 -m pip install git+https://github.com/Geet-George/halodrops.git 
 
