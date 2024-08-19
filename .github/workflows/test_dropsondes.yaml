@@ -2,16 +2,12 @@ name: test
 
 on: [push, pull_request]
 
-env:
-  CONDA_CACHE_NUMBER: 0
-
 jobs:
   test:
     runs-on: ubuntu-latest
     defaults:
       run:
         shell: bash -l {0}
-
     steps:
     - uses: actions/checkout@v4
     - name: initialize conda
@@ -22,9 +18,10 @@ jobs:
         use-mamba: true
         miniforge-variant: Mambaforge
         miniforge-version: latest
-    - name: install halodrops 
-      run: python3 -m pip install git+https://github.com/Geet-George/halodrops.git 
-
-
+    - name: install conda environment
+      run:
+        mamba env update -n dropsonde_test -f environment.yaml
+    - name: run halodrops
+      run: halodrops -c ./halodrops.cfg
            
      
