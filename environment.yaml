@@ -1,23 +1,22 @@
 name: dropsonde_test 
 channels:
   - conda-forge
-  - defaults
 dependencies:
-  - python>=3.10
-  - sphinx
+  - python=3.12
   - ca-certificates
-  - openssl
-  - myst-parser
   - certifi
-  - sphinx-autobuild
+  - ipython
+  - metpy
+  - myst-parser
   - numpy
   - nbsphinx
-  - pip>=20.1
-  - xarray
   - netcdf4
-  - ipython
+  - openssl
   - pre-commit
-  - metpy
+  - sphinx
+  - sphinx-autobuild
+  - xarray
+  - pip
   - pip:
     - sphinx-autodoc2
     - sphinx-book-theme

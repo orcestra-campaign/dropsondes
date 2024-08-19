@@ -2,10 +2,6 @@ name: test
 
 on: [push, pull_request]
 
-env:
-  # Increase this value to reset cache
-  CONDA_CACHE_NUMBER: 0
-
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -17,7 +13,7 @@ jobs:
     - name: initialize conda
       uses: conda-incubator/setup-miniconda@v3
       with:
-        activate-environment: dropsonde_test 
+        activate-environment: dropsonde_test
         auto-activate-base: false
         use-mamba: true
         miniforge-variant: Mambaforge
