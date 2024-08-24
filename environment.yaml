@@ -21,4 +21,4 @@ dependencies:
     - sphinx-autodoc2
     - sphinx-book-theme
     - sphinx-last-updated-by-git
-    - git+https://github.com/Geet-George/halodrops.git#egg=halodrops 
+    - git+https://github.com/atmdrops/pydropsonde.git#egg=pydropsonde 

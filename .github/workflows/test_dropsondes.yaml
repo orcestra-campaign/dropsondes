@@ -21,7 +21,7 @@ jobs:
     - name: install conda environment
       run:
         mamba env update -n dropsonde_test -f environment.yaml
-    - name: run halodrops
-      run: halodrops -c ./halodrops.cfg
+    - name: run pydropsonde 
+      run: pydropsonde -c ./orcestra_drop.cfg
            
      
