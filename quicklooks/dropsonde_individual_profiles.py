@@ -26,7 +26,7 @@ datasets = [ds1, ds2, ds3, ds4]
 individual_sondes_profiles(
     flight_id=flightdate,
     filepath_list=filepaths,
-    ds_list=datasets,
+    sonde_ds_list=datasets,
     loc_list=location,
     variables=variables,
     units=units,
@@ -34,6 +34,6 @@ individual_sondes_profiles(
 
 # Save
 plt.savefig(
-    f"individual_dropsondes_PERCUSION_HALO_{flightdate}.png",
+    f"../figures/individual_dropsondes_PERCUSION_HALO_{flightdate}.png",
     bbox_inches="tight",
 )

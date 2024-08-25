@@ -5,6 +5,7 @@ from datetime import datetime
 import cartopy.crs as ccrs
 import matplotlib.ticker as mticker
 from cartopy.mpl.gridliner import LONGITUDE_FORMATTER, LATITUDE_FORMATTER
+from orcestra.flightplan import LatLon, path_preview
 
 from quickgrid import grid_together, derived_products
 from quicklooks import goes_overlay, dropsondes_overlay
@@ -83,19 +84,16 @@ goes_overlay(sat_time_str, ax)
 ################ PLOT DROPSONDES #############
 
 path_to_dropsondes = f"/Volumes/ORCESTRA/{flight_name}/dropsondes"
-print(glob.glob("path_to_dropsondes/*"))
 
 # Regrid
-
 dropsonde_ds = grid_together(path_to_dropsondes)
 dropsonde_ds = derived_products(dropsonde_ds)
 
 # Plot
-
-dropsondes_overlay(dropsonde_ds, ax)
+dropsondes_overlay(dropsonde_ds, ax, colormap="Blues_r")
 
 # Save
 plt.savefig(
-    f"IWV_QL_dropsondes_PERCUSION_HALO_{flight_time.strftime("%Y%m%d")}.png",
+    f"../figures/IWV_dropsondes_GOES_PERCUSION_HALO_{flight_time.strftime("%Y%m%d")}.png",
     bbox_inches="tight",
 )

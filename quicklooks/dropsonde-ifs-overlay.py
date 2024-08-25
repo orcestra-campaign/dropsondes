@@ -5,54 +5,10 @@ from datetime import datetime
 import cartopy.crs as ccrs
 import matplotlib.ticker as mticker
 from cartopy.mpl.gridliner import LONGITUDE_FORMATTER, LATITUDE_FORMATTER
-from matplotlib import colors
-from mpl_toolkits.axes_grid1 import make_axes_locatable
 
-from orcestra.flightplan import plot_cwv, LatLon, path_preview
+from orcestra.flightplan import LatLon, path_preview
 import intake
 import easygems.healpix as egh
-
-
-## -------------------------------------------
-################ DEFINE PLOTTING FUNCTION ################
-
-
-def dropsondes_overlay(
-    dropsonde_ds,
-    ax,
-    variable="iwv",
-    variable_label=r"Integrated Water Vapor / kg m$^{-2}$",
-    colormap="Blues",
-    alpha=1,
-    vmin=45,
-    vmax=70,
-    nlevels=9,
-):
-    cmap = plt.cm.Blues
-    levels = np.linspace(vmin, vmax, nlevels)
-    norm = colors.BoundaryNorm(levels, cmap.N)
-
-    im_launches = ax.scatter(
-        dropsonde_ds["lon"].isel(alt=10),
-        dropsonde_ds["lat"].isel(alt=10),
-        marker="o",
-        edgecolor="grey",
-        s=40,
-        transform=ccrs.PlateCarree(),
-        c=dropsonde_ds[variable],
-        cmap=colormap,
-        zorder=10,
-        norm=norm,
-    )
-
-    divider = make_axes_locatable(ax)
-    cax = divider.append_axes("bottom", size="3%", pad=0.4, axes_class=plt.Axes)
-    cbar = plt.colorbar(im_launches, cax=cax, orientation="horizontal", ticks=levels)
-    cbar.set_label(variable_label)
-    cbar.set_ticks(levels)
-    cbar.set_label(variable_label)
-
-    return im_launches
 
 
 # -------------------------------------------
@@ -133,9 +89,6 @@ cat = intake.open_catalog("https://tcodata.mpimet.mpg.de/internal.yaml")
 ds = cat.HIFS(datetime=issued_time).to_dask().pipe(egh.attach_coords)
 cwv_flight_time = ds["tcwv"].sel(time=flight_time, method="nearest")
 
-plot_cwv(cwv_flight_time)
-
-
 # # -------------------------------------------
 ################ PLOT DROPSONDES #############
 
@@ -149,6 +102,6 @@ dropsondes_overlay(dropsonde_ds, ax, colormap="Blues", alpha=0.75, nlevels=9)
 
 # Save
 plt.savefig(
-    f"IWV_dropsondes_IFS_PERCUSION_HALO_{flight_time.strftime("%Y%m%d")}.png",
+    f"../figures/IWV_dropsondes_IFS_PERCUSION_HALO_{flight_time.strftime("%Y%m%d")}.png",
     bbox_inches="tight",
 )
