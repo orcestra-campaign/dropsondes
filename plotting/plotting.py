@@ -216,28 +216,42 @@ def launch_locations_map(ds_flight, flight_id, fs=14):
 def lat_time_plot(ds_flight, flight_id, fs=14):
     print("Plotting spatio-temporal variation (lat v/s time) with IWV...")
 
-    plt.scatter(
+    # Create the figure and axis
+    fig, ax = plt.subplots(figsize=(15, 5))
+
+    # Plotting
+    scatter = ax.scatter(
         ds_flight["launch_time"].values,
         ds_flight["lat"].isel(alt=-700).values,
         s=90,
-        c=ds_flight["iwv"],
+        c=ds_flight["iwv"].values,
         edgecolor="grey",
         cmap="Blues_r",
     )
-    plt.xlim(
+
+    # Set x-axis limits
+    ax.set_xlim(
         np.min(ds_flight["launch_time"].values) - np.timedelta64(4, "m"),
         np.max(ds_flight["launch_time"].values) + np.timedelta64(4, "m"),
     )
-    plt.gca().spines["right"].set_visible(False)
-    plt.gca().spines["top"].set_visible(False)
-    g = plt.colorbar()
-    g.set_label("IWV / kg m$^{-2}$", fontsize=fs - 2)
 
+    # Hide the top and right spines
+    ax.spines["right"].set_visible(False)
+    ax.spines["top"].set_visible(False)
+
+    # Add colorbar
+    cbar = plt.colorbar(scatter, ax=ax)
+    cbar.set_label("IWV / kg m$^{-2}$", fontsize=fs - 2)
+
+    # Format the x-axis with time
     myFmt = mdates.DateFormatter("%H:%M")
-    plt.gca().xaxis.set_major_formatter(myFmt)
-    plt.xlabel("Time / UTC", fontsize=fs)
-    plt.ylabel("Latitude / $\degree$N", fontsize=fs)
+    ax.xaxis.set_major_formatter(myFmt)
 
+    # Set labels
+    ax.set_xlabel("Time / UTC", fontsize=fs)
+    ax.set_ylabel("Latitude / $\degree$N", fontsize=fs)
+
+    # Save the figure
     plt.savefig(
         f"../figures/HALO-{flight_id}a/HALO_Dropsondes-spatiotemporal_variation_iwv-{flight_id}.png",
         bbox_inches="tight",
@@ -346,7 +360,7 @@ def drift_plots(ds_flight, flight_id, fs=14):
     )
 
 
-def all_quicklook_plots(ds_flight, flight_id, fs=14):
+def all_quicklook_plots(ds_flight, flight_id):
     launch_locations_map(ds_flight, flight_id)
     lat_time_plot(ds_flight, flight_id)
     profiles_from_ds(ds_flight, flight_id)
