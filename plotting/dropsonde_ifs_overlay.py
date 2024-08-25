@@ -10,6 +10,8 @@ from orcestra.flightplan import LatLon, path_preview
 import intake
 import easygems.healpix as egh
 
+from plotting import dropsondes_overlay
+
 
 # -------------------------------------------
 ################ PLOT FLIGHT ################

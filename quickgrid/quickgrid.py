@@ -20,7 +20,6 @@ def grid_together(
 
     g = 0
     fail_counter = 0
-    fail_sondes = []
     for i in tqdm(allfiles):
         sonde = i.replace(f"{l1_dir}", "").replace("QC.nc", "")
 
@@ -48,7 +47,6 @@ def grid_together(
             print(print_msg)
 
             fail_counter += 1
-            fail_sondes.append(sonde)
 
         else:
             ori_list[g] = (
@@ -71,8 +69,6 @@ def grid_together(
 
     ds_list = list(filter(None, ori_list))
     ds_flight = xr.concat(ds_list, dim="launch_time")
-
-    fail_sondes_list = "".join(fail_sondes)
 
     logging.info(
         f"{fail_counter} out of the {len(allfiles)} sondes provided did not contain enough data and hence have been excluded from this quick processing."

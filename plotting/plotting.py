@@ -4,7 +4,6 @@ import xarray as xr
 import matplotlib.cm as cm
 from datetime import datetime
 from goes2go.data import goes_nearesttime
-import matplotlib.pyplot as plt
 import cartopy.crs as ccrs
 from mpl_toolkits.axes_grid1 import make_axes_locatable
 from matplotlib import colors
