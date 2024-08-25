@@ -101,6 +101,7 @@ def individual_sondes_profiles(
     variables,
     units,
     colormap="viridis",
+    fs=14,
 ):
     """
     Plot for individual selected sondes. Plotting profiles of variables listed for sondes listed. One should also provide
@@ -215,7 +216,6 @@ def launch_locations_map(ds_flight, flight_id, fs=14):
 def lat_time_plot(ds_flight, flight_id, fs=14):
     print("Plotting spatio-temporal variation (lat v/s time) with IWV...")
 
-    ax = plt.figure(figsize=(15, 5))
     plt.scatter(
         ds_flight["launch_time"].values,
         ds_flight["lat"].isel(alt=-700).values,
