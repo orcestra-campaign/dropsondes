@@ -167,17 +167,17 @@ def launch_locations_map(ds_flight, flight_id, fs=14):
         ds_flight["lat"].isel(alt=-700),
         marker="o",
         edgecolor="grey",
-        s=100,
+        s=60,
         transform=ccrs.PlateCarree(),
         c=ds_flight["iwv"],
         cmap="Blues_r",
     )
 
     # Set plot boundaries
-    lon_w = -33
+    lon_w = -35
     lon_e = -13
-    lat_s = 3
-    lat_n = 23
+    lat_s = 1
+    lat_n = 22
     ax.set_extent([lon_w, lon_e, lat_s, lat_n], crs=ccrs.PlateCarree())
 
     # Assigning axes ticks
@@ -201,7 +201,7 @@ def launch_locations_map(ds_flight, flight_id, fs=14):
     gl.ylabel_style = {"size": fs, "color": "k"}
 
     # Colorbar adjustments
-    cax = fig.add_axes([0.25, 0.05, 0.5, 0.02])
+    cax = fig.add_axes([0.25, 0.001, 0.5, 0.02])
     cbar = fig.colorbar(im, cax=cax, orientation="horizontal")
     cbar.set_label("Integrated Water Vapour (kg m$^{-2}$)", fontsize=fs)
     cbar.ax.tick_params(labelsize=fs - 2)
