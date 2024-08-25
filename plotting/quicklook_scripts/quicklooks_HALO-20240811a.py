@@ -1,7 +1,7 @@
 import sys
 import os
 
-sys.path.append(os.path.abspath(os.path.join(os.getcwd(), "..", "plotting")))
+sys.path.append(os.path.abspath(os.path.join(os.getcwd(), "..")))
 from quickgrid import grid_together, derived_products
 from plotting import all_quicklook_plots
 from datetime import datetime

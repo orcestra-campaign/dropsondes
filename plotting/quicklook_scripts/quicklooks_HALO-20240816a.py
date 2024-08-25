@@ -1,12 +1,12 @@
 import sys
 import os
 
-sys.path.append(os.path.abspath(os.path.join(os.getcwd(), "..", "plotting")))
+sys.path.append(os.path.abspath(os.path.join(os.getcwd(), "..")))
 from quickgrid import grid_together, derived_products
 from plotting import all_quicklook_plots
 from datetime import datetime
 
-flight_time = datetime(2024, 8, 18, 0, 0, 0)
+flight_time = datetime(2024, 8, 16, 0, 0, 0)
 flight_id = flight_time.strftime("%Y%m%d")
 
 # Flight directory
