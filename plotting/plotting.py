@@ -171,6 +171,8 @@ def launch_locations_map(ds_flight, flight_id, fs=14):
         transform=ccrs.PlateCarree(),
         c=ds_flight["iwv"],
         cmap="Blues_r",
+        vmin=45,
+        vmax=70,
     )
 
     # Set plot boundaries
@@ -227,6 +229,8 @@ def lat_time_plot(ds_flight, flight_id, fs=14):
         c=ds_flight["iwv"].values,
         edgecolor="grey",
         cmap="Blues_r",
+        vmin=45,
+        vmax=70,
     )
 
     # Set x-axis limits
@@ -262,7 +266,7 @@ def profiles_from_ds(ds_flight, flight_id, fs=14):
     row = 1
     col = 4
 
-    f, ax = plt.subplots(row, col, sharey=True, figsize=(12, 6))
+    fig, ax = plt.subplots(row, col, sharey=True, figsize=(12, 6))
 
     r = ["tdry", "theta", "rh", "wspd", "wdir"]
     r_titles = [
@@ -278,7 +282,6 @@ def profiles_from_ds(ds_flight, flight_id, fs=14):
     for j in range(col):
         d = ds_flight[r[j]]
         for i in range(1, len(ds_flight["launch_time"]) - 1):
-            #     if i != 11
             ax[j].plot(
                 d.isel(launch_time=i),
                 ds_flight["alt"] / 1000,
