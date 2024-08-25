@@ -262,16 +262,17 @@ def lat_time_plot(ds_flight, flight_id, fs=14):
     )
 
 
-def profiles_from_ds(ds_flight, flight_id, fs=14):
+def all_profiles(ds_flight, flight_id, fs=14):
     row = 1
-    col = 4
+    col = 5
 
-    fig, ax = plt.subplots(row, col, sharey=True, figsize=(12, 6))
+    fig, ax = plt.subplots(row, col, sharey=True, figsize=(14, 6))
 
-    r = ["tdry", "theta", "rh", "wspd", "wdir"]
+    r = ["tdry", "theta", "theta_v", "rh", "wspd", "wdir"]
     r_titles = [
         "T / $\degree$C",
         "$\\theta$ / K",
+        "$\\theta_v$ / K",
         "RH / %",
         "Wind speed / ms$^{-1}$",
         "Wind direction / $\degree$",
@@ -366,5 +367,5 @@ def drift_plots(ds_flight, flight_id, fs=14):
 def all_quicklook_plots(ds_flight, flight_id):
     launch_locations_map(ds_flight, flight_id)
     lat_time_plot(ds_flight, flight_id)
-    profiles_from_ds(ds_flight, flight_id)
+    all_profiles(ds_flight, flight_id)
     drift_plots(ds_flight, flight_id)
