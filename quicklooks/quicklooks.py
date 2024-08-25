@@ -10,29 +10,38 @@ from mpl_toolkits.axes_grid1 import make_axes_locatable
 from matplotlib import colors
 
 
-def quicklooks_l2_profiles(flight_id, ds_list, filepath_list, loc_list, save_path):
-    # Define the variables to plot
-    variables = ["u", "v", "ta", "rh", "p"]
-    units = [r"m/s", r"m/s", "K", "[0-1]", "Pa"]
+def individual_sondes_profiles(
+    flight_id,
+    filepath_list,
+    sonde_ds_list,
+    loc_list,
+    variables,
+    units,
+    colormap="viridis",
+):
+    """
+    Plot for individual selected sondes. Plotting profiles of variables listed for sondes listed. One should also provide
+    a list of locations of the sondes (e.g. "east on north circle" or "north on ATR circle").
+    """
 
     # Create a colormap
-    cmap = cm.get_cmap("viridis", len(ds_list))
+    cmap = cm.get_cmap(colormap, len(sonde_ds_list))
 
     # Create a figure with subplots
     fig, axs = plt.subplots(
-        1, 5, figsize=(18, 8), sharey=True
+        1, len(variables), figsize=(18, 8), sharey=True
     )  # 1 row, 5 columns, adjusted figure size
     fs = 14
 
     for i, var in enumerate(variables):
-        for j, sonde in enumerate(ds_list):
+        for j, sonde in enumerate(sonde_ds_list):
             file_name = filepath_list[j].split("/")[-1]
             timestamp = file_name.split("_")[2].split(".")[0]
             time_only = timestamp.split("T")[1][:5]
 
             # Plot on each subplot
             color = cmap(j)
-            axs[i].scatter(
+            im_profiles = axs[i].scatter(
                 sonde[var],
                 sonde.gpsalt,
                 c=color,
@@ -47,14 +56,9 @@ def quicklooks_l2_profiles(flight_id, ds_list, filepath_list, loc_list, save_pat
 
     axs[0].set_ylabel("Altitude / m", fontsize=fs)
     axs[2].legend(fontsize=fs - 3)
-    plt.suptitle(f"Level 2 Quicklooks for {flight_id}", fontsize=fs + 2)
+    plt.suptitle(f"{flight_id} (Level 2)", fontsize=fs + 2)
 
-    # Adjust spacing if needed
-    plt.tight_layout()
-
-    # Show the plot
-    plt.savefig(save_path, dpi=200, bbox_inches="tight")
-    plt.show()
+    return im_profiles
 
 
 def convert_time_to_str(time=None, time_format="%Y%m%d %H:%M:%S"):
