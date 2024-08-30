@@ -2,7 +2,6 @@ import numpy as np
 import xarray as xr
 import matplotlib.cm as cm
 import matplotlib.pyplot as plt
-from goes2go.data import goes_nearesttime
 from mpl_toolkits.axes_grid1 import make_axes_locatable
 from matplotlib import colors
 import matplotlib.ticker as mticker
@@ -43,6 +42,8 @@ def _create_GOES_variable(goes_object: xr.Dataset, variable: str, gamma: float =
 def goes_overlay(
     image_date, ax, satellite="16", product="ABI", domain="F", variable="TrueColor"
 ):
+    from goes2go.data import goes_nearesttime
+
     snapshot = goes_nearesttime(
         image_date, satellite=satellite, product=product, domain=domain
     )
@@ -210,7 +211,7 @@ def launch_locations_map(ds_flight, flight_id, fs=14):
 
     # Save the figure
     plt.savefig(
-        f"../figures/HALO-{flight_id}a/HALO_Dropsondes-launch_locations_iwv-{flight_id}.png",
+        f"../../figures/HALO-{flight_id}a/HALO_Dropsondes-launch_locations_iwv-{flight_id}.png",
         bbox_inches="tight",
     )
 
@@ -257,7 +258,7 @@ def lat_time_plot(ds_flight, flight_id, fs=14):
 
     # Save the figure
     plt.savefig(
-        f"../figures/HALO-{flight_id}a/HALO_Dropsondes-spatiotemporal_variation_iwv-{flight_id}.png",
+        f"../../figures/HALO-{flight_id}a/HALO_Dropsondes-spatiotemporal_variation_iwv-{flight_id}.png",
         bbox_inches="tight",
     )
 
@@ -304,7 +305,7 @@ def all_profiles(ds_flight, flight_id, fs=14):
             ax[j].set_ylabel("Altitude (km)", fontsize=fs)
 
     plt.savefig(
-        f"../figures/HALO-{flight_id}a/HALO_Dropsondes-vertical_profiles_measured_quantities-{flight_id}.png",
+        f"../../figures/HALO-{flight_id}a/HALO_Dropsondes-vertical_profiles_measured_quantities-{flight_id}.png",
         bbox_inches="tight",
     )
 
@@ -359,7 +360,7 @@ def drift_plots(ds_flight, flight_id, fs=14):
         ax[1].spines["left"].set_visible(False)
 
     plt.savefig(
-        f"../figures/HALO-{flight_id}a/HALO_Dropsondes-drift_in_lat_lon-{flight_id}.png",
+        f"../../figures/HALO-{flight_id}a/HALO_Dropsondes-drift_in_lat_lon-{flight_id}.png",
         bbox_inches="tight",
     )
 
