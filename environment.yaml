@@ -19,7 +19,11 @@ dependencies:
   - xarray
   - pip
   - pip:
+    - ipfsspec
+    - ruamel.yaml
     - sphinx-autodoc2
     - sphinx-book-theme
     - sphinx-last-updated-by-git
+    - tqdm
+    - typhon
     - git+https://github.com/atmdrops/pydropsonde.git#egg=pydropsonde 
