@@ -36,7 +36,7 @@ config = data_utils.get_config(config_path)
 
 flight_id_template = config["OPTIONAL"]["path_to_l0_files"]
 path_to_flight_ids = config["OPTIONAL"]["path_to_flight_ids"]
-flight_ids = [f for f in os.listdir(path_to_flight_ids) if "HALO-" in f]
+flight_ids = [f for f in sorted(os.listdir(path_to_flight_ids)) if "HALO-" in f]
 # %%
 
 # add raw data to tree
