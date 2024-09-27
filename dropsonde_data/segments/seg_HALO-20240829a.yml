@@ -1,0 +1,24 @@
+## yaml file to not raise error in lev4
+flight_id: HALO-20240829a
+platform: HALO
+segments:
+- kinds:
+  - circle
+  segment_id: c1
+  start: 2024-08-29 14:05:00
+  end: 2024-08-29 15:05:00
+- kinds:
+  - circle
+  segment_id: c2
+  start: 2024-08-29 16:14:00
+  end: 2024-08-29 17:06:00
+- kinds:
+  - circle
+  segment_id: c3
+  start: 2024-08-29 17:45:00
+  end: 2024-08-29 18:41:00
+- kinds:
+  - circle
+  segment_id: c4
+  start: 2024-08-29 19:11:00
+  end: 2024-08-29 19:47:00
