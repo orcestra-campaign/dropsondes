@@ -52,7 +52,7 @@ for level in level_dirs:
         tree["products"]["HALO"]["dropsondes"][f"{level}"] = {}
     fl_path = os.path.join(product_path, level)
     flight_ids = [f for f in sorted(os.listdir(fl_path)) if "HALO-" in f]
-    for flight in tqdm(flight_ids):
+    for flight in tqdm(sorted(flight_ids)):
         path_to_flight = os.path.join(fl_path, flight)
         lev_sonde = path2ipfs(path_to_flight)
 
