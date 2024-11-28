@@ -14,7 +14,7 @@ import droputils.data_utils as data_utils  # noqa: E402
 def path2ipfs(path):
     ret = subprocess.run(
         [
-            "/opt/homebrew/Cellar/ipfs/0.30.0/bin//ipfs",
+            "ipfs",
             "add",
             "--recursive",
             "--hidden",
