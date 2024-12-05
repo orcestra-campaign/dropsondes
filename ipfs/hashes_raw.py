@@ -31,7 +31,7 @@ def path2ipfs(path):
 yaml = ruamel.yaml.YAML(typ="rt")
 tree = yaml.load(open("../../ipfs_tools/tree.yaml", "r"))
 # %%
-config_path = "/Users/helene/Documents/Orcestra/playground/run_complete_orcestra/complete_orcestra.cfg"
+config_path = "/Users/helene/Documents/Orcestra/playground/run_complete_orcestra/helene_complete_orcestra.cfg"
 config = data_utils.get_config(config_path)
 
 flight_id_template = config["OPTIONAL"]["path_to_l0_files"]
