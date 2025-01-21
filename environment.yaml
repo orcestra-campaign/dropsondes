@@ -8,7 +8,6 @@ dependencies:
   - cartopy
   - certifi
   - ipython
-  - metpy
   - myst-parser
   - numpy
   - nbsphinx
@@ -19,9 +18,10 @@ dependencies:
   - sphinx
   - sphinx-autobuild
   - xarray
+  - zarr<3.0.0
   - pip
   - pip:
     - sphinx-autodoc2
     - sphinx-book-theme
     - sphinx-last-updated-by-git
-    - git+https://github.com/atmdrops/pydropsonde.git#egg=pydropsonde 
+    - pydropsonde
