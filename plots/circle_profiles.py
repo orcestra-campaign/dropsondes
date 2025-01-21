@@ -118,7 +118,7 @@ fig.suptitle(f"Flight {flight_id} (circle means)")
 for ax in axes[-2:].flatten():
     ax.axvline(0, color="grey", alpha=0.5)
 axes[0].set_ylabel(
-    f'{ds_c[alt_var].attrs['long_name']} / {ds_c[alt_var].attrs['units']} '
+    f"{ds_c[alt_var].attrs['long_name']} / {ds_c[alt_var].attrs['units']} "
 )
 axes[0].legend()
 for ax in axes[1:].flatten():
