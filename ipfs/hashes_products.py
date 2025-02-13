@@ -7,7 +7,6 @@ from tqdm import tqdm
 
 sys.path.append("./")
 sys.path.append("../")
-import droputils.data_utils as data_utils  # noqa: E402
 
 
 # %%
@@ -31,10 +30,10 @@ def path2ipfs(path):
 yaml = ruamel.yaml.YAML(typ="rt")
 tree = yaml.load(open("../../ipfs_tools/tree.yaml", "r"))
 # %%
-config_path = "/Users/helene/Documents/Orcestra/playground/run_complete_orcestra/helene_complete_orcestra.cfg"
-config = data_utils.get_config(config_path)
+# config_path = "/Users/helene/Documents/Orcestra/playground/run_complete_orcestra/helene_complete_orcestra.cfg"
+# config = data_utils.get_config(config_path)
 
-product_path = config["OPTIONAL"]["product_dir"]
+product_path = "/Users/helene/Documents/Data/Dropsonde/dropsonde_data/products/"  # config["OPTIONAL"]["product_dir"]
 # %%
 
 # Ensure the structure exists and initialize empty dicts if they don't exist
@@ -57,8 +56,8 @@ for level in level_dirs:
         lev_sonde = path2ipfs(path_to_flight)
 
         tree["products"]["HALO"]["dropsondes"][f"{level}"][f"{flight}"] = lev_sonde
-
-level_dirs = ["Level_3", "Level_4"]
+# %%
+level_dirs = ["Level_3", "Level_3_qc"]
 for level in tqdm(level_dirs):
     path2lev = os.path.join(product_path, level)
     lev_sonde = path2ipfs(path2lev)
@@ -69,3 +68,4 @@ with open("../../ipfs_tools/tree.yaml", "w") as file:
     yaml.dump(tree, file)
 
 # %%
+# ipfs dag export <cid> > <cid>.car
