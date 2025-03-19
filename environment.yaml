@@ -15,6 +15,7 @@ dependencies:
   - netcdf4
   - openssl
   - pre-commit
+  - pytest
   - seaborn
   - sphinx
   - sphinx-autobuild
