@@ -23,6 +23,7 @@ dependencies:
   - zarr<3.0.0
   - pip
   - pip:
+    - eurec4a
     - ipfsspec>=0.5.3
     - orcestra
     - sphinx-autodoc2
