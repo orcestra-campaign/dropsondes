@@ -1,6 +1,14 @@
 name: test
 
-on: [push, pull_request]
+on:
+  push:
+    paths:
+      - 'environment.yaml'
+      - 'orcestra_drop.cfg'
+  pull_request: 
+    paths:
+      - 'environment.yaml'
+      - 'orcestra_drop.cfg'
 
 jobs:
   test:
