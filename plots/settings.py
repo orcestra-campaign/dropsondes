@@ -4,3 +4,5 @@ colors = {
     "atr": "#FFA500",
     "extra-sondes": "#23E9FF",
 }
+
+root = "ipfs://QmSgY99MScFdqhwroLg7QLSGhkLhtuaMijjrX9yxqGLxcG"
