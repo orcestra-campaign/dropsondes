@@ -60,3 +60,38 @@ sns.despine(offset={"left": 10})
 fig.tight_layout()
 
 fig.savefig("../images/omega_error_2d.png")
+# %%
+plt.style.use("./beach.mplstyle")
+
+sonde_idx = np.insert(np.cumsum(lev4.sondes_per_circle), 0, 0)
+sns.set_palette("bright")
+circles = [13, 23, 28, 31, 54, 80, 87]
+fig, axes = plt.subplots(ncols=2, figsize=(12, 6), sharey=True, sharex=True)
+for circle in circles:
+    ds = lev4.sel(circle=circle)
+    sonde_ds = lev4.sel(
+        sonde=slice(sonde_idx[circle].values, sonde_idx[circle + 1].values)
+    )
+    for ax in axes:
+        ds.omega.plot(y="altitude", ax=ax, label=ds.circle_id.values)
+    axes[0].fill_betweenx(
+        ds.altitude,
+        ds.omega - ds.omega_std_error,
+        ds.omega + ds.omega_std_error,
+        alpha=0.2,
+    )
+
+    axes[1].fill_betweenx(
+        ds.altitude,
+        ds.omega + sonde_ds.omega_sonde_relevance.min(),
+        ds.omega + sonde_ds.omega_sonde_relevance.max(),
+        alpha=0.2,
+    )
+axes[1].set_ylabel("")
+axes[0].set_title("Regression Standard Error")
+axes[1].set_title("Sonde Relevance for Circle")
+for ax in axes:
+    ax.set_xlabel("omega / hPa hr-1")
+axes[0].legend(fontsize=12, loc=2)
+sns.despine(offset={"left": 10})
+fig.savefig("../images/error_meassures.pdf", bbox_inches="tight")
