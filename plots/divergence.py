@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import xarray as xr
 import numpy as np
 import settings
-
+import eurec4a
 
 # %%
 l4_path = f"{settings.root}/products/HALO/dropsondes/Level_4/PERCUSION_Level_4.zarr"
@@ -63,3 +63,62 @@ ax1.set_xlim(ax.get_xlim())
 # ax.set_ylim(0, 2500)
 
 fig.savefig("../images/divergence.png", transparent=True, bbox_inches="tight")
+
+# %%
+# %% div lowest 2500 m
+circle_flights = get_nb_circles_per_flight(ds_lev4)
+
+
+plt.style.use("./beach.mplstyle")
+fig, ax = plt.subplots(figsize=(24, 6))
+im = (
+    (ds_lev4.div)
+    .sel(circle=slice(None, 43))
+    .plot(
+        cmap="coolwarm",
+        ax=ax,
+        y="altitude",
+        center=0,
+        vmin=-3e-5,
+        vmax=3e-5,
+        add_colorbar=False,
+    )
+)
+fig.subplots_adjust(right=0.93)
+cax = fig.add_axes([0.95, 0.15, 0.01, 0.7])
+fig.colorbar(im, cax=cax, label="divergence / s-1", extend="both")
+nb_circ = 0
+ax.set_xlabel("")
+ax.set_ylabel("Altitude / m")
+
+ax.set_ylim(0, 2500)
+
+fig.savefig("../images/divergence_east_low.png", bbox_inches="tight")
+# %%
+# %% div to mean lowest 2500 m
+circle_flights = get_nb_circles_per_flight(ds_lev4)
+
+cat = eurec4a.get_intake_catalog()
+joanne = cat.dropsondes.JOANNE.level4.to_dask()
+
+
+plt.style.use("./beach.mplstyle")
+fig, ax = plt.subplots(figsize=(24, 6))
+im = (joanne.D).plot(
+    cmap="coolwarm",
+    ax=ax,
+    y="alt",
+    center=0,
+    vmin=-3e-5,
+    vmax=3e-5,
+    add_colorbar=False,
+)
+fig.subplots_adjust(right=0.93)
+cax = fig.add_axes([0.95, 0.15, 0.01, 0.7])
+fig.colorbar(im, cax=cax, label="divergence / s-1", extend="both")
+ax.set_xlabel("")
+ax.set_ylabel("Altitude / m")
+
+ax.set_ylim(0, 2500)
+
+fig.savefig("../images/divergence_joanne_low.png", bbox_inches="tight")
