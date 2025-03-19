@@ -2,30 +2,51 @@
 import xarray as xr
 import matplotlib.pyplot as plt
 import cartopy.crs as ccrs
+import cartopy
+import numpy as np
+import settings
+
 
 # %%
 
-root = "ipns://latest.orcestra-campaign.org/"
 ds = xr.open_dataset(
-    f"{root}/products/HALO/dropsondes/Level_3/PERCUSION_Level_3.zarr", engine="zarr"
+    f"{settings.root}/products/HALO/dropsondes/Level_3/PERCUSION_Level_3.zarr",
+    engine="zarr",
 )
-# %%
+# %% wind direction
 
-ds_sfc = ds.sel(gpsalt=slice(0, 50)).mean("gpsalt").load()
-# %%
+ds_sfc = ds.sel(altitude=slice(0, 50)).mean("altitude")
+
+plt.style.use("./beach.mplstyle")
+lon_min, lon_max, lat_min, lat_max = -65, -15, 0, 23
 cmap = "twilight_shifted"
-lon_min, lon_max, lat_min, lat_max = -65, -15, -2, 22
 
-
-fig, ax = plt.subplots(figsize=(12, 6), subplot_kw={"projection": ccrs.PlateCarree()})
-
+fig, ax = plt.subplots(
+    figsize=(10.5, 6), subplot_kw=dict(projection=ccrs.PlateCarree())
+)
+gl = ax.gridlines(crs=ccrs.PlateCarree(), draw_labels=True, alpha=0.25)
+gl.top_labels = False
+gl.right_labels = False
 ax.set_extent([lon_min, lon_max, lat_min, lat_max], crs=ccrs.PlateCarree())
-p = ax.scatter(ds_sfc.lon.values, ds_sfc.lat.values, c=ds_sfc.w_dir, cmap=cmap)
-ax.coastlines(alpha=1.0)
-ax.gridlines(draw_labels=True, dms=True, x_inline=False, y_inline=False, alpha=0.25)
+ax.add_feature(cartopy.feature.LAND, zorder=0, edgecolor="black", facecolor="lightgrey")
 
-# fig.tight_layout()
-fig.subplots_adjust(left=0, right=0.9)
-cax = fig.add_axes([0.92, 0.09, 0.02, 0.8])
-fig.colorbar(p, cax=cax, shrink=0.5)
-fig.savefig("../images/w_dir.pdf")
+ax.set_title("Surface wind direction")
+
+p = ax.scatter(ds_sfc.lon.values, ds_sfc.lat.values, c=ds_sfc.w_dir, cmap=cmap)
+
+ax1 = fig.add_axes((0.88, 0.2, 0.1, 0.1), projection="polar")
+
+azimuths = np.arange(0, 361, 1)
+zeniths = np.arange(40, 70, 1)
+values = azimuths * np.ones((30, 361))
+ax1.pcolormesh(azimuths * np.pi / 180.0, zeniths, values, cmap=cmap)
+ax1.set_yticklabels("")
+ax1.set_theta_zero_location("N")
+ax1.set_theta_direction(-1)
+ax1.set_xticks(np.deg2rad([0, 45, 90, 135, 180, 225, 270, 315]))
+ax1.set_xticklabels(["N", "", "E", "", "S", "", "W", ""])
+ax1.tick_params(axis="x", which="major", pad=-1)
+ax1.grid(False)
+
+fig.tight_layout()
+fig.savefig("../images/w_dir.png", dpi=300)
