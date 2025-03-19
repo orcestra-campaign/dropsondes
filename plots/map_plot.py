@@ -50,3 +50,38 @@ ax1.grid(False)
 
 fig.tight_layout()
 fig.savefig("../images/w_dir.png", dpi=300)
+
+
+# %% iwv
+ds_iwv = ds.iwv
+
+plt.style.use("./beach.mplstyle")
+lon_min, lon_max, lat_min, lat_max = -65, -15, 0, 23
+cmap = "BrBG"
+
+fig, ax = plt.subplots(
+    figsize=(10.5, 6), subplot_kw=dict(projection=ccrs.PlateCarree())
+)
+gl = ax.gridlines(crs=ccrs.PlateCarree(), draw_labels=True, alpha=0.25)
+gl.top_labels = False
+gl.right_labels = False
+ax.set_extent([lon_min, lon_max, lat_min, lat_max], crs=ccrs.PlateCarree())
+ax.add_feature(cartopy.feature.LAND, zorder=0, edgecolor="black", facecolor="lightgrey")
+
+ax.set_title("Integrated water vapor")
+
+p = ax.scatter(
+    ds_iwv.aircraft_longitude.values,
+    ds_iwv.aircraft_latitude.values,
+    c=ds_iwv,
+    cmap=cmap,
+    vmin=25,
+    vmax=71,
+)
+
+cax = fig.add_axes((0.92, 0.15, 0.02, 0.3))
+cb = fig.colorbar(p, cax=cax, ticks=[30, 48, 55, 70], extend="max")
+
+
+fig.tight_layout()
+fig.savefig("../images/map_iwv.png", dpi=300)
