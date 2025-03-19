@@ -1,57 +1,76 @@
 # %%
 import matplotlib.pyplot as plt
 import seaborn as sns
-import xhistogram.xarray as xh
 import xarray as xr
 import numpy as np
+import settings
 
 # %%
-
-root = "ipfs://Qmbx6KSDfviFFi7f5XXQLB6MSTPhWnN1rNkCCKhyhaa7CA"
 ds = xr.open_dataset(
-    f"{root}/products/HALO/dropsondes/Level_3_qc/PERCUSION_Level_3.zarr", engine="zarr"
+    f"{settings.root}/products/HALO/dropsondes/Level_3/PERCUSION_Level_3_qc.zarr",
+    engine="zarr",
 )
 
 # %%
-colors = ["#689F38", "#1976D2", "#FFA000", "#7B1FA2"]
+
+
+colors = ["C2", "C0", "C1", "C2", "C3"]
 
 nb_bins = 50
-variables = ["u", "rh", "ta", "p"]
+variables = ["u", "rh", "ta"]  # , "p"]
 bins_fullness = np.linspace(0, 1, nb_bins)
 bins_count = np.linspace(0, 210, nb_bins)
-bins_extend = np.linspace(0, 1, nb_bins)
+bins_extend = np.linspace(0, 15000, nb_bins)
 var = variables[0]
 
+plt.style.use("./beach.mplstyle")
 fig, axes = plt.subplots(ncols=3, figsize=(18, 6))
 for var, color in zip(variables, colors):
-    h_fullness = xh.histogram(
-        ds[var + "_profile_fullness_fraction"], bins=[bins_fullness]
+    sns.histplot(
+        ds[var + "_profile_sparsity_fraction"],
+        alpha=0.5,
+        stat="probability",
+        kde=True,
+        element="step",
+        ax=axes[0],
+        color=color,
     )
-    h_fullness.plot(ax=axes[0], color=color, label=var)
-    h_count = xh.histogram(ds[var + "_near_surface_count"], bins=[bins_count])
-    h_count.plot(ax=axes[1], color=color, label=var)
-    ext = ds[var + "_profile_extend_max_diff"] / ds["aircraft_msl_altitude"]
-    ext.name = "extend"
-    h_extend = xh.histogram(ext, bins=[bins_extend])
-    h_extend.plot(ax=axes[2], color=color, label=var)
+    sns.histplot(
+        ds[var + "_near_surface_count"],
+        alpha=0.5,
+        stat="probability",
+        kde=True,
+        element="step",
+        ax=axes[1],
+        color=color,
+    )
+    sns.histplot(
+        ds[var + "_profile_extent_max"],
+        alpha=0.5,
+        stat="probability",
+        bins=200,
+        element="step",
+        ax=axes[2],
+        color=color,
+    )
+
 ax = axes[0]
-ax.set_xlabel("Profile Fullness Fraction")
-ax.set_ylabel("Number of Sondes")
-ax.set_xlim(0.5, 1)
+ax.set_xlabel("Profile Sparsity Fraction")
+ax.set_ylabel("")
+ax.set_xlim(0, 0.5)
 ax.legend()
-ax.axvline(0.8, color="gray", alpha=0.5)
+ax.axvline(0.2, color="gray", alpha=0.5)
 ax = axes[1]
 ax.set_ylabel("")
-ax.set_xlabel("Number of Near-Surface Measurements")
+ax.set_xlabel("# Near-Surface Measurements")
 ax.axvline(50, color="gray", alpha=0.5)
 ax.legend()
 ax = axes[2]
 ax.set_ylabel("")
-ax.set_xlabel("(aircraft_msl_altitude - profile_max) / aircraft_msl_altitude")
+ax.set_xlabel("Profile Extent / m")
 ax.legend()
-ax.axvline(0.2, color="gray", alpha=0.5)
-ax.set_xlim(0, 0.5)
-sns.despine(offset=10)
+ax.axvline(8000, color="gray", alpha=0.5)
+ax.set_xlim(0, 15500)
 fig.savefig(
     "../images/qc_distribution.png",
 )
