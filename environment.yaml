@@ -7,6 +7,7 @@ dependencies:
   - ca-certificates
   - cartopy
   - certifi
+  - ipykernel
   - ipython
   - myst-parser
   - numpy
@@ -21,7 +22,9 @@ dependencies:
   - zarr<3.0.0
   - pip
   - pip:
+    - ipfsspec>=0.5.3
+    - orcestra
     - sphinx-autodoc2
     - sphinx-book-theme
     - sphinx-last-updated-by-git
-    - pydropsonde
+    - pydropsonde==0.3.1
