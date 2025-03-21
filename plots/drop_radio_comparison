@@ -1,0 +1,177 @@
+# %% This notebook compares dropsonde and radiosonde data from the ORCESTRA campaign. The data is loaded from the IPFS and compared in a few plots.
+import numpy as np
+import matplotlib.pyplot as plt
+import xarray as xr
+import cartopy.feature
+import cartopy.crs as ccrs
+import settings
+
+from datetime import datetime
+from orcestra import get_flight_segments
+
+# %%
+vars_stdname = [
+    "air_potential_temperature",
+    "specific_humidity",
+    "air_pressure",
+    "eastward_wind",
+    "northward_wind",
+]
+# dropsonde and radiosonde datasets have the same variable names for the above standard names :)
+variables = ["theta", "q", "u", "v"]
+
+# %% Load the meteor events from HALO's flight segmentation
+meta = get_flight_segments()["HALO"]
+events = [{**e, "flight_id": flight_id}
+          for flight_id, flight in meta.items()
+          for e in flight["events"]
+          ]
+kinds = set(k for e in events for k in e["kinds"])
+meteor_events = [e for e in events if 'meteor_overpass' in e['kinds']]
+meteor_event_times = [e["time"] for e in meteor_events]
+
+# %% Load dropsonde data
+l3 = xr.open_dataset(f"{settings.root}/products/HALO/dropsondes/Level_3/PERCUSION_Level_3.zarr", engine="zarr")
+#l3 = l3[[varname for varname in list(l3.variables) if "standard_name" in l3[varname].attrs and l3[varname].attrs["standard_name"] in vars_stdname]]
+drop = l3.swap_dims({"sonde": "sonde_time"})
+drop
+
+# %% Load radiosonde data
+l2 = xr.open_dataset(f"{settings.root}/products/Radiosondes/RS_ORCESTRA_level2.zarr", engine="zarr")
+radio = l2.rename({"alt": "altitude"}).sel(altitude=slice(None, 15000))
+radio
+
+# %% create a dixtionary of drop_radio_events with sonde launch times
+# foor each Meteor event, search for closest radiosonde in time and next, search for close dropsonde
+drop_radio_events = []
+for e in meteor_events:
+    radio_event = radio.sel(launch_time=e["time"], method="nearest")
+    drop_event = drop.sel(sonde_time=radio_event.launch_time.values, method="nearest")
+    # if radio_event not yet in drop_radio_events
+#    if not any([e["radio_event"]["launch_time"] == radio_event.launch_time for e in drop_radio_events]):
+#        print(f"new event added: {radio_event.launch_time.values}")
+    drop_radio_events.append({
+        "meteor_event": e,
+        "radio_event": radio_event,
+        "drop_event": drop_event
+    })
+print(f"Number of drop_radio_events: {len(drop_radio_events)}")
+
+# %% check proximity of drop and radio events
+def check_proximity_of_event(event):
+    delta_radio = np.timedelta64(15, "m")
+    delta_drop = np.timedelta64(5, "m")
+    radio_time = event["radio_event"]["launch_time"].values
+    drop_time = event["drop_event"]["sonde_time"].values
+    event_time = np.datetime64(event["meteor_event"]["time"])
+    if abs(radio_time - event_time) > delta_radio:
+        print(f"radio and meteor events are not close enough: {radio_time} - {event_time}") 
+    elif abs(drop_time - event_time) > delta_drop:    
+        print(f"drop and meteor events are not close enough: {drop_time} - {event_time}")
+    else:
+        print(f"Close event: {event['meteor_event']['time']}; {radio_time}, {drop_time}")
+        return True
+    return False
+# %% check proximity of drop and radio events
+drop_radio_events_prox = [e for e in drop_radio_events if check_proximity_of_event(e)]
+print(f"Number of dopr-radio-events: {len(drop_radio_events_prox)}")
+
+# %% plot the difference in var between dropsonde and radiosonde data for each meteor event
+fig, axes = plt.subplots(1, 4, figsize=(10, 6))
+fig.suptitle("Absolute difference: Dropsonde - Radiosonde")
+for var, ax in zip(variables, axes):
+    for e in drop_radio_events_prox:
+        diff = (e["drop_event"][var] - e["radio_event"][var])# / e["radio_event"][var]
+        diff.plot(y="altitude", ax=ax, label=f'{e["meteor_event"]["time"].strftime("%Y-%m-%d %H:%M:%S")}')
+    #if ax==axes[0]: ax.legend()
+    ax.set_title(f'Mean diff: {diff.mean().values: .2f}')
+axes[1].legend()
+
+# %% print interesting numbers
+for e in drop_radio_events_prox:
+    print(f'Event time: {e["meteor_event"]["time"].strftime("%Y-%m-%d %H:%M:%S")}')
+    print(f'Closest distance HALO - Meteor: {e["meteor_event"]["distance"]} m')
+    print(f'Radiosonde launch time: {e["radio_event"]["launch_time"].values}')
+    print(f'Dropsonde launch time: {e["drop_event"]["sonde_time"].values}')
+    for var in ["theta", "q"]:
+        diff = ((e["drop_event"][var] - e["radio_event"][var]) / e["radio_event"][var]).mean()
+        print(f'Relative difference in {var}: {diff.values: .2f}')
+    for var in ["u", "v"]:
+        diff = (e["drop_event"][var] - e["radio_event"][var]).mean()
+        print(f'Absolute difference in {var}: {diff.values: .2f}')
+    print("")
+
+# %% Plot the locations of drop_radio_events_prox on a map
+lon_min, lon_max, lat_min, lat_max = -65, -15, 0, 23  # -27, -19, 13, 20 (ATR area)
+
+fig, ax = plt.subplots(
+    figsize=(10.5, 6), subplot_kw=dict(projection=ccrs.PlateCarree())
+)
+gl = ax.gridlines(crs=ccrs.PlateCarree(), draw_labels=True, alpha=0.25)
+gl.top_labels = False
+gl.right_labels = False
+ax.set_extent([lon_min, lon_max, lat_min, lat_max], crs=ccrs.PlateCarree())
+ax.add_feature(cartopy.feature.LAND, zorder=0, edgecolor="black", facecolor="lightgrey")
+
+ax.set_title(f"Close dropsonde - radiosonde events")
+marker_drop = "x"
+marker_radio = "o"
+for e, c in zip(drop_radio_events_prox, ["C0", "C1", "C2", "C3"]):
+    ax.scatter(e["radio_event"].launch_lon.values,
+               e["radio_event"].launch_lat.values,
+               marker=marker_radio,
+               color = c,
+               label=f"{e["meteor_event"]["time"].strftime("%Y-%m-%d %H:%M:%S")}",
+               )
+    ax.scatter(e["drop_event"].lon.values,
+               e["drop_event"].lat.values,
+               marker=marker_drop,
+               color = c,
+               s = 8,
+               )
+ax.legend(loc="lower right")
+
+# %% Plot the tracks of radio- and dropsondes for each event in lat lon coordinates
+# Add a marker at the point when HALO and Meteor were closest in space
+
+for e in drop_radio_events_prox:
+    lon_min, lon_max = e["meteor_event"]["meteor_lon"]-.25, e["meteor_event"]["meteor_lon"]+.25
+    lat_min, lat_max = e["meteor_event"]["meteor_lat"]-.25, e["meteor_event"]["meteor_lat"]+.25
+    fig, ax = plt.subplots(subplot_kw=dict(projection=ccrs.PlateCarree()))
+    gl = ax.gridlines(crs=ccrs.PlateCarree(), draw_labels=True, alpha=0.25)
+    gl.top_labels = False
+    gl.right_labels = False
+    ax.set_extent([lon_min, lon_max, lat_min, lat_max], crs=ccrs.PlateCarree())
+    ax.add_feature(cartopy.feature.LAND, zorder=0, edgecolor="black", facecolor="lightgrey")
+
+    ax.plot(e["radio_event"].flight_lon.values,
+            e["radio_event"].flight_lat.values,
+            label=f'Radiosonde launch {e["radio_event"].launch_time.values}',
+            )
+    ax.plot(e["drop_event"].lon.values,
+            e["drop_event"].lat.values,
+            label=f'Dropsonde launch {e["drop_event"].sonde_time.values}',
+            )
+    # mark the point of the "event"
+    point_r = e["radio_event"].swap_dims({"altitude": "flight_time"}).dropna("flight_time").sel(flight_time=e["meteor_event"]["time"], method="nearest")
+    ax.scatter(
+        point_r.flight_lon.values,
+        point_r.flight_lat.values,
+        marker = "x",
+    )
+
+    point_d = e["drop_event"] \
+        .swap_dims({"altitude": "bin_average_time"}) \
+        .dropna("bin_average_time") \
+        .sel(bin_average_time=e["meteor_event"]["time"], method="nearest")
+    ax.scatter(
+        point_d.lon.values,
+        point_d.lat.values,
+        marker = "x",
+    )
+    ax.legend()
+    ax.set_title(f"Sonde tracks {e["meteor_event"]["time"].date()}")
+    ax.set_xlabel("Longitude / °")
+    ax.set_ylabel("Latitude / °")
+
+# %%
