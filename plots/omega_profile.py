@@ -67,11 +67,11 @@ ds.div.where(ds.omega.c_island == "BB").mean("circle").plot(
 )
 joanne.D.mean("circle").plot(ax=axes[0], y="alt", color="C1", label="JOANNE")
 
-axes[1].set_xlabel(f"omega / {ds.omega.attrs["units"]}")
-axes[0].set_xlabel(f"divergence / {ds.div.attrs["units"]}")
+axes[1].set_xlabel(f"omega / {ds.omega.attrs['units']}")
+axes[0].set_xlabel(f"divergence / {ds.div.attrs['units']}")
 axes[1].set_ylabel("")
 axes[1].set_yticklabels("")
-axes[0].set_ylabel(f"altitude / {ds.altitude.attrs["units"]}")
+axes[0].set_ylabel(f"altitude / {ds.altitude.attrs['units']}")
 axes[0].legend(loc="center right", fontsize=12)
 freeze_alt = (sal_freeze + bb_freeze) / 2 * 10
 axes[0].set_yticks(
