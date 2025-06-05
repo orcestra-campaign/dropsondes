@@ -28,8 +28,8 @@ plt.style.use("./beach.mplstyle")
 constrained_alt = np.where(np.abs(values) < 100, values, np.nan)
 constrained_p = np.where(np.array(pvalues) > 100500, pvalues, np.nan)
 constrained_p[constrained_p > 102000] = np.nan
-
-fig, ax1 = plt.subplots(figsize=(6, 6))
+cm = 1 / 2.54
+fig, ax1 = plt.subplots(figsize=(8.3 * cm, 8.3 * cm))
 
 
 sns.histplot(
@@ -62,12 +62,11 @@ for ax, c in zip([ax1, ax2], ["C0", "C1"]):
 ax2.spines["bottom"].set_color("C0")
 
 # ax.axvline(0, c="gray")
-ax1.set_xlim(-50, 50)
-ax2.set_xlim(100470, 101470)
+ax1.set_xlim(2.4 - 50, 2.4 + 50)
+ax2.set_xlim(101000 - 500, 101000 + 500)
 ax1.set_xlabel("last gpsalt value / m")
 ax2.set_xlabel("last pressure value / Pa")
 # axes[1].set_ylabel("")
 
 sns.despine(offset={"left": 10})
-fig.tight_layout()
-fig.savefig("../images/surface_hist.pdf")
+fig.savefig("../images/surface_hist.pdf", bbox_inches="tight")
