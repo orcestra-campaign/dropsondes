@@ -1,15 +1,15 @@
-axes.titlesize : 18
-axes.labelsize : 16
-axes.linewidth : 1.5
-lines.linewidth : 3
-lines.markersize : 5
-xtick.labelsize : 14
-ytick.labelsize : 14
-xtick.major.width : 1.5
-ytick.major.width : 1.5
+axes.titlesize : 6
+axes.labelsize : 6
+axes.linewidth : 0.5
+lines.linewidth : 0.5
+lines.markersize : 3
+xtick.labelsize : 4
+ytick.labelsize : 4
+xtick.major.width : 0.5
+ytick.major.width : 0.5
 axes.spines.right : False
 axes.spines.top : False
-legend.fontsize : 16
-
+legend.fontsize : 4
+figure.titlesize : 8
 
 axes.prop_cycle : cycler("color", ["#00267f","#ffc726", "#6d88bc", "#d3ddef" ])
