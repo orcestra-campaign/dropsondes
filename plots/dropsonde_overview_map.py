@@ -80,11 +80,19 @@ meteor_color = settings.colors.get("meteor", "C3")
 lon_min, lon_max, lat_min, lat_max = -65, -15, 0, 23  # -27, -19, 13, 20 (ATR area)
 ds_st = dsdrop.swap_dims({"sonde": "sonde_time"})
 
-
+plt.style.use("./beach.mplstyle")
+size = 2
+cm = 1 / 2.54
 fig, ax = plt.subplots(
-    figsize=(10.5, 6), subplot_kw=dict(projection=ccrs.PlateCarree())
+    figsize=(12 * cm, 5.5), subplot_kw=dict(projection=ccrs.PlateCarree())
 )
-gl = ax.gridlines(crs=ccrs.PlateCarree(), draw_labels=True, alpha=0.25)
+gl = ax.gridlines(
+    crs=ccrs.PlateCarree(),
+    draw_labels=True,
+    alpha=0.25,
+    xlabel_style={"fontsize": 6},
+    ylabel_style={"fontsize": 6},
+)
 gl.top_labels = False
 gl.right_labels = False
 ax.set_extent([lon_min, lon_max, lat_min, lat_max], crs=ccrs.PlateCarree())
@@ -93,7 +101,11 @@ ax.add_feature(cartopy.feature.LAND, zorder=0, edgecolor="black", facecolor="lig
 ax.set_title(f"PERCUSION's {ds_st.sizes['sonde_time']} dropsondes")
 
 ax.scatter(
-    ds_st.aircraft_longitude, ds_st.aircraft_latitude, s=8, c=std_color, zorder=10
+    ds_st.aircraft_longitude,
+    ds_st.aircraft_latitude,
+    s=size,
+    c=std_color,
+    zorder=10,
 )
 
 count_atr_circles = 0
@@ -109,7 +121,7 @@ for s in segments:
         ax.scatter(
             ds_st.aircraft_longitude.sel(sonde_time=t),
             ds_st.aircraft_latitude.sel(sonde_time=t),
-            s=8,
+            s=size,
             c=atr_color,
             zorder=90,
         )
@@ -120,7 +132,7 @@ for s in segments:
         ax.scatter(
             ds_st.aircraft_longitude.sel(sonde_time=t),
             ds_st.aircraft_latitude.sel(sonde_time=t),
-            s=8,
+            s=size,
             c=circle_color,
             zorder=80,
         )
@@ -137,7 +149,7 @@ for e in events:
         ax.scatter(
             ds_st.aircraft_longitude.sel(sonde_time=t),
             ds_st.aircraft_latitude.sel(sonde_time=t),
-            s=8,
+            s=size,
             c=meteor_color,
             zorder=100,
         )
@@ -153,23 +165,33 @@ count_add_sondes = (
 ax.scatter(
     [],
     [],
-    s=8,
+    s=size,
     c=circle_color,
     label=f"{count_circle_sondes + count_atr_sondes} sondes in {count_circles + count_atr_circles} circles in total",
 )
 ax.scatter(
     [],
     [],
-    s=8,
+    s=size,
     c=atr_color,
     label=f"{count_atr_sondes} sondes in {count_atr_circles} circles with ATR",
 )
 ax.scatter(
-    [], [], s=8, c=meteor_color, label=f"{count_meteor_sondes} sondes close to METEOR"
+    [],
+    [],
+    s=size,
+    c=meteor_color,
+    label=f"{count_meteor_sondes} sondes close to METEOR",
 )
-ax.scatter([], [], s=8, c=std_color, label=f"{count_add_sondes} additional sondes")
+ax.scatter(
+    [],
+    [],
+    s=size,
+    c=std_color,
+    label=f"{count_add_sondes} additional sondes",
+)
 
 ax.legend(ncols=2)  # , title=f"Total number of sondes: {dsdrop.sizes["sonde"]}"
-fig.savefig("../images/dropsonde_overview_map.png", dpi=300, bbox_inches="tight")
+fig.savefig("../images/dropsonde_overview_map.pdf", dpi=300, bbox_inches="tight")
 
 # %%
