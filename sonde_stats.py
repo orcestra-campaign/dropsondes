@@ -6,6 +6,8 @@ from orcestra import get_flight_segments
 import fsspec
 import re
 from plots import settings
+from datetime import timedelta
+
 
 meta = get_flight_segments()
 
@@ -95,6 +97,68 @@ df
 df.to_latex(
     "sonde_stats.tex",
     index=False,
-    caption="PECUSION dropsonde statistics showing the number of sondes per flight and processing level.",
+    caption="PERCUSION dropsonde statistics showing the number of sondes per flight and processing level.",
     label="tab:sonde_stats",
+)
+# %%
+entries = []
+for key in meta["HALO"].keys():
+    for entry in meta["HALO"][key]["segments"]:
+        if ("atr_coordination" in entry["kinds"]) and ("circle" in entry["kinds"]):
+            print(entry["segment_id"], entry["start"], entry["end"])
+            entries.append(entry)
+            print(entry["kinds"])
+
+# %%
+
+
+def get_atr_info(entry):
+    start = entry["start"]
+    end = entry["end"]
+    id = entry["segment_id"]
+    min_diff_to_atr_start = np.min(
+        [np.abs(meta["ATR"][key]["takeoff"] - end) for key in meta["ATR"].keys()]
+    )
+    min_diff_to_atr_end = np.min(
+        [np.abs(start - meta["ATR"][key]["landing"]) for key in meta["ATR"].keys()]
+    )
+    for key in meta["ATR"].keys():
+        atr_start = meta["ATR"][key]["takeoff"]
+        atr_end = meta["ATR"][key]["landing"]
+
+        start_diff = np.abs(start - atr_end)
+        end_diff = np.abs(atr_start - end)
+        if np.abs(start_diff - min_diff_to_atr_end) < timedelta(minutes=5) or (
+            np.abs(end_diff - min_diff_to_atr_start)
+        ) < timedelta(minutes=5):
+            # if ( timedelta(minutes=-6 * 60) < start_diff < timedelta(minutes=60)) or (timedelta(minutes=-6 * 60) < end_diff <timedelta(minutes=60)):
+            return {
+                "HALO circle ID": (id).replace("_", "\_"),
+                "ATR flight ID": key,
+                "ATR takeoff": atr_start,
+                "ATR landing": atr_end,
+                #                "HALO circle start": start,
+                #                "HALO circle end": end,
+                "Level 3 sondes": l3.where(
+                    (l3.sonde_time > np.datetime64(start))
+                    & (l3.sonde_time < np.datetime64(end)),
+                    drop=True,
+                ).sizes["sonde"],
+                "Level 4 sondes": l4.swap_dims({"circle": "circle_id"})
+                .sondes_per_circle.sel(circle_id=id)
+                .values,
+            }
+    return {}
+
+
+# %%
+df = pd.DataFrame.from_records(map(get_atr_info, entries))
+
+df.sort_values("HALO circle ID", inplace=True)
+# %%
+df.to_latex(
+    "atr_stats.tex",
+    index=False,
+    caption="PERCUSION ATR coordination statistics showing the closest ATR flight to each atr-coordinated HALO circle and the number of sondes in Level 3 and Level 4 for those circles.",
+    label="tab:atr_stats",
 )
