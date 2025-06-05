@@ -74,9 +74,15 @@ lon_min, lon_max, lat_min, lat_max = -65, -15, 0, 23
 cmap = "BrBG"
 
 fig, ax = plt.subplots(
-    figsize=(10.5, 6), subplot_kw=dict(projection=ccrs.PlateCarree())
+    figsize=(12 * cm, 5.5 * cm), subplot_kw=dict(projection=ccrs.PlateCarree())
 )
-gl = ax.gridlines(crs=ccrs.PlateCarree(), draw_labels=True, alpha=0.25)
+gl = ax.gridlines(
+    crs=ccrs.PlateCarree(),
+    draw_labels=True,
+    alpha=0.25,
+    xlabel_style={"fontsize": 6},
+    ylabel_style={"fontsize": 6},
+)
 gl.top_labels = False
 gl.right_labels = False
 ax.set_extent([lon_min, lon_max, lat_min, lat_max], crs=ccrs.PlateCarree())
@@ -89,13 +95,14 @@ p = ax.scatter(
     ds_iwv.aircraft_latitude.values,
     c=ds_iwv,
     cmap=cmap,
+    s=size,
     vmin=25,
     vmax=71,
 )
 
-cax = fig.add_axes((0.92, 0.15, 0.02, 0.3))
+cax = fig.add_axes((0.83, 0.2, 0.01, 0.25))
 cb = fig.colorbar(p, cax=cax, ticks=[30, 48, 55, 70], extend="max")
 
 
 fig.tight_layout()
-fig.savefig("../images/map_iwv.png", dpi=300)
+fig.savefig("../images/map_iwv.pdf", bbox_inches="tight")
