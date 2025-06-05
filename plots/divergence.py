@@ -21,8 +21,9 @@ def get_nb_circles_per_flight(ds):
 
 circle_flights = get_nb_circles_per_flight(ds_lev4)
 # %%
+cm = 1 / 2.54
 plt.style.use("./beach.mplstyle")
-fig, ax = plt.subplots(figsize=(24, 6))
+fig, ax = plt.subplots(figsize=(12 * cm, 4 * cm))
 im = (ds_lev4.div).plot(
     cmap="coolwarm",
     ax=ax,
@@ -30,6 +31,7 @@ im = (ds_lev4.div).plot(
     center=0,
     vmin=-3e-5,
     vmax=3e-5,
+    rasterized=True,
     add_colorbar=False,
 )
 fig.subplots_adjust(right=0.93)
@@ -55,14 +57,48 @@ for x in xpos:
     ax.axvline(x, color="black")
 ax.set_xticks(xtickpos, labels=xlabels)
 ax.set_xlabel("")
-ax.set_ylabel("Altitude / m")
+ax.set_ylabel("altitude / m")
 
 ax1 = ax.twiny()
 ax1.set_xticks([xtickpos[11]], labels=["Transfer 20240906"])
 ax1.set_xlim(ax.get_xlim())
+
+ax.annotate(
+    "West",
+    xy=(230, 110),
+    xycoords="figure points",
+    xytext=(250, 118),
+    fontsize=4,
+    ha="center",
+)
+ax.annotate(
+    "",
+    xy=(220, 114),
+    xytext=(280, 114),
+    xycoords="figure points",
+    fontsize=6,
+    arrowprops={"arrowstyle": "<->", "linewidth": 0.2},
+)
+ax.annotate(
+    "East",
+    xy=(120, 110),
+    xycoords="figure points",
+    xytext=(100, 118),
+    fontsize=4,
+    ha="center",
+)
+ax.annotate(
+    "",
+    xy=(70, 114),
+    xytext=(130, 114),
+    xycoords="figure points",
+    fontsize=6,
+    arrowprops={"arrowstyle": "<->", "linewidth": 0.2},
+)
+
 # ax.set_ylim(0, 2500)
 
-fig.savefig("../images/divergence.png", transparent=True, bbox_inches="tight")
+fig.savefig("../images/divergence.pdf", dpi=300, bbox_inches="tight")
 
 # %%
 # %% div lowest 2500 m
