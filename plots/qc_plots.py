@@ -24,13 +24,15 @@ bins_extend = np.linspace(0, 15000, nb_bins)
 var = variables[0]
 
 plt.style.use("./beach.mplstyle")
-fig, axes = plt.subplots(ncols=3, figsize=(18, 6))
+cm = 1 / 2.54
+fig, axes = plt.subplots(ncols=3, figsize=(12 * cm, 4 * cm))
 for var, color in zip(variables, colors):
     sns.histplot(
         ds[var + "_profile_sparsity_fraction"],
         alpha=0.5,
         stat="probability",
         kde=True,
+        label=var,
         element="step",
         ax=axes[0],
         color=color,
@@ -55,22 +57,22 @@ for var, color in zip(variables, colors):
     )
 
 ax = axes[0]
-ax.set_xlabel("Profile Sparsity Fraction")
+ax.set_xlabel("fraction of missing values")
 ax.set_ylabel("")
 ax.set_xlim(0, 0.5)
 ax.legend()
 ax.axvline(0.2, color="gray", alpha=0.5)
 ax = axes[1]
 ax.set_ylabel("")
-ax.set_xlabel("# Near-Surface Measurements")
+ax.set_xlabel("# measurements \n in the lowest 1000m")
 ax.axvline(50, color="gray", alpha=0.5)
-ax.legend()
+ax.set_xlim(0, None)
 ax = axes[2]
 ax.set_ylabel("")
-ax.set_xlabel("Profile Extent / m")
-ax.legend()
+ax.set_xlabel("profile extent / m")
 ax.axvline(8000, color="gray", alpha=0.5)
 ax.set_xlim(0, 15500)
-fig.savefig(
-    "../images/qc_distribution.png",
-)
+axes[0].set_ylabel("normalized number of sondes")
+for ax in axes:
+    ax.tick_params(pad=0.3, axis="y")
+fig.savefig("../images/qc_distribution.pdf", bbox_inches="tight")
