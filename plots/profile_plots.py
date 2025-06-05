@@ -43,64 +43,73 @@ variables = ["theta", "rh", "u", "v"]
 units = ["K", "%", "m s-1", "m s-1"]
 
 
-fig, axes = plt.subplots(ncols=4, figsize=(24, 6), sharey=True)
+cm = 1 / 2.54
+fig, axes = plt.subplots(ncols=2, nrows=2, figsize=(12 * cm, 12 * cm), sharey=True)
 
 for j, var in enumerate(variables):
     col = j % 2
     row = j // 2
-    ax = axes[j]  # axes[row, col]
+    ax = axes[row, col]
     for i in range(max([sal.sonde.size, bb.sonde.size])):
         sonde = max([sal.sonde.size, bb.sonde.size]) - i - 1
 
         try:
-            sal.sel(sonde=sonde)[var].plot(ax=ax, color=csal, alpha=0.05, y="altitude")
+            pass
+            sal.sel(sonde=sonde)[var].plot(
+                ax=ax, color=csal, alpha=0.05, y="altitude", rasterized=True
+            )
         except IndexError:
             pass
-        bb.sel(sonde=sonde)[var].plot(ax=ax, color=cbb, alpha=0.05, y="altitude")
+        bb.sel(sonde=sonde)[var].plot(
+            ax=ax, color=cbb, alpha=0.05, y="altitude", rasterized=True
+        )
 
     sal[var].mean("sonde").sel(altitude=slice(0, 13500)).plot(
-        ax=ax, color=csal_mean, y="altitude", linewidth=5, label="East Atlantic"
+        ax=ax, color=csal_mean, y="altitude", linewidth=2, label="East Atlantic"
     )
     bb[var].mean("sonde").sel(altitude=slice(0, 13500)).plot(
-        ax=ax, color=cbb_mean, y="altitude", linewidth=5, label="West Atlantic"
+        ax=ax, color=cbb_mean, y="altitude", linewidth=2, label="West Atlantic"
     )
     ax.set_xlabel(f"{var} / {units[j]}")
 
 sns.despine(offset=10)
-axes[0].set_yticks(
-    list(axes[0].get_yticks())
+axes[0, 1].set_yticks(
+    list(axes[0, 1].get_yticks())
     + [(sal_freeze + bb_freeze) / 2 * 10, (rhmax_sal + rhmax_bb) / 2 * 10],
-    labels=list(axes[0].get_yticks())
+    labels=list(axes[0, 0].get_yticks())
     + ["273.15 K", (rhmax_sal + rhmax_bb).values / 2 * 10],
 )
-xticks = list((axes[1].get_xticks()).astype(int))
+xticks = list((axes[0, 1].get_xticks()).astype(int))
 xticks.remove(np.float64(60))
-axes[1].set_xticks(xticks + [int(rhfreeze_sal), int(rhfreeze_bb)])
-axes[0].set_yticks(
-    axes[0].get_yticks(), labels=[int(label) for label in axes[0].get_yticks()]
+axes[0, 1].set_xticks(xticks + [int(rhfreeze_sal), int(rhfreeze_bb)])
+
+
+axes[0, 0].set_yticks(
+    axes[0, 0].get_yticks(), labels=[int(label) for label in axes[0, 0].get_yticks()]
 )
 
 for ax in axes.flatten():
     ax.set_ylim(0, 15000)
     ax.set_ylabel("")
-for ax in axes[:2]:
+for ax in axes[0, :]:
     ax.axhline(
         (sal_freeze + bb_freeze) / 2 * 10, color="grey", alpha=0.5, linestyle="--"
     )
-axes[1].axhline(
+
+axes[0, 1].axhline(
     (rhmax_sal + rhmax_bb) / 2 * 10, color="grey", alpha=0.5, linestyle="--"
 )
 
-axes[1].axvline(rhfreeze_sal, color="grey", alpha=0.5, linestyle="--")
-axes[1].axvline(rhfreeze_bb, color="grey", alpha=0.5, linestyle="--")
-axes[1].set_xlim(0, 100)
-
-axes[3].axhline(
-    (rhmax_sal + rhmax_bb) / 2 * 10, color="grey", alpha=0.5, linestyle="--"
-)
-# for ax in axes[0]:
-axes[0].set_ylabel("altitude / m")
+axes[0, 1].axvline(rhfreeze_sal, color="grey", alpha=0.5, linestyle="--")
+axes[0, 1].axvline(rhfreeze_bb, color="grey", alpha=0.5, linestyle="--")
+axes[0, 1].set_xlim(0, 100)
+for ax in axes[1, :]:
+    ax.axhline((rhmax_sal + rhmax_bb) / 2 * 10, color="grey", alpha=0.5, linestyle="--")
+axes[0, 0].set_ylabel("altitude / m")
+axes[1, 0].set_ylabel("altitude / m")
+axes[1, 1].set_xlim(-20, 20)
+axes[1, 0].set_xlim(-40, 20)
 sns.despine(offset={"left": 10})
-axes[0].legend()
+axes[0, 0].legend()
 fig.tight_layout()
-fig.savefig("../images/profile_overview.png")
+fig.savefig("../images/profile_overview.pdf", bbox_inches="tight")
