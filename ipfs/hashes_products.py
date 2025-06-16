@@ -58,11 +58,21 @@ for level in level_dirs:
         tree["products"]["HALO"]["dropsondes"][f"{level}"][f"{flight}"] = lev_sonde
 # %%
 level_dirs = ["Level_3", "Level_3_qc"]
+tree["products"]["HALO"]["dropsondes"].setdefault("Level_3", {})
 for level in tqdm(level_dirs):
-    path2lev = os.path.join(product_path, level)
+    path2lev = os.path.join(product_path, "Level_3")
     lev_sonde = path2ipfs(path2lev)
-    tree["products"]["HALO"]["dropsondes"][f"{level}"] = lev_sonde
 
+    if tree["products"]["HALO"]["dropsondes"]["Level_3"] is None:
+        tree["products"]["HALO"]["dropsondes"]["Level_3"] = {}
+    lev_sonde = path2ipfs(os.path.join(path2lev, f"PERCUSION_{level}.zarr"))
+    tree["products"]["HALO"]["dropsondes"]["Level_3"][
+        f"PERCUSION_{level}.zarr"
+    ] = lev_sonde
+
+# %%
+
+# %%
 # Save the updated tree back to the YAML file
 with open("../../ipfs_tools/tree.yaml", "w") as file:
     yaml.dump(tree, file)
