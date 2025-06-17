@@ -103,60 +103,63 @@ df.to_latex(
     label="tab:sonde_stats",
 )
 # %%
-entries = []
-for key in meta["HALO"].keys():
-    for entry in meta["HALO"][key]["segments"]:
+atr_circle_segments = []
+for halo_flight in meta["HALO"].keys():
+    for entry in meta["HALO"][halo_flight]["segments"]:
         if ("atr_coordination" in entry["kinds"]) and ("circle" in entry["kinds"]):
             print(entry["segment_id"], entry["start"], entry["end"])
-            entries.append(entry)
+            atr_circle_segments.append(entry)
             print(entry["kinds"])
 
 # %%
-
-
-def get_atr_info(entry):
-    start = entry["start"]
-    end = entry["end"]
-    id = entry["segment_id"]
-    min_diff_to_atr_start = np.min(
-        [np.abs(meta["ATR"][key]["takeoff"] - end) for key in meta["ATR"].keys()]
-    )
-    min_diff_to_atr_end = np.min(
-        [np.abs(start - meta["ATR"][key]["landing"]) for key in meta["ATR"].keys()]
-    )
+def atr_flight_for_circle(circle):
+    potential_flights = []
     for key in meta["ATR"].keys():
-        atr_start = meta["ATR"][key]["takeoff"]
-        atr_end = meta["ATR"][key]["landing"]
+        flight = meta["ATR"][key]
+        if circle["start"].date() == flight["date"]:
+            potential_flights.append(flight)
+            #print(flight["flight_id"], flight["takeoff"], flight["landing"])
+    if len(potential_flights) == 0:
+        print("No ATR flight found for circle", circle["segment_id"])
+        return None
+    elif len(potential_flights) == 1:
+        return potential_flights[0]
+    elif len(potential_flights) > 1:
+        circle_ref_time = circle["start"] + (circle["end"] - circle["start"]) / 2
+        flight_ref_time = [flight["takeoff"] + (flight["landing"] - flight["takeoff"]) / 2 for flight in potential_flights]
+        flight_ind = np.argmin([np.abs(circle_ref_time - f) for f in flight_ref_time])
+        return potential_flights[flight_ind]
 
-        start_diff = np.abs(start - atr_end)
-        end_diff = np.abs(atr_start - end)
-        if np.abs(start_diff - min_diff_to_atr_end) < timedelta(minutes=5) or (
-            np.abs(end_diff - min_diff_to_atr_start)
-        ) < timedelta(minutes=5):
-            # if ( timedelta(minutes=-6 * 60) < start_diff < timedelta(minutes=60)) or (timedelta(minutes=-6 * 60) < end_diff <timedelta(minutes=60)):
-            return {
-                "HALO circle ID": (id).replace("_", "\_"),
-                "ATR flight ID": key,
-                "ATR takeoff": atr_start,
-                "ATR landing": atr_end,
-                #                "HALO circle start": start,
-                #                "HALO circle end": end,
-                "Level 3 sondes": l3.where(
-                    (l3.sonde_time > np.datetime64(start))
-                    & (l3.sonde_time < np.datetime64(end)),
-                    drop=True,
-                ).sizes["sonde"],
-                "Level 4 sondes": l4.swap_dims({"circle": "circle_id"})
-                .sondes_per_circle.sel(circle_id=id)
-                .values,
-            }
-    return {}
+for circle in atr_circle_segments:
+    print(circle["segment_id"], circle["start"].strftime("%H:%M:%S"), circle["end"].strftime("%H:%M:%S"))
+    flight = atr_flight_for_circle(circle)
+    print(flight["flight_id"], flight["takeoff"].strftime("%H:%M:%S"), flight["landing"].strftime("%H:%M:%S"))
+    print("--------")
+
+# %%
+
+def get_atr_info(circle):
+    flight = atr_flight_for_circle(circle)
+    return {
+        "flight ID": flight["flight_id"],
+        "flight date": flight["date"],
+        "flight time": f"{flight['takeoff'].strftime('%H:%M:%S')}-{flight['landing'].strftime('%H:%M:%S')}",
+        "Level 3 sondes": l3.where(
+            (l3.sonde_time > np.datetime64(circle["start"]))
+            & (l3.sonde_time < np.datetime64(circle["end"])),
+            drop=True,
+        ).sizes["sonde"],
+        "Level 4 sondes": l4.swap_dims({"circle": "circle_id"})
+        .sondes_per_circle.sel(circle_id=circle["segment_id"])
+        .values,
+        "HALO circle ID": circle["segment_id"].replace("_", "\_"),
+    }
 
 
 # %%
-df = pd.DataFrame.from_records(map(get_atr_info, entries))
+df = pd.DataFrame.from_records(map(get_atr_info, atr_circle_segments))
 
-df.sort_values("HALO circle ID", inplace=True)
+df.sort_values("flight ID", inplace=True)
 # %%
 df.to_latex(
     "atr_stats.tex",
