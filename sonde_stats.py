@@ -58,8 +58,9 @@ def get_flight_info(flight_id):
 
     return {
         "flight ID": flight_id,
-        "takeoff": flight["takeoff"],
-        "landing": flight["landing"],
+        "date": flight["date"],
+        "flight time": str(flight["takeoff"].strftime("%H:%M:%S"))+"-"+str(flight["landing"].strftime("%H:%M:%S")),
+        #"landing": flight["landing"].strftime("%H:%M:%S"),
         "Level 0": len(
             [
                 fname
@@ -77,13 +78,14 @@ def get_flight_info(flight_id):
 
 # %%
 df = pd.DataFrame.from_records(map(get_flight_info, set(l3.flight_id.values)))
-df = df.sort_values("takeoff")
+df = df.sort_values("date")
 
 # %%
 total = {
     "flight ID": "Total",
-    "takeoff": "",
-    "landing": "",
+    "date": "",
+    "flight time": "",
+    #"landing": "",
     "Level 0": df["Level 0"].sum(),
     "Level 1": df["Level 1"].sum(),
     "Level 2": df["Level 2"].sum(),
