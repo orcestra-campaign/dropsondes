@@ -54,7 +54,6 @@ for j, var in enumerate(variables):
         sonde = max([sal.sonde.size, bb.sonde.size]) - i - 1
 
         try:
-            pass
             sal.sel(sonde=sonde)[var].plot(
                 ax=ax, color=csal, alpha=0.05, y="altitude", rasterized=True
             )
