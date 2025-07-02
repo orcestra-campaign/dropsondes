@@ -43,12 +43,12 @@ xpos = np.insert(np.cumsum(list(circle_flights.values())) - 0.5, 0, -0.5)
 xtickpos = [(xpos[i] + xpos[i + 1]) / 2 for i in range(len(xpos) - 1)]
 xlabels = (
     [
-        "\n" * (i % 2) + f"{flight}".split("-")[1].split("a")[0]
+        "\n" * (i % 2) + f"{flight}".split("-")[1].split("a")[0].split("4", 1)[1]
         for i, flight in enumerate(list(circle_flights.keys())[:11])
     ]
     + [""]
     + [
-        "\n" * ((i + 1) % 2) + f"{flight}".split("-")[1].split("a")[0]
+        "\n" * ((i + 1) % 2) + f"{flight}".split("-")[1].split("a")[0].split("4", 1)[1]
         for i, flight in enumerate(list(circle_flights)[12:])
     ]
 )
@@ -60,7 +60,7 @@ ax.set_xlabel("")
 ax.set_ylabel("altitude / m")
 
 ax1 = ax.twiny()
-ax1.set_xticks([xtickpos[11]], labels=["Transfer 20240906"])
+ax1.set_xticks([xtickpos[11]], labels=["Transfer 0906"])
 ax1.set_xlim(ax.get_xlim())
 
 ax.annotate(
