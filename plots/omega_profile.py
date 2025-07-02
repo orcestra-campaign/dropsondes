@@ -87,5 +87,5 @@ for ax in axes:
     ax.axvline(0, color="gray", alpha=0.5)
     ax.axhline(freeze_alt, color="gray", alpha=0.5, linestyle=":")
 
-sns.despine(offset={"left": 10})
+sns.despine(offset={"left": 5})
 fig.savefig("../images/joanne_vs_beach.pdf", bbox_inches="tight")
