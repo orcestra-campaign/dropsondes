@@ -39,6 +39,8 @@ bb_freeze = np.abs(ta_bb - 273.15).argmin()
 
 # %% omega vs joanne
 
+csal = settings.colors["csal_mean"]
+cbb = settings.colors["cbb_mean"]
 
 cm = 1 / 2.54
 cat = eurec4a.get_intake_catalog()
@@ -46,25 +48,25 @@ joanne = cat.dropsondes.JOANNE.level4.to_dask()
 plt.style.use("./beach.mplstyle")
 fig, axes = plt.subplots(ncols=2, figsize=(12 * cm, 6 * cm))
 
-ds.omega.mean("circle").plot(y="altitude", label="BEACH", color="C0", ax=axes[1])
+ds.omega.mean("circle").plot(y="altitude", label="BEACH", color="k", ax=axes[1])
 
 ds.omega.where(ds.omega.c_island == "SAL").mean("circle").plot(
-    y="altitude", label="BEACH East Atlantic", color="C2", ax=axes[1]
+    y="altitude", label="BEACH East Atlantic", color=csal, ax=axes[1]
 )
 ds.omega.where(ds.omega.c_island == "BB").mean("circle").plot(
-    y="altitude", label="BEACH West Atlantic", color="C3", ax=axes[1]
+    y="altitude", label="BEACH West Atlantic", color=cbb, ax=axes[1]
 )
 
 (joanne.omega * 60 * 60 / 100).sel(alt=slice(0, 9500)).mean("circle").plot(
     ax=axes[1], y="alt", color="C1", label="JOANNE"
 )
-ds.div.mean("circle").plot(y="altitude", label="BEACH ", color="C0", ax=axes[0])
+ds.div.mean("circle").plot(y="altitude", label="BEACH ", color="k", ax=axes[0])
 
 ds.div.where(ds.omega.c_island == "SAL").mean("circle").plot(
-    y="altitude", label="BEACH East Atlantic", color="C2", ax=axes[0]
+    y="altitude", label="BEACH East Atlantic", color=csal, ax=axes[0]
 )
 ds.div.where(ds.omega.c_island == "BB").mean("circle").plot(
-    y="altitude", label="BEACH West Atlantic", color="C3", ax=axes[0]
+    y="altitude", label="BEACH West Atlantic", color=cbb, ax=axes[0]
 )
 joanne.D.mean("circle").plot(ax=axes[0], y="alt", color="C1", label="JOANNE")
 

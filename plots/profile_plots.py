@@ -5,6 +5,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import numpy as np
 import settings
+from orcestra import get_flight_segments
 
 lev3 = xr.open_dataset(
     f"{settings.root}/products/HALO/dropsondes/Level_3/PERCUSION_Level_3.zarr",
@@ -25,20 +26,46 @@ ta_bb = bb["ta"].mean("sonde")
 
 sal_freeze = np.abs(ta_sal - 273.15).argmin()
 bb_freeze = np.abs(ta_bb - 273.15).argmin()
-
-rhmax_sal = sal["rh"].mean("sonde").argmax()
-rhmax_bb = bb["rh"].mean("sonde").argmax()
 rhfreeze_sal = sal["rh"].isel(altitude=sal_freeze).mean("sonde")
 rhfreeze_bb = bb["rh"].isel(altitude=sal_freeze).mean("sonde")
+# %%
 
+meta = get_flight_segments()
+entries = []
+atr = []
+for key in meta["HALO"].keys():
+    for entry in meta["HALO"][key]["segments"]:
+        if ("atr_coordination" in entry["kinds"]) and ("circle" in entry["kinds"]):
+            print(entry["segment_id"], entry["start"], entry["end"])
+            segment_sondes = (
+                lev3.swap_dims({"sonde": "launch_time"})
+                .sel(launch_time=slice(entry["start"], entry["end"]))
+                .swap_dims({"launch_time": "sonde"})
+            )
+            try:
+                extra = (
+                    lev3.swap_dims({"sonde": "sonde_id"})
+                    .sel(sonde=entry["extra_sondes"])
+                    .swap_dims({"sonde_id": "sonde"})
+                )
+            except KeyError:
+                atr.append(segment_sondes)
+            else:
+                atr.append(xr.concat([segment_sondes, extra], dim="sonde"))
+            entries.append(entry)
+            print(entry["kinds"])
+
+atr_sondes = xr.concat(atr, dim="sonde")
+atr_sondes["rh"] = atr_sondes["rh"] * 100
 # %%
 
 
 plt.style.use("./beach.mplstyle")
-csal = "#960018"
-csal_mean = "#c1121f"
-cbb = "#0085db"
-cbb_mean = "#00b4d8"
+csal = settings.colors["csal"]
+csal_mean = settings.colors["csal_mean"]
+atr_color = settings.colors["atr_mean"]
+cbb = settings.colors["cbb"]
+cbb_mean = settings.colors["cbb_mean"]
 variables = ["theta", "rh", "u", "v"]
 units = ["K", "%", "m s-1", "m s-1"]
 
@@ -73,10 +100,8 @@ for j, var in enumerate(variables):
 
 sns.despine(offset=10)
 axes[0, 1].set_yticks(
-    list(axes[0, 1].get_yticks())
-    + [(sal_freeze + bb_freeze) / 2 * 10, (rhmax_sal + rhmax_bb) / 2 * 10],
-    labels=list(axes[0, 0].get_yticks())
-    + ["273.15 K", (rhmax_sal + rhmax_bb).values / 2 * 10],
+    list(axes[0, 1].get_yticks()) + [(sal_freeze + bb_freeze) / 2 * 10],
+    labels=list(axes[0, 0].get_yticks()) + ["273.15 K"],
 )
 xticks = list((axes[0, 1].get_xticks()).astype(int))
 xticks.remove(np.float64(60))
