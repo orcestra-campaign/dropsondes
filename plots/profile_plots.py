@@ -90,9 +90,13 @@ for j, var in enumerate(variables):
             ax=ax, color=cbb, alpha=0.05, y="altitude", rasterized=True
         )
 
+    atr_sondes[var].mean("sonde").sel(altitude=slice(0, 10000)).plot(
+        ax=ax, color=atr_color, y="altitude", linewidth=2, label="ATR (East Atlantic)"
+    )
     sal[var].mean("sonde").sel(altitude=slice(0, 13500)).plot(
         ax=ax, color=csal_mean, y="altitude", linewidth=2, label="East Atlantic"
     )
+
     bb[var].mean("sonde").sel(altitude=slice(0, 13500)).plot(
         ax=ax, color=cbb_mean, y="altitude", linewidth=2, label="West Atlantic"
     )
@@ -120,20 +124,15 @@ for ax in axes[0, :]:
         (sal_freeze + bb_freeze) / 2 * 10, color="grey", alpha=0.5, linestyle="--"
     )
 
-axes[0, 1].axhline(
-    (rhmax_sal + rhmax_bb) / 2 * 10, color="grey", alpha=0.5, linestyle="--"
-)
 
 axes[0, 1].axvline(rhfreeze_sal, color="grey", alpha=0.5, linestyle="--")
 axes[0, 1].axvline(rhfreeze_bb, color="grey", alpha=0.5, linestyle="--")
 axes[0, 1].set_xlim(0, 100)
-for ax in axes[1, :]:
-    ax.axhline((rhmax_sal + rhmax_bb) / 2 * 10, color="grey", alpha=0.5, linestyle="--")
 axes[0, 0].set_ylabel("altitude / m")
 axes[1, 0].set_ylabel("altitude / m")
 axes[1, 1].set_xlim(-20, 20)
 axes[1, 0].set_xlim(-40, 20)
-sns.despine(offset={"left": 10})
+sns.despine(offset={"left": 5})
 axes[0, 0].legend()
 fig.tight_layout()
 fig.savefig("../images/profile_overview.pdf", bbox_inches="tight")
