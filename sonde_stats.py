@@ -6,7 +6,6 @@ from orcestra import get_flight_segments
 import fsspec
 import re
 from plots import settings
-from datetime import timedelta
 
 
 meta = get_flight_segments()
@@ -59,8 +58,10 @@ def get_flight_info(flight_id):
     return {
         "flight ID": flight_id,
         "date": flight["date"],
-        "flight time": str(flight["takeoff"].strftime("%H:%M:%S"))+"-"+str(flight["landing"].strftime("%H:%M:%S")),
-        #"landing": flight["landing"].strftime("%H:%M:%S"),
+        "flight time": str(flight["takeoff"].strftime("%H:%M:%S"))
+        + "-"
+        + str(flight["landing"].strftime("%H:%M:%S")),
+        # "landing": flight["landing"].strftime("%H:%M:%S"),
         "Level 0": len(
             [
                 fname
@@ -85,7 +86,7 @@ total = {
     "flight ID": "Total",
     "date": "",
     "flight time": "",
-    #"landing": "",
+    # "landing": "",
     "Level 0": df["Level 0"].sum(),
     "Level 1": df["Level 1"].sum(),
     "Level 2": df["Level 2"].sum(),
@@ -111,6 +112,7 @@ for halo_flight in meta["HALO"].keys():
             atr_circle_segments.append(entry)
             print(entry["kinds"])
 
+
 # %%
 def atr_flight_for_circle(circle):
     potential_flights = []
@@ -118,7 +120,7 @@ def atr_flight_for_circle(circle):
         flight = meta["ATR"][key]
         if circle["start"].date() == flight["date"]:
             potential_flights.append(flight)
-            #print(flight["flight_id"], flight["takeoff"], flight["landing"])
+            # print(flight["flight_id"], flight["takeoff"], flight["landing"])
     if len(potential_flights) == 0:
         print("No ATR flight found for circle", circle["segment_id"])
         return None
@@ -126,17 +128,30 @@ def atr_flight_for_circle(circle):
         return potential_flights[0]
     elif len(potential_flights) > 1:
         circle_ref_time = circle["start"] + (circle["end"] - circle["start"]) / 2
-        flight_ref_time = [flight["takeoff"] + (flight["landing"] - flight["takeoff"]) / 2 for flight in potential_flights]
+        flight_ref_time = [
+            flight["takeoff"] + (flight["landing"] - flight["takeoff"]) / 2
+            for flight in potential_flights
+        ]
         flight_ind = np.argmin([np.abs(circle_ref_time - f) for f in flight_ref_time])
         return potential_flights[flight_ind]
 
+
 for circle in atr_circle_segments:
-    print(circle["segment_id"], circle["start"].strftime("%H:%M:%S"), circle["end"].strftime("%H:%M:%S"))
+    print(
+        circle["segment_id"],
+        circle["start"].strftime("%H:%M:%S"),
+        circle["end"].strftime("%H:%M:%S"),
+    )
     flight = atr_flight_for_circle(circle)
-    print(flight["flight_id"], flight["takeoff"].strftime("%H:%M:%S"), flight["landing"].strftime("%H:%M:%S"))
+    print(
+        flight["flight_id"],
+        flight["takeoff"].strftime("%H:%M:%S"),
+        flight["landing"].strftime("%H:%M:%S"),
+    )
     print("--------")
 
 # %%
+
 
 def get_atr_info(circle):
     flight = atr_flight_for_circle(circle)
