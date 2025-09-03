@@ -61,3 +61,41 @@ def get_circle_data(ds, flight_id="20240811"):
             print(f"No sondes for circle {circle}. It is omitted")
 
     return ds_c
+
+
+def get_circle_id_for_sondes(ds):
+    return ds.assign(
+        circle_id_sonde=(
+            ("sonde"),
+            np.concat(
+                [
+                    np.repeat(
+                        ds.sel(circle=circle).circle_id.values,
+                        ds.sel(circle=circle).sondes_per_circle.values,
+                    )
+                    for circle in ds.circle
+                ]
+            ),
+        )
+    )
+
+
+def assign_circle_var_to_sondes(ds, var):
+    return ds.assign(
+        {
+            f"{var}_sonde": (
+                ("sonde", "altitude"),
+                np.concat(
+                    [
+                        np.stack(
+                            ([ds.sel(circle=circle)[var].values],)
+                            * int(ds.sel(circle=circle).sondes_per_circle.values),
+                            axis=0,
+                        ).squeeze()
+                        for circle in ds.circle
+                    ],
+                    axis=0,
+                ),
+            ),
+        }
+    )
