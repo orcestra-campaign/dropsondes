@@ -71,6 +71,18 @@ for level in tqdm(level_dirs):
     ] = lev_sonde
 
 # %%
+level_dirs = ["Level_4"]
+tree["products"]["HALO"]["dropsondes"].setdefault("Level_4", {})
+for level in tqdm(level_dirs):
+    path2lev = os.path.join(product_path, "Level_4")
+    lev_sonde = path2ipfs(path2lev)
+
+    if tree["products"]["HALO"]["dropsondes"]["Level_4"] is None:
+        tree["products"]["HALO"]["dropsondes"]["Level_4"] = {}
+    lev_sonde = path2ipfs(os.path.join(path2lev, f"PERCUSION_{level}.zarr"))
+    tree["products"]["HALO"]["dropsondes"]["Level_4"][
+        f"PERCUSION_{level}.zarr"
+    ] = lev_sonde
 
 # %%
 # Save the updated tree back to the YAML file
