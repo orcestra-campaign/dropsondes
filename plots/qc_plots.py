@@ -22,10 +22,10 @@ bins_fullness = np.linspace(0, 1, nb_bins)
 bins_count = np.linspace(0, 210, nb_bins)
 bins_extend = np.linspace(0, 15000, nb_bins)
 var = variables[0]
-
+sns.set_context("paper", font_scale=0.8)
 plt.style.use("./beach.mplstyle")
 cm = 1 / 2.54
-fig, axes = plt.subplots(ncols=3, figsize=(12 * cm, 4 * cm))
+fig, axes = plt.subplots(ncols=3, figsize=(12 * cm, 5 * cm))
 for var, color in zip(variables, colors):
     sns.histplot(
         ds[var + "_profile_sparsity_fraction"],
@@ -72,7 +72,8 @@ ax.set_ylabel("")
 ax.set_xlabel("profile extent / m")
 ax.axvline(8000, color="gray", alpha=0.5)
 ax.set_xlim(0, 15500)
-axes[0].set_ylabel("normalized number of sondes")
+axes[0].set_ylabel("normalized \n # of sondes")
 for ax in axes:
     ax.tick_params(pad=0.3, axis="y")
+fig.tight_layout()
 fig.savefig("../images/qc_distribution.pdf", bbox_inches="tight")
