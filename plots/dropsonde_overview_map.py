@@ -5,8 +5,9 @@ import matplotlib.pyplot as plt
 import cartopy.feature
 import cartopy.crs as ccrs
 import settings
-
+import seaborn as sns
 from orcestra import get_flight_segments
+import droputils.plot_utils as pu
 
 # %%
 l3 = f"{settings.root}/products/HALO/dropsondes/Level_3/PERCUSION_Level_3.zarr"
@@ -78,34 +79,29 @@ atr_color = settings.colors.get("atr", "C2")
 meteor_color = settings.colors.get("meteor", "C3")
 
 lon_min, lon_max, lat_min, lat_max = -65, -15, 0, 23  # -27, -19, 13, 20 (ATR area)
-ds_st = dsdrop.swap_dims({"sonde": "sonde_time"})
+ds_st = dsdrop.swap_dims({"sonde": "launch_time"})
 
+sns.set_context("paper", font_scale=0.8)
 plt.style.use("./beach.mplstyle")
+
 size = 2
 cm = 1 / 2.54
 fig, ax = plt.subplots(
     figsize=(12 * cm, 5.5), subplot_kw=dict(projection=ccrs.PlateCarree())
 )
-gl = ax.gridlines(
-    crs=ccrs.PlateCarree(),
-    draw_labels=True,
-    alpha=0.25,
-    xlabel_style={"fontsize": 6},
-    ylabel_style={"fontsize": 6},
-)
-gl.top_labels = False
-gl.right_labels = False
+
 ax.set_extent([lon_min, lon_max, lat_min, lat_max], crs=ccrs.PlateCarree())
 ax.add_feature(cartopy.feature.LAND, zorder=0, edgecolor="black", facecolor="lightgrey")
 
-ax.set_title(f"PERCUSION's {ds_st.sizes['sonde_time']} dropsondes")
+
+# ax.set_title(f"PERCUSION's {ds_st.sizes['launch_time']} dropsondes")
 
 ax.scatter(
-    ds_st.aircraft_longitude,
-    ds_st.aircraft_latitude,
+    ds_st.launch_lon,
+    ds_st.launch_lat,
     s=size,
     c=std_color,
-    zorder=10,
+    zorder=1,
 )
 
 count_atr_circles = 0
@@ -119,24 +115,24 @@ for s in segments:
     if "atr_coordination" in s["kinds"]:
         t = slice(s["start"], s["end"])
         ax.scatter(
-            ds_st.aircraft_longitude.sel(sonde_time=t),
-            ds_st.aircraft_latitude.sel(sonde_time=t),
+            ds_st.launch_lon.sel(launch_time=t),
+            ds_st.launch_lat.sel(launch_time=t),
             s=size,
             c=atr_color,
-            zorder=90,
+            zorder=1,
         )
         count_atr_circles += 1
-        count_atr_sondes += ds_st.sel(sonde_time=t).sizes["sonde_time"]
+        count_atr_sondes += ds_st.sel(launch_time=t).sizes["launch_time"]
     elif "circle" in s["kinds"]:
         t = slice(s["start"], s["end"])
         ax.scatter(
-            ds_st.aircraft_longitude.sel(sonde_time=t),
-            ds_st.aircraft_latitude.sel(sonde_time=t),
+            ds_st.launch_lon.sel(launch_time=t),
+            ds_st.launch_lat.sel(launch_time=t),
             s=size,
             c=circle_color,
-            zorder=80,
+            zorder=1,
         )
-        sondes_in_circle = ds_st.sel(sonde_time=t).sizes["sonde_time"]
+        sondes_in_circle = ds_st.sel(launch_time=t).sizes["launch_time"]
         if sondes_in_circle > 0:
             count_circles += 1
             count_circle_sondes += sondes_in_circle
@@ -147,16 +143,16 @@ for e in events:
             e["time"] - np.timedelta64(5, "m"), e["time"] + np.timedelta64(5, "m")
         )
         ax.scatter(
-            ds_st.aircraft_longitude.sel(sonde_time=t),
-            ds_st.aircraft_latitude.sel(sonde_time=t),
+            ds_st.launch_lon.sel(launch_time=t),
+            ds_st.launch_lat.sel(launch_time=t),
             s=size,
             c=meteor_color,
-            zorder=100,
+            zorder=1,
         )
-        count_meteor_sondes += ds_st.sel(sonde_time=t).sizes["sonde_time"]
+        count_meteor_sondes += ds_st.sel(launch_time=t).sizes["launch_time"]
 
 count_add_sondes = (
-    ds_st.sizes["sonde_time"]
+    ds_st.sizes["launch_time"]
     - count_circle_sondes
     - count_atr_sondes
     - count_meteor_sondes
@@ -191,7 +187,12 @@ ax.scatter(
     label=f"{count_add_sondes} additional sondes",
 )
 
-ax.legend(ncols=2)  # , title=f"Total number of sondes: {dsdrop.sizes["sonde"]}"
+ax.legend(
+    bbox_to_anchor=(-0.15, 1.10), loc="upper left", ncols=2, framealpha=1
+)  # , title=f"Total number of sondes: {dsdrop.sizes["sonde"]}"
+ax = pu.plot_gridlines(ax)
+ax.set_xlabel("Longitude / °E")
+ax.set_ylabel("Latitude / °N")
 fig.savefig("../images/dropsonde_overview_map.pdf", dpi=300, bbox_inches="tight")
 
 # %%
