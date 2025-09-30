@@ -24,6 +24,7 @@ for idx, sonde in enumerate(lev3.sonde_id.values):
     values.append(l2_ds.gpsalt.values[0])
     pvalues.append(l2_ds.p.values[0])
 # %%
+sns.set_context("paper", font_scale=0.8)
 plt.style.use("./beach.mplstyle")
 constrained_alt = np.where(np.abs(values) < 100, values, np.nan)
 constrained_p = np.where(np.array(pvalues) > 100500, pvalues, np.nan)
@@ -34,7 +35,8 @@ fig, ax1 = plt.subplots(figsize=(8.3 * cm, 8.3 * cm))
 
 sns.histplot(
     constrained_alt,
-    bins=200,
+    bins=50,
+    binrange=(2.4 - 50, 2.4 + 50),
     stat="probability",
     alpha=0.5,
     color="C0",
@@ -46,7 +48,8 @@ ax2 = ax1.twiny()
 
 sns.histplot(
     constrained_p,
-    bins=100,
+    bins=50,
+    binrange=(101000 - 500, 101000 + 500),
     stat="probability",
     alpha=0.5,
     color="C1",
@@ -68,5 +71,5 @@ ax1.set_xlabel("last gpsalt value / m")
 ax2.set_xlabel("last pressure value / Pa")
 # axes[1].set_ylabel("")
 
-sns.despine(offset={"left": 10})
+sns.despine(offset={"left": 5})
 fig.savefig("../images/surface_hist.pdf", bbox_inches="tight")
