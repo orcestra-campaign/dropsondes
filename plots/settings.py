@@ -11,3 +11,7 @@ colors = {
 }
 
 root = "ipfs://QmTpimQBT8AngwDPRTWYqCXctbhqMiP3NiPeEfXt3JomuU"
+
+east_region = [[-34, 3.5], [-20, 3.5], [-20, 13.5], [-34, 13.5]]
+north_region = [[-26, 13.5], [-20, 13.5], [-20, 18.5], [-26, 18.5]]
+west_region = [[-59, 6], [-45, 6], [-45, 16], [-59, 16]]
