@@ -1,6 +1,6 @@
 colors = {
-    "halo-circles": "#008181",
-    "meteor": "#E92AC6",
+    "halo-circles": "teal",
+    "meteor": "navy",
     "atr": "#FFA500",
     "atr_mean": "#FF7982",
     "extra-sondes": "#23E9FF",
