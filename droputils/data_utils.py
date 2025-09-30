@@ -2,7 +2,7 @@ import configparser
 import os
 from datetime import datetime, date, time
 import numpy as np
-
+from matplotlib.path import Path
 import droputils.rough_segments as segments
 
 
@@ -61,6 +61,17 @@ def get_circle_data(ds, flight_id="20240811"):
             print(f"No sondes for circle {circle}. It is omitted")
 
     return ds_c
+
+
+def sel_sub_domain(
+    ds, polygon, item_var="sonde", lon_var="launch_lon", lat_var="launch_lat"
+):
+    """
+    select points from dataset that lie within the polygon
+    """
+    points = np.column_stack([ds[lon_var].values, ds[lat_var].values])
+    inside = Path(polygon).contains_points(points)
+    return ds.sel(**{item_var: inside})
 
 
 def get_circle_id_for_sondes(ds):
