@@ -6,28 +6,61 @@ import matplotlib.pyplot as plt
 import numpy as np
 import settings
 from orcestra import get_flight_segments
+import droputils.data_utils as du
 
 lev3 = xr.open_dataset(
     f"{settings.root}/products/HALO/dropsondes/Level_3/PERCUSION_Level_3.zarr",
     engine="zarr",
 )
 # %%
+east = du.sel_sub_domain(
+    lev3,
+    settings.east_region,
+    item_var="sonde",
+    lon_var="launch_lon",
+    lat_var="launch_lat",
+)
 
-sal = lev3.where(lev3.aircraft_longitude > -40, drop=True)
-sal["rh"] = sal["rh"] * 100
-bb = lev3.where(lev3.aircraft_longitude < -40, drop=True)
-bb["rh"] = bb["rh"] * 100
+west = du.sel_sub_domain(
+    lev3,
+    settings.west_region,
+    item_var="sonde",
+    lon_var="launch_lon",
+    lat_var="launch_lat",
+)
+north = du.sel_sub_domain(
+    lev3,
+    settings.north_region,
+    item_var="sonde",
+    lon_var="launch_lon",
+    lat_var="launch_lat",
+)
+# %%
+
+sal = lev3.where(lev3.launch_lon > -40, drop=True)
+bb = lev3.where(lev3.launch_lon < -40, drop=True)
+# %%
+
+east = east.assign(rh=east.rh * 100)
+west = west.assign(rh=west.rh * 100)
+north = north.assign(rh=north.rh * 100)
+sal = sal.assign(rh=sal.rh * 100)
+bb = bb.assign(rh=bb.rh * 100)
+# %%
 
 # %% special ticks
 
 
-ta_sal = sal["ta"].mean("sonde")
-ta_bb = bb["ta"].mean("sonde")
+ta_east = east["ta"].mean("sonde")
+ta_west = west["ta"].mean("sonde")
+ta_north = north["ta"].mean("sonde")
 
-sal_freeze = np.abs(ta_sal - 273.15).argmin()
-bb_freeze = np.abs(ta_bb - 273.15).argmin()
-rhfreeze_sal = sal["rh"].isel(altitude=sal_freeze).mean("sonde")
-rhfreeze_bb = bb["rh"].isel(altitude=sal_freeze).mean("sonde")
+east_freeze = np.abs(ta_east - 273.15).argmin()
+west_freeze = np.abs(ta_west - 273.15).argmin()
+north_freeze = np.abs(ta_north - 273.15).argmin()
+rhfreeze_east = east["rh"].isel(altitude=east_freeze).mean("sonde")
+rhfreeze_west = west["rh"].isel(altitude=west_freeze).mean("sonde")
+rhfreeze_north = north["rh"].isel(altitude=north_freeze).mean("sonde")
 # %%
 
 meta = get_flight_segments()
@@ -59,7 +92,7 @@ atr_sondes = xr.concat(atr, dim="sonde")
 atr_sondes["rh"] = atr_sondes["rh"] * 100
 # %%
 
-
+sns.set_context("paper", font_scale=0.8)
 plt.style.use("./beach.mplstyle")
 csal = settings.colors["csal"]
 csal_mean = settings.colors["csal_mean"]
@@ -77,6 +110,7 @@ for j, var in enumerate(variables):
     col = j % 2
     row = j // 2
     ax = axes[row, col]
+
     for i in range(max([sal.sonde.size, bb.sonde.size])):
         sonde = max([sal.sonde.size, bb.sonde.size]) - i - 1
 
@@ -90,30 +124,34 @@ for j, var in enumerate(variables):
             ax=ax, color=cbb, alpha=0.05, y="altitude", rasterized=True
         )
 
-    atr_sondes[var].mean("sonde").sel(altitude=slice(0, 10000)).plot(
-        ax=ax, color=atr_color, y="altitude", linewidth=2, label="ATR (East Atlantic)"
+    north[var].mean("sonde").sel(altitude=slice(0, 10000)).plot(
+        ax=ax, color=atr_color, y="altitude", linewidth=2, label="North"
     )
-    sal[var].mean("sonde").sel(altitude=slice(0, 13500)).plot(
-        ax=ax, color=csal_mean, y="altitude", linewidth=2, label="East Atlantic"
+    east[var].mean("sonde").sel(altitude=slice(0, 13500)).plot(
+        ax=ax, color=csal_mean, y="altitude", linewidth=2, label="East"
     )
 
-    bb[var].mean("sonde").sel(altitude=slice(0, 13500)).plot(
-        ax=ax, color=cbb_mean, y="altitude", linewidth=2, label="West Atlantic"
+    west[var].mean("sonde").sel(altitude=slice(0, 13500)).plot(
+        ax=ax, color=cbb_mean, y="altitude", linewidth=2, label="West"
     )
     ax.set_xlabel(f"{var} / {units[j]}")
 
 sns.despine(offset=10)
 axes[0, 1].set_yticks(
-    list(axes[0, 1].get_yticks()) + [(sal_freeze + bb_freeze) / 2 * 10],
+    list(axes[0, 1].get_yticks()) + [(east_freeze + west_freeze) / 2 * 10],
     labels=list(axes[0, 0].get_yticks()) + ["273.15 K"],
 )
 xticks = list((axes[0, 1].get_xticks()).astype(int))
 xticks.remove(np.float64(60))
-axes[0, 1].set_xticks(xticks + [int(rhfreeze_sal), int(rhfreeze_bb)])
-
+axes[0, 1].set_xticks(xticks + [int(rhfreeze_east), int(rhfreeze_west)])
+yticks = axes[0, 0].get_yticks()
+yticks_new = np.concatenate(
+    (yticks, [east_freeze * 10, west_freeze * 10, north_freeze * 10])
+)
 
 axes[0, 0].set_yticks(
-    axes[0, 0].get_yticks(), labels=[int(label) for label in axes[0, 0].get_yticks()]
+    np.concatenate((yticks, [east_freeze * 10, west_freeze * 10, north_freeze * 10])),
+    labels=yticks.tolist() + ["", "", ""],
 )
 
 for ax in axes.flatten():
@@ -121,18 +159,18 @@ for ax in axes.flatten():
     ax.set_ylabel("")
 for ax in axes[0, :]:
     ax.axhline(
-        (sal_freeze + bb_freeze) / 2 * 10, color="grey", alpha=0.5, linestyle="--"
+        (east_freeze + west_freeze) / 2 * 10, color="grey", alpha=0.5, linestyle="--"
     )
 
 
-axes[0, 1].axvline(rhfreeze_sal, color="grey", alpha=0.5, linestyle="--")
-axes[0, 1].axvline(rhfreeze_bb, color="grey", alpha=0.5, linestyle="--")
+axes[0, 1].axvline(rhfreeze_east, color="grey", alpha=0.5, linestyle="--")
+axes[0, 1].axvline(rhfreeze_west, color="grey", alpha=0.5, linestyle="--")
 axes[0, 1].set_xlim(0, 100)
 axes[0, 0].set_ylabel("altitude / m")
 axes[1, 0].set_ylabel("altitude / m")
 axes[1, 1].set_xlim(-20, 20)
 axes[1, 0].set_xlim(-40, 20)
 sns.despine(offset={"left": 5})
-axes[0, 0].legend()
+axes[0, 0].legend(fontsize=8)
 fig.tight_layout()
 fig.savefig("../images/profile_overview.pdf", bbox_inches="tight")
