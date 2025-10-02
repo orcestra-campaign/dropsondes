@@ -52,6 +52,7 @@ cnorth = settings.colors["atr_mean"]
 cm = 1 / 2.54
 cat = eurec4a.get_intake_catalog()
 joanne = cat.dropsondes.JOANNE.level4.to_dask()
+sns.set_context("paper", font_scale=0.8)
 plt.style.use("./beach.mplstyle")
 fig, axes = plt.subplots(ncols=2, figsize=(12 * cm, 6 * cm))
 
@@ -74,19 +75,19 @@ fig, axes = plt.subplots(ncols=2, figsize=(12 * cm, 6 * cm))
 )
 
 lev4.div.mean("circle").plot(y="altitude", label="BEACH", color="k", ax=axes[0])
-east.div.mean("circle").plot(y="altitude", label="BEACH East", color=csal, ax=axes[0])
-west.div.mean("circle").plot(y="altitude", label="BEACH West", color=cbb, ax=axes[0])
+east.div.mean("circle").plot(y="altitude", label="East", color=csal, ax=axes[0])
+west.div.mean("circle").plot(y="altitude", label="West", color=cbb, ax=axes[0])
 north.div.mean("circle").sel(altitude=slice(0, 10000)).plot(
-    y="altitude", label="BEACH North", color=cnorth, ax=axes[0]
+    y="altitude", label="North", color=cnorth, ax=axes[0]
 )
 joanne.D.mean("circle").plot(ax=axes[0], y="alt", color="C1", label="JOANNE")
-
+axes[0].set_zorder(2)
 axes[1].set_xlabel("omega / hPa hr-1")
 axes[0].set_xlabel(f"divergence / {lev4.div.attrs['units']}")
 axes[1].set_ylabel("")
 axes[1].set_yticklabels("")
 axes[0].set_ylabel(f"altitude / {lev4.altitude.attrs['units']}")
-axes[0].legend(loc="center right")
+axes[0].legend(loc="upper right", bbox_to_anchor=(1.33, 1), fontsize=7, framealpha=1)
 axes[0].set_yticks(
     list(axes[0].get_yticks()),
     labels=list(axes[0].get_yticks()),
