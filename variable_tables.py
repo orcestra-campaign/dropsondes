@@ -50,6 +50,9 @@ def get_coords(ds):
 # %%
 l3_records = get_ds_vars(l3)
 l4_records = get_ds_vars(l4, l3)
+# %%
+
+
 l4_records.update(
     {
         "*\_mean": {
@@ -61,25 +64,37 @@ l4_records.update(
         "*\_d*dx": {
             "variable": "*\_d*dx",
             "units": "* m-1",
-            "standard\_name": "derivative\_of\_*\_wrt\_x",
+            "standard\_name": l4["u_dudx"]
+            .attrs.get("standard_name", "")
+            .replace(l4["u"].attrs.get("standard_name", ""), "*")
+            .replace("_", "\_"),
             "dimensions": "circle altitude",
         },
         "*\_d*dy": {
             "variable": "*\_d*dy",
             "units": "* m-1",
-            "standard\_name": "derivative\_of\_*\_wrt\_y",
+            "standard\_name": l4["u_dudy"]
+            .attrs.get("standard_name", "")
+            .replace(l4["u"].attrs.get("standard_name", ""), "*")
+            .replace("_", "\_"),
             "dimensions": "circle altitude",
         },
         "*\_d*dx_std\_error": {
             "variable": "*\_d*dx\_std\_error",
             "units": "* m-1",
-            "standard\_name": "derivative\_of\_*\_wrt\_x standard\_error",
+            "standard\_name": l4["u_dudx_std_error"]
+            .attrs.get("standard_name", "")
+            .replace(l4["u"].attrs.get("standard_name", ""), "*")
+            .replace("_", "\_"),
             "dimensions": "circle altitude",
         },
         "*\_d*dy_std\_error": {
             "variable": "*\_d*dy\_std\_error",
             "units": "* m-1",
-            "standard\_name": "derivative\_of\_*\_wrt\_y standard\_error",
+            "standard\_name": l4["u_dudy_std_error"]
+            .attrs.get("standard_name", "")
+            .replace(l4["u"].attrs.get("standard_name", ""), "*")
+            .replace("_", "\_"),
             "dimensions": "circle altitude",
         },
     }
