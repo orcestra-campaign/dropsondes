@@ -160,8 +160,8 @@ def get_atr_info(circle):
         "flight date": flight["date"],
         "flight time": f"{flight['takeoff'].strftime('%H:%M:%S')}-{flight['landing'].strftime('%H:%M:%S')}",
         "Level 3 sondes": l3.where(
-            (l3.sonde_time > np.datetime64(circle["start"]))
-            & (l3.sonde_time < np.datetime64(circle["end"])),
+            (l3.launch_time > np.datetime64(circle["start"]))
+            & (l3.launch_time < np.datetime64(circle["end"])),
             drop=True,
         ).sizes["sonde"],
         "Level 4 sondes": l4.swap_dims({"circle": "circle_id"})
