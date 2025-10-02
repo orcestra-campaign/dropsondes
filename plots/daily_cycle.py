@@ -11,7 +11,7 @@ from xhistogram.xarray import histogram
 l3 = xr.open_dataset(
     f"{settings.root}/products/HALO/dropsondes/Level_3/PERCUSION_Level_3.zarr",
     engine="zarr",
-).assign(wspd_sfc=lambda ds: ds.w_spd.sel(altitude=slice(0, 51)).mean("altitude"))
+).assign(wspd_sfc=lambda ds: ds.wspd.sel(altitude=slice(0, 51)).mean("altitude"))
 
 
 # %%
@@ -25,14 +25,14 @@ l3time = l3.assign(
             pd.Timestamp(i).hour
             + pd.Timestamp(i).minute / 60
             + pd.Timestamp(i).second / 3600
-            for i in l3.sonde_time.values
+            for i in l3.launch_time.values
         ],
         dims=["sonde"],
     )
 )
 l3time = l3time.assign(
     solartime=xr.DataArray(
-        data=solar_local_time(l3.aircraft_longitude, l3time.utctime), dims=["sonde"]
+        data=solar_local_time(l3.launch_lon, l3time.utctime), dims=["sonde"]
     )
 )
 
@@ -56,14 +56,14 @@ ax.set_ylabel("Counts")
 
 # %%
 fig, ax = plt.subplots(figsize=(7, 4))
-l3time.solartime.where(l3time.aircraft_longitude > -40, drop=True).plot.hist(
+l3time.solartime.where(l3time.launch_lon > -40, drop=True).plot.hist(
     bins=np.arange(0, 25, 1),
     histtype="step",
     label=labels["east"],
     color=colors["east"],
     lw=5,
 )
-l3time.solartime.where(l3time.aircraft_longitude < -40, drop=True).plot.hist(
+l3time.solartime.where(l3time.launch_lon < -40, drop=True).plot.hist(
     bins=np.arange(0, 25, 1),
     histtype="step",
     label=labels["west"],
@@ -84,7 +84,7 @@ fig.legend()
 fig.savefig("../images/drop_solartime.png", dpi=300, bbox_inches="tight")
 
 # %% Which launches happened after 7pm?
-l3time.where(l3time.solartime > 19, drop=True).sonde_time.values
+l3time.where(l3time.solartime > 19, drop=True).launch_time.values
 
 # %% 2d histogram IWV - solar time
 fig, ax = plt.subplots(figsize=(7, 4))
