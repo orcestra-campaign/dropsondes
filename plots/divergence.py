@@ -66,7 +66,7 @@ ax1.set_xticks([xtickpos[11]], labels=["Transfer 0906"], fontsize=6)
 ax1.set_xlim(ax.get_xlim())
 ax1.tick_params(width=0.5)
 ax.annotate(
-    "West",
+    "West Atlantic",
     xy=(230, 110),
     xycoords="figure points",
     xytext=(250, 140),
@@ -82,7 +82,7 @@ ax.annotate(
     arrowprops={"arrowstyle": "<->", "linewidth": 0.5},
 )
 ax.annotate(
-    "East",
+    "East Atlantic",
     xy=(120, 140),
     xycoords="figure points",
     xytext=(100, 140),
