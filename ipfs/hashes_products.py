@@ -1,29 +1,11 @@
 # %%
-import subprocess
 import ruamel.yaml
 import sys
 import os
-from tqdm import tqdm
+import orcestra
 
 sys.path.append("./")
 sys.path.append("../")
-
-
-# %%
-def path2ipfs(path):
-    ret = subprocess.run(
-        [
-            "ipfs",
-            "add",
-            "--recursive",
-            "--hidden",
-            "--quieter",
-            "--raw-leaves",
-            path,
-        ],
-        capture_output=True,
-    )
-    return ret.stdout.decode().strip()
 
 
 # %% write ipfs hashes to file
@@ -34,55 +16,14 @@ tree = yaml.load(open("../../ipfs_tools/tree.yaml", "r"))
 # config = data_utils.get_config(config_path)
 
 product_path = "/Users/helene/Documents/Data/Dropsonde/dropsonde_data/products/"  # config["OPTIONAL"]["product_dir"]
-# %%
 
-# Ensure the structure exists and initialize empty dicts if they don't exist
 tree["products"]["HALO"].setdefault("dropsondes", {})
 if tree["products"]["HALO"]["dropsondes"] is None:
     tree["products"]["HALO"]["dropsondes"] = {}
 
+level1 = orcestra.ipfs.ipfs_add(os.path.join(product_path, "Level_1"))
 
-# add product_data
-level_dirs = ["Level_1", "Level_2"]
-for level in level_dirs:
-    print(level)
-    tree["products"]["HALO"]["dropsondes"].setdefault(f"{level}", {})
-    if tree["products"]["HALO"]["dropsondes"][f"{level}"] is None:
-        tree["products"]["HALO"]["dropsondes"][f"{level}"] = {}
-    fl_path = os.path.join(product_path, level)
-    flight_ids = [f for f in sorted(os.listdir(fl_path)) if "HALO-" in f]
-    for flight in tqdm(sorted(flight_ids)):
-        path_to_flight = os.path.join(fl_path, flight)
-        lev_sonde = path2ipfs(path_to_flight)
-
-        tree["products"]["HALO"]["dropsondes"][f"{level}"][f"{flight}"] = lev_sonde
-# %%
-level_dirs = ["Level_3", "Level_3_qc"]
-tree["products"]["HALO"]["dropsondes"].setdefault("Level_3", {})
-for level in tqdm(level_dirs):
-    path2lev = os.path.join(product_path, "Level_3")
-    lev_sonde = path2ipfs(path2lev)
-
-    if tree["products"]["HALO"]["dropsondes"]["Level_3"] is None:
-        tree["products"]["HALO"]["dropsondes"]["Level_3"] = {}
-    lev_sonde = path2ipfs(os.path.join(path2lev, f"PERCUSION_{level}.zarr"))
-    tree["products"]["HALO"]["dropsondes"]["Level_3"][
-        f"PERCUSION_{level}.zarr"
-    ] = lev_sonde
-
-# %%
-level_dirs = ["Level_4"]
-tree["products"]["HALO"]["dropsondes"].setdefault("Level_4", {})
-for level in tqdm(level_dirs):
-    path2lev = os.path.join(product_path, "Level_4")
-    lev_sonde = path2ipfs(path2lev)
-
-    if tree["products"]["HALO"]["dropsondes"]["Level_4"] is None:
-        tree["products"]["HALO"]["dropsondes"]["Level_4"] = {}
-    lev_sonde = path2ipfs(os.path.join(path2lev, f"PERCUSION_{level}.zarr"))
-    tree["products"]["HALO"]["dropsondes"]["Level_4"][
-        f"PERCUSION_{level}.zarr"
-    ] = lev_sonde
+tree["products"]["HALO"]["dropsondes"]["Level_1"] = level1
 
 # %%
 # Save the updated tree back to the YAML file
