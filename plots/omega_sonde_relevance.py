@@ -12,7 +12,7 @@ from droputils import data_utils as du
 
 # %%
 lev4 = xr.open_dataset(
-    f"{settings.root}/products/HALO/dropsondes/Level_4/PERCUSION_Level_4.zarr",
+    f"ipfs://{settings.lev4}",
     engine="zarr",
 )
 
