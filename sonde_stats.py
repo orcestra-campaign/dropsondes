@@ -25,15 +25,16 @@ def fsls(path):
 
 
 # %%
-root = settings.root
-l0_path = f"{root}/raw/HALO/dropsondes"
-l1_path = f"{root}/products/HALO/dropsondes/Level_1"
-l2_path = f"{root}/products/HALO/dropsondes/Level_2"
-l3_path = f"{root}/products/HALO/dropsondes/Level_3"
-l4_path = f"{root}/products/HALO/dropsondes/Level_4"
+l0_path = f"ipfs://{settings.lev0}"
+l1_path = f"ipfs://{settings.lev1}"
+l2_path = f"ipfs://{settings.lev2}"
+l3_path = f"ipfs://{settings.lev3}"
+l4_path = f"ipfs://{settings.lev4}"
 # %%
-l3 = xr.open_dataset(f"{l3_path}/PERCUSION_Level_3.zarr", engine="zarr")
-l4 = xr.open_dataset(f"{l4_path}/PERCUSION_Level_4.zarr", engine="zarr")
+
+l2 = xr.open_dataset(l2_path, engine="zarr")
+l3 = xr.open_dataset(l3_path, engine="zarr")
+l4 = xr.open_dataset(l4_path, engine="zarr")
 
 
 # %%
@@ -41,6 +42,7 @@ def get_flight_info(flight_id):
     flight = meta["HALO"][flight_id]
     s_id = set(s["segment_id"] for s in flight["segments"])
     flight_l3 = l3.where(lambda ds: ds.flight_id == flight_id, drop=True)
+    flight_l2 = l2.where(lambda ds: ds.flight_id == flight_id, drop=True)
     ci = [i for i, c_id in enumerate(l4.circle_id.values) if c_id in s_id]
     if ci:
         sonde_bounds = np.concatenate([[0], np.cumsum(l4.sondes_per_circle)]).tolist()
@@ -70,7 +72,7 @@ def get_flight_info(flight_id):
             ]
         ),
         "Level 1": len(fsls(f"{l1_path}/{flight_id}")),
-        "Level 2": len(fsls(f"{l2_path}/{flight_id}")),
+        "Level 2": flight_l2.sizes["sonde"],
         "Level 3": flight_l3.sizes["sonde"],
         "Level 4": l4_sondes,
         "circles": l4_circles,
