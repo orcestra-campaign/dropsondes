@@ -7,8 +7,7 @@ import eurec4a
 import seaborn as sns
 
 # %%
-l4_path = f"{settings.root}/products/HALO/dropsondes/Level_4/PERCUSION_Level_4.zarr"
-ds_lev4 = xr.open_dataset(l4_path, engine="zarr").load()
+ds_lev4 = xr.open_dataset(f"ipfs://{settings.lev4}", engine="zarr").load()
 
 
 def get_nb_circles_per_flight(ds):
