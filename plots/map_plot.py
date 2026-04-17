@@ -12,7 +12,7 @@ import droputils.plot_utils as pu
 # %%
 
 ds = xr.open_dataset(
-    f"{settings.root}/products/HALO/dropsondes/Level_3/PERCUSION_Level_3.zarr",
+    f"ipfs://{settings.lev3}",
     engine="zarr",
 )
 
