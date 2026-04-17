@@ -10,6 +10,8 @@ colors = {
     "cbb_mean": "#00b4d8",
 }
 
+lev0 = "QmUcnditMJqW1u1A9o6Xo5bjutvnnSFuufF8JQJBZnGUCE"
+lev1 = "QmTtC3pY8BMSjF6yjjzDXzaWWvjf4tgG7faaVUxTX94cj1"
 lev2 = "QmUkwVXrfyMuhLoK2rRHgeLGMuqYwzfAwywFZmTPBxbmib"
 lev3 = "Qmdfk4iUktNuaosiPvEDw8BXyeqDKxej8GbvMFCAse2s9X"
 lev3qc = "QmXbc4CCLx4UTuhwRDYPeaV1Ku5v2uBo6xqavAqnfCuyXW"
