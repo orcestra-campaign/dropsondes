@@ -10,7 +10,10 @@ colors = {
     "cbb_mean": "#00b4d8",
 }
 
-root = "ipfs://QmRuaDianH2jryvZoehSES2nkqwLrEsbnwgYnRDLsM2cHZ"
+lev2 = "QmUkwVXrfyMuhLoK2rRHgeLGMuqYwzfAwywFZmTPBxbmib"
+lev3 = "Qmdfk4iUktNuaosiPvEDw8BXyeqDKxej8GbvMFCAse2s9X"
+lev3qc = "QmXbc4CCLx4UTuhwRDYPeaV1Ku5v2uBo6xqavAqnfCuyXW"
+lev4 = "QmcBRPhAzijEFi6iSXAgb15qocGmFvbBGM4U8ReAysziBt"
 
 east_region = [[-34.5, 2.5], [-20, 2.5], [-20, 13.5], [-34.5, 13.5]]
 north_region = [[-26, 13.5], [-20, 13.5], [-20, 19], [-26, 19]]
