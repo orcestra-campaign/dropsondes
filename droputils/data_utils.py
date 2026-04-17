@@ -110,3 +110,8 @@ def assign_circle_var_to_sondes(ds, var):
             ),
         }
     )
+
+
+def sel_sonde(ds, sonde_idx):
+    idx = np.insert(np.cumsum(ds.times_per_sonde.values), 0, 0)
+    return ds.isel(time=slice(idx[sonde_idx], idx[sonde_idx + 1]), sonde=sonde_idx)

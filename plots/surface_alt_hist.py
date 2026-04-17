@@ -5,24 +5,26 @@ import xarray as xr
 import seaborn as sns
 import matplotlib.pyplot as plt
 import settings
+import droputils.data_utils as du
 
 lev3 = xr.open_dataset(
-    f"{settings.root}/products/HALO/dropsondes/Level_3/PERCUSION_Level_3.zarr",
+    f"ipfs://{settings.lev3}",
     engine="zarr",
 )
-# %%
+lev2 = xr.open_dataset(
+    f"ipfs://{settings.lev2}",
+    engine="zarr",
+)
+
+# %% takes some time
 values = []
 pvalues = []
 for idx, sonde in enumerate(lev3.sonde_id.values):
-    fid = lev3.where(lev3.sonde_id == sonde, drop=True).flight_id.values[0]
-    path = f"{settings.root}/products/HALO/dropsondes/Level_2/{fid}/PERCUSION_{sonde}_Level_2.zarr"
-    l2_ds = (
-        xr.open_dataset(path, engine="zarr")
-        .sortby("time", ascending=False)
-        .dropna(dim="time", subset=["gpsalt"])
-    )
-    values.append(l2_ds.gpsalt.values[0])
-    pvalues.append(l2_ds.p.values[0])
+    sondeidx = list(lev2.sonde_id.values).index(sonde)
+    ds = du.sel_sonde(lev2, sondeidx)
+
+    values.append(ds.gpsalt.dropna("time").values[0])
+    pvalues.append(ds.p.dropna("time").values[0])
 # %%
 sns.set_context("paper", font_scale=0.8)
 plt.style.use("./beach.mplstyle")
@@ -32,7 +34,7 @@ constrained_p[constrained_p > 102000] = np.nan
 cm = 1 / 2.54
 fig, ax1 = plt.subplots(figsize=(8.3 * cm, 8.3 * cm))
 
-
+altrange = (np.nanmean(constrained_alt) - 50, np.nanmean(constrained_alt) + 50)
 sns.histplot(
     constrained_alt,
     bins=50,
@@ -46,10 +48,11 @@ sns.histplot(
 )
 ax2 = ax1.twiny()
 
+p_range = (np.nanmean(constrained_p) - 500, np.nanmean(constrained_p) + 500)
 sns.histplot(
     constrained_p,
     bins=50,
-    binrange=(101000 - 500, 101000 + 500),
+    binrange=p_range,
     stat="probability",
     alpha=0.5,
     color="C1",
@@ -65,8 +68,8 @@ for ax, c in zip([ax1, ax2], ["C0", "C1"]):
 ax2.spines["bottom"].set_color("C0")
 
 # ax.axvline(0, c="gray")
-ax1.set_xlim(2.4 - 50, 2.4 + 50)
-ax2.set_xlim(101000 - 500, 101000 + 500)
+ax1.set_xlim(altrange)
+ax2.set_xlim(p_range)
 ax1.set_xlabel("last gpsalt value / m")
 ax2.set_xlabel("last pressure value / Pa")
 # axes[1].set_ylabel("")
