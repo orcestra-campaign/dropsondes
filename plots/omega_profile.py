@@ -65,23 +65,23 @@ fig, axes = plt.subplots(ncols=2, figsize=(12 * cm, 6 * cm))
     ax=axes[1], y="alt", color="C1", label="JOANNE"
 )
 
-lev4.div.mean("circle").plot(y="altitude", label="BEACH", color="k", ax=axes[0])
+lev4.div.mean("circle").plot(y="altitude", label="ORCESTRA", color="k", ax=axes[0])
 east.div.mean("circle").plot(y="altitude", label="East", color=csal, ax=axes[0])
 west.div.mean("circle").plot(y="altitude", label="West", color=cbb, ax=axes[0])
 north.div.mean("circle").sel(altitude=slice(0, 10000)).plot(
     y="altitude", label="North", color=cnorth, ax=axes[0]
 )
-joanne.D.mean("circle").plot(ax=axes[0], y="alt", color="C1", label="JOANNE")
+joanne.D.mean("circle").plot(ax=axes[0], y="alt", color="C1", label="EUREC$^4$A")
 axes[0].set_zorder(2)
 axes[1].set_xlabel("omega / hPa hr-1")
 axes[0].set_xlabel(f"divergence / {lev4.div.attrs['units']}")
 axes[1].set_ylabel("")
 axes[1].set_yticklabels("")
-axes[0].set_ylabel(f"altitude / {lev4.altitude.attrs['units']}")
+axes[0].set_ylabel("altitude / km")
 axes[0].legend(loc="upper right", bbox_to_anchor=(1.33, 1), fontsize=7, framealpha=1)
 axes[0].set_yticks(
     list(axes[0].get_yticks()),
-    labels=list(axes[0].get_yticks()),
+    labels=(axes[0].get_yticks() / 1000).astype(int),
 )
 
 for ax in axes:
@@ -90,9 +90,3 @@ for ax in axes:
 
 sns.despine(offset={"left": 5})
 fig.savefig("../images/joanne_vs_beach.pdf", bbox_inches="tight")
-# %%
-
-fig, ax = plt.subplots()
-
-ax.scatter(lev4.circle_lon, lev4.circle_lat, color="red")
-ax.scatter(east.circle_lon, east.circle_lat, color="red")
