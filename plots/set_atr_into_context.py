@@ -24,11 +24,11 @@ atr_circle_segments = [
 
 # %% Load the dropsonde data
 l3 = xr.open_dataset(
-    f"{settings.root}/products/HALO/dropsondes/Level_3/PERCUSION_Level_3.zarr",
+    f"ipfs://{settings.lev3}",
     engine="zarr",
 ).assign(wspd_sfc=lambda ds: ds.wspd.sel(altitude=slice(0, 51)).mean("altitude"))
 l4 = xr.open_dataset(
-    f"{settings.root}/products/HALO/dropsondes/Level_4/PERCUSION_Level_4.zarr",
+    f"ipfs://{settings.lev4}",
     engine="zarr",
 )
 
