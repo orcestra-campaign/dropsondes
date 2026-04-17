@@ -25,7 +25,7 @@ config.read("../orcestra_drop.cfg")
 
 # %%
 l3_ds = xr.open_dataset(
-    f"{settings.root}/products/HALO/dropsondes/Level_3/PERCUSION_Level_3.zarr",
+    f"ipfs://{settings.lev3}",
     engine="zarr",
 )
 
