@@ -6,10 +6,8 @@ from plots import settings
 
 # %%
 
-l3_path = f"{settings.root}/products/HALO/dropsondes/Level_3"
-l4_path = f"{settings.root}/products/HALO/dropsondes/Level_4"
-l3 = xr.open_dataset(f"{l3_path}/PERCUSION_Level_3.zarr", engine="zarr")
-l4 = xr.open_dataset(f"{l4_path}/PERCUSION_Level_4.zarr", engine="zarr")
+l3 = xr.open_dataset(f"ipfs://{settings.lev3}", engine="zarr")
+l4 = xr.open_dataset(f"ipfs://{settings.lev4}", engine="zarr")
 # %%
 
 
