@@ -5,11 +5,11 @@ import xarray as xr
 import matplotlib.pyplot as plt
 import settings
 from xhistogram.xarray import histogram
-
+import droputils.data_utils as du
 
 # %% Load the dropsonde data
 l3 = xr.open_dataset(
-    f"{settings.root}/products/HALO/dropsondes/Level_3/PERCUSION_Level_3.zarr",
+    f"ipfs://{settings.lev3}",
     engine="zarr",
 ).assign(wspd_sfc=lambda ds: ds.wspd.sel(altitude=slice(0, 51)).mean("altitude"))
 
@@ -35,6 +35,10 @@ l3time = l3time.assign(
         data=solar_local_time(l3.launch_lon, l3time.utctime), dims=["sonde"]
     )
 )
+# %%
+l3east = du.sel_sub_domain(l3time, settings.east_region)
+l3west = du.sel_sub_domain(l3time, settings.west_region)
+
 
 # %%
 plt.style.use("./beach.mplstyle")
@@ -56,14 +60,14 @@ ax.set_ylabel("Counts")
 
 # %%
 fig, ax = plt.subplots(figsize=(7, 4))
-l3time.solartime.where(l3time.launch_lon > -40, drop=True).plot.hist(
+l3east.solartime.plot.hist(
     bins=np.arange(0, 25, 1),
     histtype="step",
     label=labels["east"],
     color=colors["east"],
     lw=5,
 )
-l3time.solartime.where(l3time.launch_lon < -40, drop=True).plot.hist(
+l3west.solartime.plot.hist(
     bins=np.arange(0, 25, 1),
     histtype="step",
     label=labels["west"],
