@@ -1,6 +1,5 @@
 # %%
 import xarray as xr
-import os
 import matplotlib.pyplot as plt
 import seaborn as sns
 import eurec4a
@@ -8,17 +7,9 @@ import settings
 import droputils.data_utils as du
 
 # %%
-l4_path = f"{settings.root}/products/HALO/dropsondes/Level_4/"
-lev4 = xr.open_dataset(os.path.join(l4_path, "PERCUSION_Level_4.zarr"), engine="zarr")
+
+lev4 = xr.open_dataset(f"ipfs://{settings.lev4}", engine="zarr")
 # %%
-
-
-def assign_island(lon):
-    if lon > -40:
-        return "SAL"
-    else:
-        return "BB"
-
 
 east = du.sel_sub_domain(
     lev4,
