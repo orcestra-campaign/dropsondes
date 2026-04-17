@@ -176,8 +176,3 @@ for ax in axes[0, 1:]:
 
 axes[1, 0].set_yticks(axes[1, 0].get_yticks(), labels=axes[1, 0].get_yticks() / 1000)
 fig.savefig("../images/omega_error_2d.pdf", dpi=300, bbox_inches="tight")
-
-# %%
-(lev4.omega_sonde_relevance.std("sonde") * 0.01 * (60 * 60)).sel(
-    altitude=slice(0, 14000)
-).mean()
