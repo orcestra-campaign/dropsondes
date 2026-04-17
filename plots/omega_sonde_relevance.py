@@ -97,7 +97,7 @@ axes[1, 0].annotate(
 )
 
 
-axes[1, 0].set_ylabel("altitude / m")
+axes[1, 0].set_ylabel("altitude / km")
 axes[1, 0].set_xlabel(r"$\Delta \omega$ / hPa hr-1" + "\n if sonde is removed ")
 
 sns.histplot(
@@ -173,6 +173,8 @@ axes[1, 1].legend(loc=2, fontsize=3)
 for ax in axes[0, 1:]:
     ax.set_axis_off()
 
+
+axes[1, 0].set_yticks(axes[1, 0].get_yticks(), labels=axes[1, 0].get_yticks() / 1000)
 fig.savefig("../images/omega_error_2d.pdf", dpi=300, bbox_inches="tight")
 
 # %%
