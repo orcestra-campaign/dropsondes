@@ -7,7 +7,7 @@ import settings
 
 # %%
 ds = xr.open_dataset(
-    f"{settings.root}/products/HALO/dropsondes/Level_3/PERCUSION_Level_3_qc.zarr",
+    f"ipfs://{settings.lev3qc}",
     engine="zarr",
 )
 
