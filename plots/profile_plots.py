@@ -148,11 +148,11 @@ yticks = axes[0, 0].get_yticks()
 yticks_new = np.concatenate(
     (yticks, [east_freeze * 10, west_freeze * 10, north_freeze * 10])
 )
-
 axes[0, 0].set_yticks(
     np.concatenate((yticks, [east_freeze * 10, west_freeze * 10, north_freeze * 10])),
-    labels=yticks.tolist() + ["", "", ""],
+    labels=(yticks / 1000).tolist() + ["", "", ""],
 )
+
 
 for ax in axes.flatten():
     ax.set_ylim(0, 15000)
@@ -166,8 +166,9 @@ for ax in axes[0, :]:
 axes[0, 1].axvline(rhfreeze_east, color="grey", alpha=0.5, linestyle="--")
 axes[0, 1].axvline(rhfreeze_west, color="grey", alpha=0.5, linestyle="--")
 axes[0, 1].set_xlim(0, 100)
-axes[0, 0].set_ylabel("altitude / m")
-axes[1, 0].set_ylabel("altitude / m")
+for ax in axes[:, 0]:
+    ax.set_ylabel("altitude / km")
+
 axes[1, 1].set_xlim(-20, 20)
 axes[1, 0].set_xlim(-40, 20)
 sns.despine(offset={"left": 5})
