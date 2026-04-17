@@ -10,31 +10,9 @@ from orcestra import get_flight_segments
 import droputils.plot_utils as pu
 
 # %%
-l3 = f"{settings.root}/products/HALO/dropsondes/Level_3/PERCUSION_Level_3.zarr"
-dsdrop = xr.open_dataset(l3, engine="zarr")  # .swap_dims({"sonde_id": "launch_time"})
-
-
-# %%
-def get_HALO_position(flight_id):
-    root = settings.root
-    dshalo = (
-        xr.open_dataset(f"{root}/{flight_id}.zarr", engine="zarr")
-        .reset_coords()
-        .resample(time="1s")
-        .mean()
-    )
-    return dshalo.lon, dshalo.lat
-
-
-def get_halo_position_attitude(flight_id):
-    root = settings.root
-    return (
-        xr.open_dataset(f"{root}/{flight_id}.zarr", engine="zarr")
-        .reset_coords()
-        .resample(time="1s")
-        .mean()
-        .load()
-    )
+dsdrop = xr.open_dataset(
+    f"ipfs://{settings.lev3}", engine="zarr"
+)  # .swap_dims({"sonde_id": "launch_time"})
 
 
 # %%
