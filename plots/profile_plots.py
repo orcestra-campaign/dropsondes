@@ -9,7 +9,7 @@ from orcestra import get_flight_segments
 import droputils.data_utils as du
 
 lev3 = xr.open_dataset(
-    f"{settings.root}/products/HALO/dropsondes/Level_3/PERCUSION_Level_3.zarr",
+    f"ipfs://{settings.lev3}",
     engine="zarr",
 )
 # %%
