@@ -10,12 +10,12 @@ colors = {
     "cbb_mean": "#00b4d8",
 }
 
-lev0 = "QmUcnditMJqW1u1A9o6Xo5bjutvnnSFuufF8JQJBZnGUCE"
-lev1 = "QmTtC3pY8BMSjF6yjjzDXzaWWvjf4tgG7faaVUxTX94cj1"
-lev2 = "QmUkwVXrfyMuhLoK2rRHgeLGMuqYwzfAwywFZmTPBxbmib"
-lev3 = "Qmdfk4iUktNuaosiPvEDw8BXyeqDKxej8GbvMFCAse2s9X"
-lev3qc = "QmXbc4CCLx4UTuhwRDYPeaV1Ku5v2uBo6xqavAqnfCuyXW"
-lev4 = "QmcBRPhAzijEFi6iSXAgb15qocGmFvbBGM4U8ReAysziBt"
+lev0 = "bafybeif4n7lov7syd5ragolfosqf6t7zuawexxjhtr5r2ezecvgvvj7eje"
+lev1 = "bafybeieqqc5fktpmwbluppgb4vidrrx7vv44l5e7rol6zp3e3wlbjmj2q4"
+lev2 = "bafybeifi5pglgpcq6onwb3yixhvghcmenkvqmcqi7qgjbrbqlgoyrvj52i"
+lev3 = "bafybeiczbv7mycr2jois6t4dq3zwiltycomwo5xxvjqcjz2ot3newzar6q"
+lev3qc = "bafybeidytxgujp3evqesvvuvc3vsllv6pbcu5gc2torqkz7yo6yuazwtmu"
+lev4 = "bafybeibgeeqs5uhmbqy4hz4v3pihrfisiklcetisxkf63d2r473szaprwi"
 
 
 east_region = [[-34.5, 2.5], [-20, 2.5], [-20, 13.5], [-34.5, 13.5]]
