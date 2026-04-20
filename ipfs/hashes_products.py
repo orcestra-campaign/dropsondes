@@ -37,14 +37,14 @@ level3qc = orcestra.ipfs.ipfs_add(
 )
 print("l3 done")
 level4 = orcestra.ipfs.ipfs_add(
-    os.path.join(product_path, "products/Level_3/PERCUSION_Level_4.zarr")
+    os.path.join(product_path, "products/Level_4/PERCUSION_Level_4.zarr")
 )
 print("l4 done")
-
+# %%
 tree["products"]["HALO"]["dropsondes"]["Level_1"] = level1
 tree["products"]["HALO"]["dropsondes"]["Level_2"] = level2
-tree["products"]["HALO"]["dropsondes"]["Level_3"]["Level_3"] = level3
-tree["products"]["HALO"]["dropsondes"]["Level_3"]["Level_3_qc"] = level3qc
+tree["products"]["HALO"]["dropsondes"]["Level_3"] = level3
+tree["products"]["HALO"]["dropsondes"]["Level_3_qc"] = level3qc
 tree["products"]["HALO"]["dropsondes"]["Level_4"] = level4
 tree["raw"]["HALO"]["dropsondes"] = level0
 
